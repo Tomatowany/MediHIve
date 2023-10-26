@@ -32,7 +32,7 @@
 
                     <div class="login-btn-2"><input type="submit" value="Log in"></div>
 
-                    <p><a href="#">Forgot password?</a></p>
+                    <p><a href="#">Forgot password?a</a></p>
                 </form>
 
                 <button type="submit" onclick="location.href='signup.php';" class="login-btn-2">Create new account</button>
