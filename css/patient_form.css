@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+/* font-family: 'Paytone One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+/* font-family: 'Archivo Black', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;   
+}
+
+.navbar {
+    padding-block: 0.8rem;
+    margin-bottom: .5rem;
+    background-color: #ffffff;
+}
+
+    .navbar-expand-md .navbar-collapse{
+        margin-right: 1rem;
+    }
+
+    .navbar-expand-md .navbar-nav .nav-link {
+        width: 7rem;
+        display: flex;
+        justify-content: center;
+        --color: #FFEE7D;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        border-radius: 10px;
+        transition: color .5s;
+        z-index: 1;
+        color: black;
+        background-color: transparent;
+    }
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background: var(--color);
+        height: 150px;
+        width: 200px;
+        border-radius: 50%;
+    }
+    
+    .nav-link:hover {
+        color: #fff;
+    }
+    
+    .nav-link:before {
+        top: 100%;
+        left: 100%;
+        transition: all .7s;
+    }
+    
+    .nav-link:hover:before {
+        top: -30px;
+        left: -30px;
+    }
+    
+    .nav-link:active:before {
+        background: #3a0ca3;
+    }
+
+
+a.navbar-brand{
+    padding: 0;
+    margin-inline-start: 5px;
+    margin-block-start: 5px;
+}
+
+    a.navbar-brand img, svg{
+        height: 40px;
+        width: 165px;
+        padding: 0;
+}
+
+.nav-item button.login-btn{
+    background-color: #7DDFFF;
+    --color: #FFEE7D;
+    display: flex;
+    justify-content: center;
+    width: 6rem;
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1rem;
+    padding: 8px 30px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: color .5s;
+    z-index: 1;
+    border-radius: 10px;
+    font-weight: 400;
+    color: black;
+}
+
+    .nav-item button.login-btn:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background: var(--color);
+        height: 150px;
+        width: 200px;
+        border-radius: 50%;
+    }
+    
+    .nav-item button.login-btn:hover {
+        color: black;
+    }
+    
+    .nav-item button.login-btn:before {
+        top: 100%;
+        left: 100%;
+        transition: all .7s;
+    }
+    
+    .nav-item button.login-btn:hover:before {
+        top: -30px;
+        left: -30px;
+    }
+
+.below-title-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+    .title, .below-title-info{
+        padding: 0 50px 0 50px;
+    }
+    
+    h1{
+        text-align: center;
+    }
+    
+    h3{
+        text-align:left;
+    }
+    
+    section div{
+        padding: 50px 50px 50px 50px;
+    }
+    
+    .patient-demog-div table{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        left: 100px;
+    }
+    
+    .patient-demog-div td{
+        padding: 0 20px 0 20px;
+    }
+    
+    .family-hist-div table{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .family-hist-div th{
+        padding: 0 20px 0 20px;
+    }
+    
+    .table-input{
+        width: 300px;
+    }
+
+    
+
+hr#line-footer{
+    height: 2px;
+    max-width: 70rem;
+    border-width: 0;
+    color: black;
+    background-color: black;
+    margin-inline: auto;
+}
+
+ul, li{
+    list-style: none;
+    padding-left: 0;
+}
+
+footer{
+    min-height: 25rem;
+    padding: 2rem;
+    background-color: #1bb4e7;
+}
+    footer h2{
+        font-weight: bold;
+        color: #fff;
+    }
+
+    footer a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.2rem;
+        line-height: 2rem;  
+    }
+
+    footer p{
+        font-size: 1.1rem;
+        line-height: 2rem;
+        color: #fff;
+    }
+
+    footer p.title{
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    strong{
+        color: #fff;
+    }
+
+    div.partition-1 .logo{
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.partition-1 .logo .image-1{
+        max-height: 170px;
+        margin-bottom: .5rem;
+    }
+
+    .wrapper {
+        display: inline-flex;
+        list-style: none;
+        width: 100%;
+        padding-left: 0;
+        font-family: "Poppins", sans-serif;
+        justify-content: center;
+    }
+    
+    .wrapper .icon {
+        position: relative;
+        border-radius: 50%;
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .wrapper .tooltip {
+        position: absolute;
+        top: 0;
+        font-size: 14px;
+        background: #fff;
+        color: #fff;
+        padding: 5px 8px;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .wrapper .tooltip::before {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        background: #fff;
+        bottom: -3px;
+        left: 50%;
+        transform: translate(-50%) rotate(45deg);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .wrapper .icon:hover .tooltip {
+        top: -45px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    
+    .wrapper .icon:hover span,
+    .wrapper .icon:hover .tooltip {
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+    }
+    
+    .wrapper .facebook:hover .tooltip,
+    .wrapper .facebook:hover .tooltip::before {
+        background: #1877F2;
+        color: #fff;
+    }
+    
+    .wrapper .twitter:hover .tooltip,
+    .wrapper .twitter:hover .tooltip::before {
+        background: #1DA1F2;
+        color: #fff;
+    }
+    
+    .wrapper .instagram:hover .tooltip,
+    .wrapper .instagram:hover .tooltip::before {
+        background: #E4405F;
+        color: #fff;
+    }
+
+    .wrapper .email:hover .tooltip,
+    .wrapper .email:hover .tooltip::before {
+        background: #B23121;
+        color: #fff;
+    }
+
+    .wrapper .pinterest:hover .tooltip,
+    .wrapper .pinterest:hover .tooltip::before {
+        background: #BD081C;
+        color: #fff;
+    }
+    
+    .wrapper .facebook{
+        background-image: url("../img/Contacts/facebook.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    .wrapper .twitter{
+        background-image: url("../img/Contacts/twitter.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .wrapper .instagram{
+        background-image: url("../img/Contacts/instagram.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .wrapper .email{
+        background-image: url("../img/Contacts/email.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .wrapper .pinterest{
+        background-image: url("../img/Contacts/pinterest.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+@media screen and (max-width: 320px){
+    .navbar-expand-md .navbar-nav .nav-link {
+        width: 6rem;
+        padding: 6px;
+        font-size: 1rem;
+        justify-content: space-around;
+        margin-bottom: 0.5rem;
+    }
+
+    ul.navbar-nav{
+        margin-top: 1.2rem;
+        flex-direction: row;
+    }
+
+    button.login-btn{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .navbar-expand-md .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .navbar-nav .mb-2{
+        margin-bottom: 0;
+    }
+
+}

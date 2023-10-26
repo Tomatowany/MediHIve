@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Online -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" > -->
+    <!-- Offline -->
+    <link rel="stylesheet" href="./vendor/bootstrap-5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Menu</title>
+</head>
+<body>
+    <header class="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./img/logo1.png" alt="" srcset=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Signup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="content">
+            <div class="wrapper container-fluid ">
+                <div class="row">
+                    <div class="text-center pt-5">
+                        <h1>Menu</h1>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="partition-1 col-4">
+                                <div class="card-1 col-12">
+                                    <h2>Categories</h2>
+                                    <h2>Pizzas</h2>
+                                    <p>Solo</p>
+                                    <p>Refreshment</p>
+                                    <br>
+                                    <h3>Filter</h3>
+                                    <p>Price Range</p>
+                                    <p>Min.     Max.</p>
+                                    <label for="Min.">
+                                        <input type="number" id="quantity" name="quantity" min="">
+                                    </label>
+                                    <label for="Max.">
+                                        <input type="number" id="quantity" name="quantity" max="">
+                                    </label>
+                                    <input type="submit" value="Apply">
+                                </div>
+                            </div>
+                            <div class="partition-2 col-8">
+                                <div class="cons row">
+                                    <div class="col-2">
+                                        <div class="piz-1"></div>
+                                        <h5>Spicy Marghraita</h5>
+                                        <p>₱350.00</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="piz-2"></div>
+                                        <h5>Pepperoni Inferno</h5>
+                                        <p>₱420.00</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="piz-3"></div>
+                                        <h5>Veggie Delight</h5>
+                                        <p>₱300.00</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="piz-4"></div>
+                                        <h5>Hawaiian Paradise</h5>
+                                        <p>₱380.00</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="piz-5"></div>
+                                        <h5>Supreme Feast</h5>
+                                        <p>₱450.00</p>
+                                    </div>
+                                    <div class="col-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="copyright container-fluid">
+            <div class="row">
+                <h4>Copyright 2023 Spicy Pizza. All rights reserved.</h4>
+            </div>
+        </div>
+    </footer>
+    <!-- Online -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- Offline -->
+    <script src="./vendor/bootstrap-5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+
+.bg-red{
+    background-color: #D80032;
+}
+
+.bg-pink{
+    background-color: #F78CA2;
+}
+
+.color-red{
+    color: #D80032;
+}
+
+.color-pink{
+    color: #F78CA2;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
+    color: #D80032
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #F78CA2;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #D80032;
+}
+
+header{
+    box-shadow: 2px 2px 4px #F78CA2;
+}
+
+#content{
+    height: calc(100vh - 10px);
+    width: 100%;
+}
+div.container{
+    border-bottom: 1px solid #000000;
+    width: 95%;
+    height: 85vh;
+}
+div.partition-1{
+    /* border: 1px solid rgb(0, 0, 0); */
+    height: 600px;
+    padding: 1.2em ;
+} 
+
+div.card-1{
+    border: 1px solid rgb(7, 7, 7);
+    height: 560px;
+}
+div.partition-2{
+   /*  border: 1px solid rgb(4, 4, 4); */
+}
+
+div.cons > div{
+    border: 1px solid rgb(9, 9, 9);
+    height: 250px;
+    width: 310px;
+    margin: 1.2em .5em 1.2em 0;
+    padding: 10px;
+    text-align: center;
+}
+div.cons > div:last-child{
+    display: hidden;
+    border: none;
+}
+div.cons > div p{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+div.cons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+div.copyright{
+    width: 100%;
+    height: 120px;
+    margin-top: 2rem;
+    background-color: lightgray;
+    text-align: center;
+    padding: 3em;
+}
+
+div.piz-1{
+    height: 180px;
+    width: 100%;
+    border: 1px solid black;
+    background-image: url("../img/solo/1.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+div.piz-2{
+    height: 180px;
+    width: 100%;
+    border: 1px solid black;
+    background-image: url("../img/solo/3.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+div.piz-3{
+    height: 180px;
+    width: 100%;
+    border: 1px solid black;
+    background-image: url("../img/solo/2.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+div.piz-4{
+    height: 180px;
+    width: 100%;
+    border: 1px solid black;
+    background-image: url("../img/bestseller/1.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+div.piz-5{
+    height: 180px;
+    width: 100%;
+    border: 1px solid black;
+    background-image: url("../img/bestseller/2.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
