@@ -17,15 +17,14 @@ section.container-bg{
 
 
 .my-container{
-    max-height: 38rem;
-    max-width: 55rem;
+    max-height: 40rem;
+    min-width: 65rem;
     display: flex;
     border-radius: 3.5rem;
     box-shadow: 8px 8px 15px 0 #7DDFFF, -8px -8px 15px 0 #FFEE7D;
 }
 
 .first-column {
-    border-right: 1px solid #ccc;
     width: 27.4rem;
     height: auto;
     padding: 3rem;
@@ -60,6 +59,24 @@ section.container-bg{
     flex-wrap: wrap;
     align-content: flex-start;
     width: 100%;
+}
+div.genderc{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+div.namesfl{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+div.fname{
+    padding-right: 6px;
+    max-width: 100%;
+}
+div.lname{
+    padding-left: 6px;
+    max-width: 100%
 }
 
 label{
