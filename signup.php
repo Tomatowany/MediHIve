@@ -25,19 +25,23 @@
                 <div class="row">
                         <form action="" method="POST">
                             <div class="mb-3">
-                                <label for="fullName" class="form-label">Full name</label>
-                                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Shan Khair Jikiri" required value="<?php if(isset($_POST['fullName'])){ echo $_POST['fullName']; } ?>">
+                                <label for="firstName" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Shan Khair" required value="<?php if(isset($_POST['firstName'])){ echo $_POST['firstName']; } ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Jikiri" required value="<?php if(isset($_POST['lastName'])){ echo $_POST['lastName']; } ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="gender" class="form-label">Gender</label>
                                 <div class="row">
                                     <div class="col">
-                                        <label for="male">Male</label>
-                                        <input type="radio" id="male" name="gender" value="Male" required <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Male') echo 'checked'; ?>>
+                                        <label for="male"><input type="radio" id="male" name="gender" value="Male" required <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Male') echo 'checked'; ?>> Male</label>
+                                        
                                     </div>
                                     <div class="col">
-                                        <label for="female">Female</label> 
-                                        <input type="radio" id="female" name="gender" value="Female" required <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Female') echo 'checked'; ?>>
+                                        <label for="female"><input type="radio" id="female" name="gender" value="Female" required <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Female') echo 'checked'; ?>> Female</label> 
+                                        
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,14 @@
 <?php
 
     function validate_fn($POST){
-        if(strlen(trim($POST['fullName']))<1){
+        if(strlen(trim($POST['firstName']))<1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    function validate_ln($POST){
+        if(strlen(trim($POST['lastName']))<1){
             return false;
         }else{
             return true;
