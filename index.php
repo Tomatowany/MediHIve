@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once('./includes/shared/head.index.php');
+    require_once('./includes/shared/head-index.php');
 ?>
 <body>
     <?php
-        require_once('./includes/shared/header.index.php');
+        require_once('./includes/shared/header-index.php');
     ?>
     <main>
       <section id="banner">
@@ -19,7 +19,7 @@
             <input type="text" autocomplete="off" name="hpCode" id="hpCode" placeholder="XXXX-XXXX">
             <p>or</p>
           </div>
-          <button type="submit" onclick="location.href='login.php';" class="login-btn-2">Login</button>
+          <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Login</button>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -217,7 +217,7 @@
       </section>
       
       <?php
-          require_once('./includes/shared/footer.index.php');
+          require_once('./includes/shared/footer-index.php');
       ?>
 
     </main>

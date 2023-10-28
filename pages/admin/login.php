@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once('./includes/login/head.log.php')
+    require_once('../../includes/shared/head-login.php')
 ?>
 <body>
     <section class="container-fluid container-bg">
@@ -9,10 +9,10 @@
 
             <div class="first-column col-12 col-md-8 d-flex justify-content-center flex-column">
                 <div class="icon-logo-1">
-                    <img src="img/MediHive_Icon.svg" alt="icon">
+                    <img src="../../img/MediHive_Icon.svg" alt="icon">
                 </div>
                 <div class="icon-logo-2">
-                    <img src="img/MediHive.svg" alt="text">
+                    <img src="../../img/MediHive.svg" alt="text">
                 </div>
                 <div class="motto">
                     <h2>Health and Technology Intertwined </h2>
@@ -35,10 +35,6 @@
                     <p><a href="#">Forgot password?</a></p>
                 </form>
 
-                <div class="or-line">
-                    <img src="img/or.svg" alt="or-line">
-                </div>
-
                 <div id="g_id_onload"
                     data-client_id="YOUR_GOOGLE_CLIENT_ID"
                     data-login_uri="https://your.domain/your_login_endpoint"
@@ -58,7 +54,7 @@
     </section>
 
     <?php
-        require_once('./includes/js.php');
+        require_once('../../includes/js.php');
     ?>
 </body>
 </html>
