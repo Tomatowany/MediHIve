@@ -16,10 +16,10 @@
             <h4>Intertwined</h4>
           </div>
           <div class="particulars">
-            <input type="text" autocomplete="off" name="hpCode" id="hpCode" placeholder="XXXX-XXXX">
+            <input type="text" autocomplete="off" name="hpCode" id="hpCode" placeholder="What's your patient-code?">
             <p>or</p>
           </div>
-          <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Login</button>
+          <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Log in</button>
         </div>
         <div class="container-fluid">
           <div class="row">

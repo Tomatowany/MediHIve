@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once('./includes/login-signup/head.log.sig.php')
+    require_once('includes/shared/head-login.php')
 ?>
 <body>
     <section class="container-fluid container-bg p-3 p-md-5">
@@ -77,7 +77,7 @@
         </div>
     </section>
     <?php
-        require_once('./includes/login-signup/js.php');
+        require_once('includes/js.php');
     ?>
 </body>
 </html>

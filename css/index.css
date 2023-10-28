@@ -83,7 +83,7 @@ a.navbar-brand{
     --color: #FFEE7D;
     display: flex;
     justify-content: center;
-    width: 6rem;
+    width: 7rem;
     margin-inline-start: 5rem;
     margin-inline-end: 1rem;
     padding: 8px 30px;
@@ -93,8 +93,9 @@ a.navbar-brand{
     transition: color .5s;
     z-index: 1;
     border-radius: 10px;
-    font-weight: bold;
+    font-weight: 600;
     color: black;
+    cursor: pointer;
 }
 
     .nav-item button.login-btn:before {
@@ -167,6 +168,7 @@ section#banner{
 
     .banner-text .particulars input{
         padding-block: 5px;
+        padding-inline: 1rem;
         margin-block-start: .5rem;
         text-align: center;
         font-size: 1.2rem;
@@ -195,17 +197,17 @@ section#banner{
         --color: #FFEE7D;
         display: flex;
         justify-content: center;
-        /* width: 6rem; */
+        width: 7rem;
         padding: 8px 30px;
-        font-size: 1.2rem;
         position: relative;
         overflow: hidden;
         border: none;
         transition: color .5s;
         z-index: 1;
         border-radius: 10px;
-        font-weight: bold;
+        font-weight: 600;
         color: black;
+        cursor: pointer;
     }
 
     .banner-text button.login-btn-2:before {
@@ -258,7 +260,7 @@ section#medihive-sec{
     align-items: center;
     width: auto;
     min-height: 25rem;
-    background-color: #e9e9e9;
+    background-color: #f1f1f1;
     color: #000000;
     z-index: 1;
     margin-top: -19rem;
@@ -362,7 +364,7 @@ hr:not([size]){
 }
 
 section#VMG{
-    background-color: #e9e9e9;
+    background-color: #f1f1f1;
     height: auto;
 }
     div.vmg-sec{
@@ -448,7 +450,7 @@ section#medihive-timeline{
     display: flex;
     min-height: 25rem;
     padding: 1.5rem;
-    background-color: #e9e9e9;
+    background-color: #fbfbfb;
 }
     #TL-subj h1{
         padding-block-start: 1.5rem;

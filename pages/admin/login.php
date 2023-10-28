@@ -5,51 +5,40 @@
 ?>
 <body>
     <section class="container-fluid container-bg">
-        <div class="row d-flex justify-content-center align-items-center my-container">
+        <div class="my-container row">
 
-            <div class="first-column col-12 col-md-8 d-flex justify-content-center flex-column">
-                <div class="icon-logo-1">
-                    <img src="../../img/MediHive_Icon.svg" alt="icon">
-                </div>
-                <div class="icon-logo-2">
-                    <img src="../../img/MediHive.svg" alt="text">
-                </div>
+            <div class="first-column col-12 col-md-6 d-flex justify-content-center flex-column">
+                <a href="index.php">
+                    <div class="icon-logo-1">
+                        <img src="../../img/MediHive_Icon.svg" alt="icon">
+                    </div>
+                    <div class="icon-logo-2">
+                        <img src="../../img/MediHive.svg" alt="text">
+                    </div>
+                </a>
                 <div class="motto">
                     <h2>Health and Technology Intertwined </h2>
                 </div>
             </div>
+            <div class="v-line"></div>
             <div class="sec-column col-12 col-md-4 d-flex justify-content-center flex-column">
-
+                <div class="login-title">
+                    <h1>Log in</h1>
+                </div>
                 <form action="">
                     <div><label for="hosp-code">Hospital Code</label></div>
-                    <div><input type="text" name="hospital-code" id="hospital-code" placeholder="Enter hospital code" required></div>    
+                    <div><input type="text" class="form-control is-valid" name="hospital-code" id="hospital-code" placeholder="What's your hospital code" required></div>    
 
                     <div><label for="email">Email</label></div>
                     <div><input type="text" name="email" id="email" placeholder="Enter email" required></div>
 
                     <div><label for="password">Password</label></div>
-                    <div><input type="password" name="password" id="password" placeholder="Enter password" required></div>             
+                    <div><input type="password" name="password" id="password" placeholder="Password" required></div>             
 
-                    <button type="submit" name="login" class="login-btn-2">Login</button>
+                    <button type="submit" name="login" class="login-btn-2">Log in</button>
 
                     <p><a href="#">Forgot password?</a></p>
                 </form>
-
-                <div id="g_id_onload"
-                    data-client_id="YOUR_GOOGLE_CLIENT_ID"
-                    data-login_uri="https://your.domain/your_login_endpoint"
-                    data-auto_prompt="false">
-                </div>
-                <div class="g_id_signin"
-                    data-type="standard"
-                    data-size="large"
-                    data-theme="outline"
-                    data-text="continue_with"
-                    data-shape="pill"
-                    data-logo_alignment="center">
-                </div>
-            </div>
-
         </div>
     </section>
 
