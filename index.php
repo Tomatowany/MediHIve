@@ -5,7 +5,7 @@
 ?>
 <body>
     <?php
-        require_once('./includes/shared/header-index.php');
+        require_once('./includes/shared/header-nav.php');
     ?>
     <main>
       <section id="banner">
