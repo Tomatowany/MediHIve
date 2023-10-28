@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+    $title = 'MediHive';
     require_once('./includes/shared/head-index.php');
 ?>
 <body>
-    <?php
+    <?php  
         require_once('./includes/shared/header-nav.php');
     ?>
     <main>

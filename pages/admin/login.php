@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once('../../includes/shared/head-login.php')
+    $title = 'MediHive - Log in';
+    require_once('../../includes/shared/head-login.php');
 ?>
 <body>
     <section class="container-fluid container-bg">
