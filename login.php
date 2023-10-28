@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once('./includes/login-signup/head.log.sig.php')
+    require_once('./includes/login/head.log.php')
 ?>
 <body>
     <section class="container-fluid container-bg">
@@ -34,8 +34,6 @@
 
                     <p><a href="#">Forgot password?</a></p>
                 </form>
-
-                <button type="submit" onclick="location.href='signup.php';" class="login-btn-2">Create new account</button>
 
                 <div class="or-line">
                     <img src="img/or.svg" alt="or-line">

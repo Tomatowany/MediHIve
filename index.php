@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once('./includes/landing-page/head.index.php');
+    require_once('./includes/shared/head.index.php');
 ?>
 <body>
     <?php
-        require_once('./includes/landing-page/header.index.php');
+        require_once('./includes/shared/header.index.php');
     ?>
     <main>
       <section id="banner">
@@ -217,7 +217,7 @@
       </section>
       
       <?php
-          require_once('./includes/landing-page/footer.index.php');
+          require_once('./includes/shared/footer.index.php');
       ?>
 
     </main>
