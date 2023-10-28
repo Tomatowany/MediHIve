@@ -60,7 +60,7 @@
     </section>
 
     <?php
-        require_once('./includes/login-signup/js.php');
+        require_once('./includes/js.php');
     ?>
 </body>
 </html>
