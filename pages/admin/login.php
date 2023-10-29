@@ -9,7 +9,7 @@
         <div class="my-container row">
 
             <div class="first-column col-12 col-md-6 d-flex justify-content-center flex-column">
-                <a href="index.php">
+                <a href="/">
                     <div class="icon-logo-1">
                         <img src="../../img/MediHive_Icon.svg" alt="icon">
                     </div>
@@ -26,7 +26,7 @@
                 <div class="login-title">
                     <h1>Log in</h1>
                 </div>
-                <form action="">
+                <form action="" method="POST">
                     <div><label for="hosp-code">Hospital Code</label></div>
                     <div><input type="text" class="form-control is-valid" name="hospital-code" id="hospital-code" placeholder="What's your hospital code" required></div>    
 
