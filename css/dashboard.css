@@ -11,6 +11,12 @@
     font-family: 'Roboto', sans-serif;   
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 #sidebarMenu .fa{
     width: 20px;
 }
@@ -38,9 +44,8 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
     z-index: 100;
-    padding: 48px 0 0;
+    padding: 80px 10px;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
   
@@ -63,4 +68,10 @@ a.navbar-brand{
         height: 40px;
         width: 165px;
         padding: 0;
+}
+
+.admin-header{
+    height: 55px;
+    display: flex;
+    align-items: center;
 }
