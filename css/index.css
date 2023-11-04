@@ -14,7 +14,7 @@
 .navbar {
     padding-block: 0.8rem;
     margin-bottom: .5rem;
-    background-color: #ffffff;
+    background-color: transparent;
 }
 
     .navbar-expand-md .navbar-collapse{
@@ -130,8 +130,10 @@ section#banner{
 .banner-text .particulars{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-start;
     padding: 0;
+    margin-left: 1.5rem;
 }
 
     p, h4{
@@ -166,32 +168,6 @@ section#banner{
         margin-bottom: 1rem;
     }
 
-    .banner-text .particulars input{
-        padding-block: 5px;
-        padding-inline: 1rem;
-        margin-block-start: .5rem;
-        text-align: center;
-        font-size: 1.2rem;
-        border: none;
-        outline: none;
-        border-radius: 10px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: inset 2px 5px 10px rgba(173, 169, 169, 0.3);
-        transition: 300ms ease-in-out;
-    }
-
-    .banner-text .particulars input:focus {
-        background-color: white;
-        transform: scale(1.05);
-        box-shadow: 13px 13px 100px #969696,
-                -13px -13px 100px #ffffff;
-    }
-
-    .banner-text .particulars p{
-        margin: 1rem;
-        font-size: 1.2rem;
-    }
-
     .banner-text button.login-btn-2{
         background-color: #7DDFFF;
         --color: #FFEE7D;
@@ -206,7 +182,9 @@ section#banner{
         z-index: 1;
         border-radius: 10px;
         font-weight: 600;
+        font-size: 1.1rem;
         color: black;
+        margin-left: 1.5rem;
         cursor: pointer;
     }
 
@@ -262,8 +240,6 @@ section#medihive-sec{
     min-height: 25rem;
     background-color: #f1f1f1;
     color: #000000;
-    z-index: 1;
-    margin-top: -19rem;
     padding: 1.5rem;
 }
 
@@ -290,11 +266,14 @@ section#testimonies{
     padding: 1rem;
 }
     #T-subj h1{
-        padding-block-start: 1.5rem;
-        padding-block-end: 2rem;
-        font-size: 2.5rem;
+        padding: 0;
+        font-size: 6rem;
+        font-weight: 500;
         font-family: 'Archivo Black', sans-serif;
         margin-bottom: 0;
+        writing-mode: vertical-rl;
+        /*text-orientation: sideways;*/
+        transform:scale(-1);
     }
     div.ttmns-1{
         display: flex;

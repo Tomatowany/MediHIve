@@ -16,10 +16,6 @@
             <h4>Health and Technology</h4>
             <h4>Intertwined</h4>
           </div>
-          <div class="particulars">
-            <input type="text" autocomplete="off" name="hpCode" id="hpCode" placeholder="What's your patient-code?">
-            <p>or</p>
-          </div>
           <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Log in</button>
         </div>
         <div class="container-fluid">
@@ -34,41 +30,35 @@
         </div>
       </section>
 
-      <section id="medihive-sec">
-        <div class="medihive-desc">
-          <p>MediHive, the ultimate Electronic Medical Record. 
-            A patient-centric solution to record-keeping and medical 
-            analysis.<br><br>- Founder</p>
-            <span id="ttmns-link"></span>
-        </div>
-      </section>
       <section id="testimonies">
         <div class="testimony container-fluid">
-          <div class="subject text-center my-2" id="T-subj">
-            <h1>Testimonies</h1>
+          <div class="row">
+            <div class="subject text-center my-2" id="T-subj">
+              <h1>Testimonies</h1>
+            </div>
+            <div class="container" style="padding: 0;">
+              <div class="ttmns-1">
+                <div class="profile-1 col">
+                  <img src="img/testimonies/woman.jpg" class="img-fluid" alt="testimony pic1">
+                </div>
+                <div class="feedback-1 col">
+                  <p>"MediHive as an electronic medical record system proved to be 
+                    a revolutionary tool in a medical practitioner’s arsenal."</p>
+                  <p id="witness">-Angel Mae Digal Liabado (July 2025)</p>
+                </div>
+              </div>
+              <div class="ttmns-2">
+                <div class="feedback-2 col">
+                  <p>"Life as a nurse never became more bearable thanks to 
+                    MediHive. Dahil sa MediHive, nagbago buhay ko."</p>
+                  <p id="witness">-Rolanie Jane Tejada (October 2026)</p>  
+                </div>
+                <div class="profile-2 col">
+                  <img src="img/testimonies/man.jpg" class="img-fluid" alt="testimony pic2">
+                </div>
+                <span id="vmg-link"></span> 
+              </div>
           </div>
-          <div class="container" style="padding: 0;">
-            <div class="ttmns-1">
-              <div class="profile-1 col">
-                <img src="img/testimonies/woman.jpg" class="img-fluid" alt="testimony pic1">
-              </div>
-              <div class="feedback-1 col">
-                <p>"MediHive as an electronic medical record system proved to be 
-                  a revolutionary tool in a medical practitioner’s arsenal."</p>
-                <p id="witness">-Angel Mae Digal Liabado (July 2025)</p>
-              </div>
-            </div>
-            <div class="ttmns-2">
-              <div class="feedback-2 col">
-                <p>"Life as a nurse never became more bearable thanks to 
-                  MediHive. Dahil sa MediHive, nagbago buhay ko."</p>
-                <p id="witness">-Rolanie Jane Tejada (October 2026)</p>  
-              </div>
-              <div class="profile-2 col">
-                <img src="img/testimonies/man.jpg" class="img-fluid" alt="testimony pic2">
-              </div>
-              <span id="vmg-link"></span> 
-            </div>
           </div>
         </div>
       </section>
@@ -172,6 +162,15 @@
               <p id="partner-link"></p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="medihive-sec">
+        <div class="medihive-desc">
+          <p>MediHive, the ultimate Electronic Medical Record. 
+            A patient-centric solution to record-keeping and medical 
+            analysis.<br><br>- Founder</p>
+            <span id="ttmns-link"></span>
         </div>
       </section>
       
