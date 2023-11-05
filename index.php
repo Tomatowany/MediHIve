@@ -13,21 +13,12 @@
         <div class="banner-text container-fluid">
           <div class="narratives">
             <p><span class="spOne">Medi</span><span class="spTwo">Hive</span></p>
-            <h4>Health and Technology</h4>
-            <h4>Intertwined</h4>
+            <h4>Global Provider of Electronic</h4>
+            <h4>Medical Record System</h4>
           </div>
           <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Log in</button>
         </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="clay-1 col-md-6">
-              <img src="img/384467412_324695820047205_3728827488795527625_n-removebg-preview.png" alt="Dakumata">
-            </div>
-            <div class="clay-2 col-md-6">
-              <img src="img/381975010_691953845814335_4579708997448563908_n-removebg-preview.png" alt="Nigga">
-            </div>
-          </div> 
-        </div>
+        <div class="banner-bg"></div>
       </section>
 
       <section id="testimonies">
