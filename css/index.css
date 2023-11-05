@@ -12,17 +12,17 @@
 }
 
 .navbar {
-    padding-block: 0.8rem;
-    margin-bottom: .5rem;
-    background-color: #ffffff;
+    padding-block: 1rem;
+    background-color: transparent;
 }
 
     .navbar-expand-md .navbar-collapse{
         margin-right: 1rem;
     }
-
     .navbar-expand-md .navbar-nav .nav-link {
-        width: 6.5rem;
+        width: auto;
+        padding-inline: 1rem;
+        margin-inline: 1rem;
         display: flex;
         justify-content: center;
         --color: #FFEE7D;
@@ -32,8 +32,9 @@
         border-radius: 10px;
         transition: color .5s;
         z-index: 1;
-        color: black;
+        color: white;
         background-color: transparent;
+        font-size: 1.4rem;
     }
 
     .nav-link::before {
@@ -74,31 +75,35 @@ a.navbar-brand{
 
     a.navbar-brand img, svg{
         height: 40px;
-        width: 165px;
+        width: auto;
         padding: 0;
 }
-
-.nav-item button.login-btn{
+.nav-item-b{
+    display: flex;
+}
+.nav-item-b button.login-btn{
     background-color: #7DDFFF;
     --color: #FFEE7D;
     display: flex;
     justify-content: center;
-    width: 7rem;
+    align-items: center;
+    width: auto;
     margin-inline-start: 5rem;
     margin-inline-end: 1rem;
-    padding: 8px 30px;
+    padding-inline: 2rem;
     position: relative;
     overflow: hidden;
     border: none;
     transition: color .5s;
     z-index: 1;
     border-radius: 10px;
+    font-size: 1.2rem;
     font-weight: 600;
     color: black;
     cursor: pointer;
 }
 
-    .nav-item button.login-btn:before {
+    .nav-item-b button.login-btn:before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -108,30 +113,40 @@ a.navbar-brand{
         border-radius: 50%;
     }
     
-    .nav-item button.login-btn:hover {
+    .nav-item-b button.login-btn:hover {
         color: black;
     }
     
-    .nav-item button.login-btn:before {
+    .nav-item-b button.login-btn:before {
         top: 100%;
         left: 100%;
         transition: all .7s;
     }
     
-    .nav-item button.login-btn:hover:before {
+    .nav-item-b button.login-btn:hover:before {
         top: -30px;
         left: -30px;
     }
 
 section#banner{
-    margin-block: 2.5rem;
+    height: calc(100vh - 0px);
 }
+.banner-bg{
+    height: calc(100vh - 0px);
+    background-image: url("../img/heroPage/brandon-holmes-GofYo51GQ_4-unsplash.png");
+    margin-top: -36.4rem;
+    z-index: -1;
+}
+
 .banner-text, .banner-text .narratives,
 .banner-text .particulars{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-start;
     padding: 0;
+    margin-left: 1.5rem;
+    margin-top: 3rem;
 }
 
     p, h4{
@@ -160,36 +175,11 @@ section#banner{
         font-size: 4rem;
         font-weight: 300;
         margin-top: -0.3rem;
+        color: white;
     }
 
     .banner-text .narratives{
         margin-bottom: 1rem;
-    }
-
-    .banner-text .particulars input{
-        padding-block: 5px;
-        padding-inline: 1rem;
-        margin-block-start: .5rem;
-        text-align: center;
-        font-size: 1.2rem;
-        border: none;
-        outline: none;
-        border-radius: 10px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: inset 2px 5px 10px rgba(173, 169, 169, 0.3);
-        transition: 300ms ease-in-out;
-    }
-
-    .banner-text .particulars input:focus {
-        background-color: white;
-        transform: scale(1.05);
-        box-shadow: 13px 13px 100px #969696,
-                -13px -13px 100px #ffffff;
-    }
-
-    .banner-text .particulars p{
-        margin: 1rem;
-        font-size: 1.2rem;
     }
 
     .banner-text button.login-btn-2{
@@ -206,7 +196,9 @@ section#banner{
         z-index: 1;
         border-radius: 10px;
         font-weight: 600;
+        font-size: 1.1rem;
         color: black;
+        margin-left: 1.5rem;
         cursor: pointer;
     }
 
@@ -262,8 +254,6 @@ section#medihive-sec{
     min-height: 25rem;
     background-color: #f1f1f1;
     color: #000000;
-    z-index: 1;
-    margin-top: -19rem;
     padding: 1.5rem;
 }
 
@@ -290,11 +280,14 @@ section#testimonies{
     padding: 1rem;
 }
     #T-subj h1{
-        padding-block-start: 1.5rem;
-        padding-block-end: 2rem;
-        font-size: 2.5rem;
+        padding: 0;
+        font-size: 6rem;
+        font-weight: 500;
         font-family: 'Archivo Black', sans-serif;
         margin-bottom: 0;
+        writing-mode: vertical-rl;
+        /*text-orientation: sideways;*/
+        transform:scale(-1);
     }
     div.ttmns-1{
         display: flex;

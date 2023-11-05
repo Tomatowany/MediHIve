@@ -9,7 +9,6 @@
         require_once('admin-navbar.php');
     ?>
 
-
     <?php
         require_once('dashboard-sidenav.php');
     ?>

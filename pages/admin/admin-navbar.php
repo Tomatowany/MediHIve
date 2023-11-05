@@ -1,4 +1,4 @@
-<header class="navbar navbar-dark sticky-top brand-bg-color flex-md-nowrap p-0 admin">
+<header class="navbar navbar-dark sticky-top brand-bg-color flex-md-nowrap p-1 admin">
     <div class="col-md-3 col-lg-2 admin-header">
         <a class="navbar-brand" href="index.php"><img src="../../img/MediHive.svg" alt="" srcset=""></a>
     </div>
