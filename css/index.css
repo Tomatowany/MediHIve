@@ -74,12 +74,13 @@ a.navbar-brand{
 }
 
     a.navbar-brand img, svg{
-        height: 40px;
+        height: 45px;
         width: auto;
         padding: 0;
 }
 .nav-item-b{
     display: flex;
+    align-items: center;
 }
 .nav-item-b button.login-btn{
     background-color: #7DDFFF;
@@ -91,6 +92,7 @@ a.navbar-brand{
     margin-inline-start: 5rem;
     margin-inline-end: 1rem;
     padding-inline: 2rem;
+    padding-block: 6px;
     position: relative;
     overflow: hidden;
     border: none;
@@ -172,10 +174,11 @@ section#banner{
     }
 
     .banner-text h4{
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 300;
         margin-top: -0.3rem;
         color: white;
+        padding-left: 6px;
     }
 
     .banner-text .narratives{
@@ -187,19 +190,21 @@ section#banner{
         --color: #FFEE7D;
         display: flex;
         justify-content: center;
-        width: 7rem;
-        padding: 8px 30px;
+        align-items: center;
+        width: auto;
+        margin-left: 2rem;
+        padding-inline: 2rem;
+        padding-block: 6px;
         position: relative;
         overflow: hidden;
         border: none;
         transition: color .5s;
         z-index: 1;
         border-radius: 10px;
+        font-size: 1.5rem;
         font-weight: 600;
-        font-size: 1.1rem;
         color: black;
-        margin-left: 1.5rem;
-        cursor: pointer;
+    cursor: pointer;
     }
 
     .banner-text button.login-btn-2:before {
