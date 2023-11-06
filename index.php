@@ -24,10 +24,10 @@
       <section id="testimonies">
         <div class="testimony container-fluid">
           <div class="row">
-            <div class="subject text-center my-2" id="T-subj">
+            <div class="subject col-12 col-sm-6 col-md-6 col-lg-4 text-center my-2" id="T-subj">
               <h1>Testimonies</h1>
             </div>
-            <div class="container" style="padding: 0;">
+            <div class="container col-12 col-sm-6 col-md-6 col-lg-4" style="padding: 0;">
               <div class="ttmns-1">
                 <div class="profile-1 col">
                   <img src="img/testimonies/woman.jpg" class="img-fluid" alt="testimony pic1">
