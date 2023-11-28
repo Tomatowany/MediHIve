@@ -3,12 +3,15 @@
 /* font-family: 'Paytone One', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 /* font-family: 'Archivo Black', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Inter', sans-serif; */
+
 *{
     margin: 0;
     padding: 0;
     font-size: 1rem;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;   
+    font-family: 'Inter', sans-serif;
 }
 
 .navbar {
@@ -34,7 +37,8 @@
         z-index: 1;
         color: white;
         background-color: transparent;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+        font-weight: 300;
     }
 
     .nav-link::before {
@@ -88,10 +92,9 @@ a.navbar-brand{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-    margin-inline-start: 5rem;
+    margin-inline-start: 2rem;
     margin-inline-end: 1rem;
-    padding-inline: 2rem;
+    padding-inline: 1.5rem;
     padding-block: 6px;
     position: relative;
     overflow: hidden;
@@ -99,8 +102,9 @@ a.navbar-brand{
     transition: color .5s;
     z-index: 1;
     border-radius: 10px;
+    font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
     color: black;
     cursor: pointer;
 }
@@ -131,58 +135,57 @@ a.navbar-brand{
     }
 
 section#banner{
-    height: calc(100vh - 0px);
+    height: calc(100vh - 82px);
+    padding: 0;
 }
 .banner-bg{
-    height: calc(100vh - 0px);
+    height: calc(100vh - -5px);
     background-image: url("../img/heroPage/brandon-holmes-GofYo51GQ_4-unsplash.png");
-    margin-top: -36.4rem;
+    margin-top: -35rem;
     z-index: -1;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-.banner-text, .banner-text .narratives,
-.banner-text .particulars{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    padding: 0;
-    margin-left: 1.5rem;
-    margin-top: 3rem;
-}
+.banner-text{
+    padding-left: 3rem;
+    padding-right: 0;
+    padding-top: 8rem;
+    margin: 0;
+}   
 
-    p, h4{
+    .narratives #mediHive{
+        display: flex;
+    }
+
+    .narratives h6{
         margin: 0;
-        padding: 0;
+        padding-inline: .5rem;
+        padding-block: .2rem;
+        font-weight: 300;
     }
 
-    .banner-text p{
-        margin-bottom: -2rem;
-    }
 
-    .spOne, .spTwo{
+    h1#medi, h1#hive{
         font-size: 10rem;
-        font-weight: bolder;
+        font-weight: revert-layer;
+        padding: 0;
+        margin-bottom: -16px;
     }
 
-    .banner-text span.spOne{
+    .banner-text h1#medi{
         color: #FFEE7D;
     }
 
-    .banner-text span.spTwo{
+    .banner-text h1#hive{
         color: #7DDFFF;
     }
 
-    .banner-text h4{
-        font-size: 3.5rem;
-        font-weight: 300;
+    .banner-text h6{
+        font-size: 3.1rem;
         margin-top: -0.3rem;
         color: white;
         padding-left: 6px;
-    }
-
-    .banner-text .narratives{
-        margin-bottom: 1rem;
     }
 
     .banner-text button.login-btn-2{
@@ -191,20 +194,21 @@ section#banner{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: auto;
-        margin-left: 2rem;
-        padding-inline: 2rem;
-        padding-block: 6px;
+        margin-top: .5rem;
+        margin-left: .5rem;
+        padding-inline: 1.5rem;
+        padding-block: 4px;
         position: relative;
         overflow: hidden;
         border: none;
         transition: color .5s;
         z-index: 1;
         border-radius: 10px;
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 500;
         color: black;
-    cursor: pointer;
+        cursor: pointer;
     }
 
     .banner-text button.login-btn-2:before {
@@ -252,56 +256,56 @@ section#banner{
         /* border: 2px solid red; */
     }
 
-section#medihive-sec{
-    display: flex;
-    align-items: center;
-    width: auto;
-    min-height: 25rem;
-    background-color: #f1f1f1;
-    color: #000000;
-    padding: 1.5rem;
-}
-
-    div.medihive-desc p{
-        font-size: 2rem;
-        /* padding: 2.1rem; */
-        text-align: center;
-        display: flex;
-    }
-
-.subject h1{
-    padding-block: 1.5rem;
-    /* padding-block-end: .5rem; */
-    font-size: 2.5rem;
-    font-family: 'Archivo Black', sans-serif;
-    margin-bottom: 0;
-}
-
 
 section#testimonies{
     /* border: 2px solid red; */
     display: flex;
     min-height: 25rem;
-    padding: 1rem;
+    padding: 0;
 }
-    #T-subj h1{
+#tescar{
+    display: flex;
+}
+.carousel{
+    display: flex;
+    align-items: center;
+}
+    .testimony .subject{
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        border: 0;
+    }
+    #T-subj p{
+        display: flex;
         padding: 0;
         font-size: 6rem;
-        font-weight: 500;
-        font-family: 'Archivo Black', sans-serif;
+        font-family: 'Inter', sans-serif;
+        font-weight: 100;
         margin-bottom: 0;
         writing-mode: vertical-rl;
         /*text-orientation: sideways;*/
         transform:scale(-1);
     }
+    img#blurrr{
+        display: flex;
+        z-index: -1;
+        position: absolute;
+        height: calc(100vh - 30px);
+        width: 400px;
+        left: -4%;
+        top: 96%;
+    }
     div.ttmns-1{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     div.ttmns-2{
         display: flex;
         flex-wrap: wrap;
-        margin-block-end: 2.5rem;
+        justify-content: center;
+        margin-top: 1rem;
     }
 
     div.feedback-1 p,
@@ -314,7 +318,6 @@ section#testimonies{
     div.feedback-1, div.feedback-2{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         justify-content: center;
         padding: 1rem;
     }
@@ -328,22 +331,13 @@ section#testimonies{
         margin-right: 1.5rem;
     }
 
-
-    div.profile-1 img{
-        max-height: 800px;
-        /* border-radius: 1rem; */
-        border-top-left-radius: 4em;
-        border-top-right-radius: 8em;
-        border-bottom-left-radius: 8em;
-        border-bottom-right-radius: 4em;
+    div.profile-1{
+        display: flex;
     }
 
-    div.profile-2 img{
-        max-height: 800px;
-        border-top-left-radius: 8em;
-        border-top-right-radius: 4em;
-        border-bottom-left-radius: 4em;
-        border-bottom-right-radius: 8em;
+    div.profile-1 img, div.profile-2 img{
+        max-height: 300px;
+        border-radius: 2rem;
     }
 
     p#witness{
@@ -362,138 +356,159 @@ hr:not([size]){
 }
 
 section#VMG{
-    background-color: #f1f1f1;
-    height: auto;
+    height: calc(100vh - 140px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    background-image: url("../img/heroPage/bg_blue_yellow_ls.png");
 }
-    div.vmg-sec{
-        display: flex;
-        flex-direction: column;
+    .visbox, .misbox{
+        border: 5px solid #5e5e5e;
+        border-radius: 15px;
+        background-color: white;
     }
 
-    div.vmg-1{
-        height: 15rem;
+    .visbox .vmgcontent,.misbox .vmgcontent{
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        
+        flex-wrap: wrap;
     }
-    div.vmg-2{
-        height: 15rem;
+    .visbox .vmgpic, .misbox .vmgpic{
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        margin-block-end: 2rem;
     }
-
-    section#VMG .subject h1{
+    img#eyehair{
+        max-height: 220px;
+    }
+    p#titvimi{
         font-size: 3.5rem;
-        padding: 1rem;
+        margin: 0;
+        padding: 0;
     }
-
-    div.vision-text, div.mission-text{
-        display: flex;
-        justify-content: center;
-    }
-
-    div.vision-text p, div.mission-text p{
+    .vmgcontent p{
+        font-size: 1.8rem;
+        margin: 0;
+        padding-inline: 3rem;
+        padding-block-start: .5rem;
+        padding-block-end: 1.5rem;
         text-align: center;
-        max-width: 45rem;
-        font-size: 1.5rem;
     }
 
 section#medihive-team{
-    min-height: 38rem;
+    padding: 0;
+    height: calc(100vh - 0px);
 }
 #MT-subj h1{
-    padding-block-start: 2.5rem;
-    padding-block-end: 1.5rem;
+    padding-block-start: 3.5rem;
+    padding-block-end: 2.5rem;
     /* padding-block-end: .5rem; */
-    font-size: 2.5rem;
-    font-family: 'Archivo Black', sans-serif;
+    font-size: 4rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
     margin-bottom: 0;
-}
-
-p.mh-name{
-    font-size: 2rem;
-    padding-block: .25rem;
 }
 
 div.mh-team{
     display: flex;
     justify-content: space-around;
-    padding-block: 1rem;
+    --bs-gutter-x: 0rem;
+}
+.mh-name{
+    max-height: 4rem;
+    font-size: 2.6rem;
+    text-align: center;
 }
 
 div.polaroid img{
     padding: 0;
-    border-radius: 20px 20px 0 0;
-    
+    border-radius: 2rem 2rem 0 0;
 }
 
 div.polaroid {
-    max-width: 30%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 20px;
+    margin: 0;
     padding: 0;
-    border-radius: 20px;
+    border-radius: 2rem;
 }
-    div.polaroi.container {
-        text-align: center;
-        padding: 10px 20px;
-      }
 
-section#medihive-timeline{
-    /* border: 2px solid red; */
-    display: flex;
-    min-height: 25rem;
-    padding: 1.5rem;
-    background-color: #fbfbfb;
+.concard {
+    max-width: 420px;
+    max-height: 500px;
+    perspective: 900px;
 }
-    #TL-subj h1{
-        padding-block-start: 1.5rem;
-        padding-block-end: 3rem;
-        font-size: 2.5rem;
-        font-family: 'Archivo Black', sans-serif;
+
+.card {
+    height: 500px;
+    width: 420px;
+    background-color: white;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    border-radius: 2rem;
+}
+
+.concard:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    position: absolute;
+    box-shadow: 0 0 10px 2px rgba(44, 44, 44, 2.5);
+    backface-visibility: hidden;
+    color: black;
+    background: linear-gradient(-160deg, 
+    #FFEE7D, #7DDFFF);
+}
+
+.front, .back {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back {
+    transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.back-heading, .front-heading {
+    font-size: 3rem;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+img.picard{
+    max-width: 200px;
+    max-height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+
+section#medihive-sec{
+    display: flex;
+    align-items: center;
+    width: auto;
+    min-height: 12rem;
+    background-image: url("../img/heroPage/medsec.png");
+    color: #fff;
+    padding: 1.5rem;
+}
+    div.medihive-desc p{
+        font-size: 2rem;
+        text-align: center;
+        padding: 0;
         margin: 0;
     }
-
-    div.tmln-row{
-        padding: .8rem;
-        margin-bottom: 1rem;
-    }
-
-    div.milestone, .milestone p{
-        font-size: 1.6rem;
-        margin-block: auto;
-        padding: 1rem;
-    }
-
-    .milestone p:hover{
-        font-size: 1.8rem;
-        font-weight: 600;
-        transition: 0.1s;
-    }
-
-    div.milestone:nth-child(1){
-        text-align: center;
-    }   
-
-    div.milestone:nth-child(2){
-        text-align: center;
-    }
-
-    div.tmln-row .tmln-pic img{
-        min-height: 300px;
-        border-radius: 25px;
-        transition: 0.2s;
-    }
-    div.tmln-row .tmln-pic img:hover{
-        opacity: 0.8;
-    }
-
-    div.tmln-row .tmln-pic{
-        padding: 0;
+    p#fnder{
+        padding-top: 1.2rem;
     }
 
 #partners .container{
@@ -553,11 +568,11 @@ section#medihive-timeline{
         }
         
 hr#line-footer{
-    height: 1px;
-    max-width: 70rem;
+    height: 4px;
+    max-width: 79rem;
     border-width: 0;
-    color: black;
-    background-color: black;
+    color: white;
+    background-color: white;
     margin-inline: auto;
 }
 
@@ -567,35 +582,47 @@ ul, li{
 }
 
 footer{
-    min-height: 25rem;
-    padding: 2rem;
-    background-color: #1bb4e7;
+    min-height: 46rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.50)url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    display: flex;
+    align-items: center;
 }
     footer h2{
-        font-weight: bold;
+        font-weight: 500;
+        padding-top: 2rem;
+        padding-bottom: .5rem;
         color: #fff;
     }
 
     footer a{
         text-decoration: none;
         color: #fff;
-        font-size: 1.2rem;
-        line-height: 2rem;  
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.4rem;  
     }
 
     footer p{
-        font-size: 1.1rem;
-        line-height: 2rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.4rem;
         color: #fff;
     }
 
     footer p.title{
-        font-weight: bold;
-        font-size: 1.3rem;
+        font-weight: 500;
+        font-size: 2rem;
     }
 
-    strong{
+    .rights,strong{
         color: #fff;
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding-top: 3rem;
     }
 
     div.partition-1 .logo{
@@ -604,19 +631,18 @@ footer{
     }
 
     div.partition-1 .logo .image-1{
-        max-height: 170px;
+        max-height: 225px;
         margin-bottom: .5rem;
     }
 
-    .wrapper {
-        display: inline-flex;
-        list-style: none;
-        width: 100%;
-        padding-left: 0;
-        font-family: "Poppins", sans-serif;
-        justify-content: center;
-    }
-    
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+    justify-content: center;
+}   
     .wrapper .icon {
         position: relative;
         border-radius: 50%;

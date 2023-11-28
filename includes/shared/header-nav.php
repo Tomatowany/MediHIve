@@ -1,4 +1,4 @@
-<header class="sticky-top" id="home-link">
+<header id="home-link">
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="index.php"><img src="./img/MediHive_Icon.svg" alt=""> <img src="./img/MediHive.svg" alt="" srcset=""></a>

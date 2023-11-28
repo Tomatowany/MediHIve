@@ -12,11 +12,13 @@
       <section id="banner">
         <div class="banner-text container-fluid">
           <div class="narratives">
-            <p><span class="spOne">Medi</span><span class="spTwo">Hive</span></p>
-            <h4>Global Provider of Electronic</h4>
-            <h4>Medical Record System</h4>
+            <div id="mediHive">
+              <h1 id="medi">Medi</h1><h1 id="hive">Hive</h1>
+            </div>
+            <h6>Global provider of Electronic</h6>
+            <h6>Medical Record System</h6>
+            <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Log in</button>
           </div>
-          <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Log in</button>
         </div>
         <div class="banner-bg"></div>
       </section>
@@ -24,135 +26,156 @@
       <section id="testimonies">
         <div class="testimony container-fluid">
           <div class="row">
-            <div class="subject col-12 col-sm-6 col-md-6 col-lg-4 text-center my-2" id="T-subj">
-              <h1>Testimonies</h1>
+            <div class="subject col-12 col-sm-6 col-md-6 col-lg-2" id="T-subj">
+              <p>TESTIMONIES</p>
+              <img src="../img/heroPage/bg_shapes_blur.svg" id="blurrr" alt="blur pic">
             </div>
-            <div class="container col-12 col-sm-6 col-md-6 col-lg-4" style="padding: 0;">
-              <div class="ttmns-1">
-                <div class="profile-1 col">
-                  <img src="img/testimonies/woman.jpg" class="img-fluid" alt="testimony pic1">
+            <div class="container col-12 col-sm-6 col-md-6 col-lg-10" id="tescar" style="padding: 0;">
+              <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
                 </div>
-                <div class="feedback-1 col">
-                  <p>"MediHive as an electronic medical record system proved to be 
-                    a revolutionary tool in a medical practitioner’s arsenal."</p>
-                  <p id="witness">-Angel Mae Digal Liabado (July 2025)</p>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="0">
+                    <div class="ttmns-1">
+                      <div class="profile-1 col-12 col-sm-6 col-md-6 col-lg-3">
+                        <img src="img/testimonies/woman.jpg" class="img-fluid" alt="testimony pic1">
+                      </div>
+                      <div class="feedback-1 col-12 col-sm-6 col-md-6 col-lg-8">
+                        <p>"MediHive as an electronic medical record system proved to be 
+                          a revolutionary tool in a medical practitioner’s arsenal."</p>
+                        <p id="witness">Angel Mae Digal Liabado (July 2025)</p>
+                      </div>
+                    </div>
+                    <div class="ttmns-2">
+                      <div class="feedback-2 col-12 col-sm-6 col-md-6 col-lg-8">
+                        <p>"Life as a nurse never became more bearable thanks to 
+                          MediHive. Dahil sa MediHive, nagbago buhay ko."</p>
+                        <p id="witness">Rolanie Jane Tejada (October 2026)</p>  
+                      </div>
+                      <div class="profile-2 col-12 col-sm-6 col-md-6 col-lg-3">
+                        <img src="img/testimonies/man.jpg" class="img-fluid" alt="testimony pic2">
+                      </div>
+                      <span id="vmg-link"></span> 
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="0">
+                    <div class="ttmns-1">
+                      <div class="profile-1 col-12 col-sm-6 col-md-6 col-lg-3">
+                        <img src="img/testimonies/victor.png" class="img-fluid" alt="testimony pic1">
+                      </div>
+                      <div class="feedback-1 col-12 col-sm-6 col-md-6 col-lg-8">
+                        <p>"The stress imposed by taking care of others is  immense that's why by having MediHive,
+                          life as a medical practitioner is exponentially better."</p>
+                        <p id="witness">Victor Timely</p>
+                      </div>
+                    </div>
+                    <div class="ttmns-2">
+                      <div class="feedback-2 col-12 col-sm-6 col-md-6 col-lg-8">
+                        <p>"MediHive is truly a remarkable feat of system engineering for it hits perfectly 
+                          the many conundrum we, healthcare providers, experience in a daily basis with solutions 
+                          that are truly solutions."</p>
+                        <p id="witness">Loki Odinson</p>  
+                      </div>
+                      <div class="profile-2 col-12 col-sm-6 col-md-6 col-lg-3">
+                        <img src="img/testimonies/loki.png" class="img-fluid" alt="testimony pic2">
+                      </div>
+                      <span id="vmg-link"></span> 
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="ttmns-2">
-                <div class="feedback-2 col">
-                  <p>"Life as a nurse never became more bearable thanks to 
-                    MediHive. Dahil sa MediHive, nagbago buhay ko."</p>
-                  <p id="witness">-Rolanie Jane Tejada (October 2026)</p>  
-                </div>
-                <div class="profile-2 col">
-                  <img src="img/testimonies/man.jpg" class="img-fluid" alt="testimony pic2">
-                </div>
-                <span id="vmg-link"></span> 
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
           </div>
           </div>
-        </div>
+        </div> 
       </section>
   
       <section id="VMG">
-        <div class="vmg-sec container-fluid">
-          <div class="vmg-1 container-fluid">
-            <div class="subject text-center my-2">
-              <h1>Vision</h1>
+          <div class="visbox col-12 col-sm-6 col-md-5">
+            <div class="vmgpic">
+              <img src="img/heroPage/eye.svg" id="eyehair" alt="eye">
             </div>
-            <div class="vision-text">
-              <p>To to be at the forefront of the global intersection 
-                between the technology and health industry. </p>
-            </div>
-          </div>
-          <div class="vmg-2 container-fluid">
-            <div class="subject text-center my-2">
-              <h1 id="mssn">Mission</h1>
-            </div>
-            <div class="mission-text">
-              <p>To usher in a new era of technology and health
-                amalgamation for the benefit of the human 
-                civilization. </p>
-                <span id="team-link"></span>
+            <div class="vmgcontent">
+              <p id="titvimi">VISION</p>
+              <p>To to be at the forefront of the global intersection between technology and health industry.</p>
             </div>
           </div>
-        </div>
+          <div class="misbox col-12 col-sm-6 col-md-5">
+            <div class="vmgpic">
+              <img src="img/heroPage/crosshair.svg" id="eyehair" alt="crosshair">
+            </div>
+            <div class="vmgcontent">
+              <p id="titvimi">MISSION</p>
+              <p>To usher in a new era of technology and health amalgamation for the benefit of the human civilization.</p>
+            </div>
+          </div>
       </section>
 
       <section id="medihive-team">
         <div class="container-fluid">
           <div class="subject text-center my-2" id="MT-subj">
-            <h1>The MediHive Team</h1>
+            <h1>MEET THE TEAM</h1>
           </div>
-          <div class="container">
             <div class="mh-team row">
-              <div class="polaroid col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-                <img src="img/founders/ESTRADA.jpg" class="img-fluid" alt="shan">
-                <div class="container"></div>
-                <p class="mh-name text-center my-2">Shan</p>
-              </div>
-              <div class="polaroid col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-                <img src="img/founders/RUBERT_POGs.jpg" class="img-fluid" alt="rubert">
-                <p class="mh-name text-center my-2">Rubert</p>
-              </div>
-              <div class="polaroid col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-                <img src="img/founders/LANDIAO.jpg" class="img-fluid" alt="angelo">
-                <p class="mh-name text-center my-2" id="timeline-link">Angelo</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section id="medihive-timeline" class="my-3">
-        <div class="container-fluid">
-          <div class="subject text-center my-2" id="TL-subj">
-            <h1>MediHive Timeline</h1>
-          </div>
-          <div class="container">
+              <div class="concard">
+                <div class="card">
+                  
+                  <div class="front">
+                    <img src="img/heroPage/money.svg" class="picard" alt="money">
+                    <p class="front-heading">Hustler</p>
+                  </div>
+                  <div class="back">
+                    <div class="polaroid">
+                      <img src="img/founders/ESTRADA.jpg" class="img-fluid" alt="shan">
+                      <p class="mh-name my-2">Shan</p>
+                    </div>
+                  </div>
 
-            <div class="tmln-row row">
-              <div class="tmln-pic col">
-                <img src="img/timelines/t1.jpeg" class="img-fluid" alt="timeline-pic1">
+                </div>
               </div>
-              <div class="milestone col">
-                <p>Company Establishment - 08/27/23</p>
+              <div class="concard">
+                <div class="card">
+                  
+                  <div class="front">
+                    <img src="img/heroPage/trend-up.svg" class="picard" alt="trendup">
+                    <p class="front-heading">Hipster</p>
+                  </div>
+                  <div class="back">
+                    <div class="polaroid">
+                      <img src="img/founders/RUBERT_POGs.jpg" class="img-fluid" alt="rubert">
+                      <p class="mh-name my-2">Rubert</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="concard">
+                <div class="card">
+                  
+                  <div class="front">
+                    <img src="img/heroPage/laptop.svg" class="picard" alt="laptop">
+                    <p class="front-heading">Hacker</p>
+                  </div>
+                  <div class="back">
+                    <div class="polaroid">
+                      <img src="img/founders/LANDIAO.jpg" class="img-fluid" alt="angelo">
+                      <p class="mh-name my-2">Angelo</p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
-            <div class="tmln-row row">
-              <div class="milestone col">
-                <p>Ciudad Medical Partnership - 09/01/23</p>
-              </div>
-              <div class="tmln-pic col">
-                <img src="img/timelines/t2.jpg" class="img-fluid" alt="timeline-pic2">
-              </div>
-            </div>
-            <div class="tmln-row row">
-              <div class="tmln-pic col">
-                <img src="img/timelines/t3.jpg" class="img-fluid" alt="timeline-pic3">
-              </div>
-              <div class="milestone col">
-                <p>Google Partnership - 10/07/23</p>
-              </div>
-            </div>
-            <div class="tmln-row row">
-              <div class="milestone col">
-                <p>Apple Partnership - 10/27/23</p>
-              </div>
-              <div class="tmln-pic col">
-                <img src="img/timelines/t4.jpg" class="img-fluid" alt="timeline-pic4">
-              </div>
-            </div>
-            <div class="tmln-row row">
-              <div class="tmln-pic col">
-                <img src="img/timelines/t5.jpg" class="img-fluid" alt="timeline-pic5">
-              </div>
-              <div class="milestone col">
-                <p>Z.C.  General Hospital - 11/01/23</p>
-              </div>
-              <p id="partner-link"></p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -160,7 +183,8 @@
         <div class="medihive-desc">
           <p>MediHive, the ultimate Electronic Medical Record. 
             A patient-centric solution to record-keeping and medical 
-            analysis.<br><br>- Founder</p>
+            analysis.</p>
+          <p id="fnder">-Living Founders</p>
             <span id="ttmns-link"></span>
         </div>
       </section>
@@ -206,13 +230,10 @@
           </div>
         </div>
       </section>
-      
-      <?php
-          require_once('./includes/shared/footer-index.php');
-      ?>
-
     </main>
-  
+    <?php
+      require_once('./includes/shared/footer-index.php');
+    ?>
     <?php
         require_once('./includes/js.php');
     ?>
