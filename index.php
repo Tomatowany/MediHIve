@@ -190,46 +190,37 @@
       </section>
       
       <section id="partners">
-        <div class="container-fluid">
-          <div class="subject text-center my-2" id="P-subj">
-            <h1>Our Partners</h1>
-          </div>
-          <div class="partner-list container-fluid">
-            <div class="p-card col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-              <div class="card2">
-                <img src="img/partners/acer-2011.svg" class="img-fluid" alt="">
-              </div>
+        <div class="subject text-center my-2" id="P-subj">
+          <h1>OUR PARTNERS</h1>
+        </div>
+        <div class="parcon container-fluid">
+          <div class="cards row">
+            
+            <div class="card one">
+              <img src="img/partners/acer-2011.svg" class="img-fluid" alt="acer">
             </div>
-            <div class="p-card col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-              <div class="card2">
-                <img src="img/partners/micro-star-international-logo.svg" class="img-fluid" alt="">
-              </div>
+            <div class="card one">
+              <img src="img/partners/intel.svg" class="img-fluid" alt="intel">
             </div>
-            <div class="p-card col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-              <div class="card2">
-                <img src="img/partners/google-1-1.svg" class="img-fluid" alt="">
-              </div>
+            <div class="card one">
+              <img src="img/partners/google-1-1.svg" class="img-fluid" alt="google">
             </div>
-          </div>
-          <div class="partner-list container-fluid" id="partner-list-2">
-            <div class="p-card col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-              <div class="card2">
-                <img src="img/partners/intel.svg" class="img-fluid" alt="">
-              </div>
+            
+            <div class="card one">
+              <img src="img/partners/micro-star-international-logo.svg" class="img-fluid" alt="msi">
             </div>
-            <div class="p-card col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-              <div class="card2">
-                <img src="img/partners/ryzen-amd-1.svg" class="img-fluid" alt="">
-              </div>
+
+            <div class="card one">
+              <img src="img/partners/ryzen-amd-1.svg" class="img-fluid" alt="intel">
             </div>
-            <div class="p-card col-12 col-md-6 col-lg-4 d-flex justify-content-center flex-column align-content-center">
-              <div class="card2">
-                <img src="img/partners/apple-11.svg" class="img-fluid" alt="">
-              </div>
+
+            <div class="card one">
+              <img src="img/partners/apple-11.svg" class="img-fluid" alt="google">
             </div>
           </div>
         </div>
       </section>
+      
     </main>
     <?php
       require_once('./includes/shared/footer-index.php');

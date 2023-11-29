@@ -143,7 +143,6 @@ section#banner{
     background-image: url("../img/heroPage/brandon-holmes-GofYo51GQ_4-unsplash.png");
     margin-top: -35rem;
     z-index: -1;
-    background-attachment: fixed;
     background-position: center;
 }
 
@@ -397,7 +396,7 @@ section#VMG{
 
 section#medihive-team{
     padding: 0;
-    height: calc(100vh - 0px);
+    height: calc(100vh - 50px);
 }
 #MT-subj h1{
     padding-block-start: 3.5rem;
@@ -511,61 +510,48 @@ section#medihive-sec{
         padding-top: 1.2rem;
     }
 
-#partners .container{
+#partners .parcon{
     padding: 1.5rem;
-    display: flex;
-    justify-content: space-evenly;
+    margin: 0;
 }
     div.subject#P-subj h1{
-        padding-block: 2rem;
-        font-size: 2.5rem;
-        font-family: 'Archivo Black', sans-serif;
-        margin-top: 2rem;
+        padding-top: 3rem;
+        margin: 0;
         margin-bottom: -1rem;
+        font-weight: 500;
+        font-size: 4rem;
     }
-
-    div.partner-list{
+    .cards{
         display: flex;
-        justify-content: space-evenly;
-        padding: 1rem;
+        /* gap: 110px; */
+        flex-direction: row;
+        justify-content: center;
     }
-    #partner-list-2{
-        margin-bottom: 2rem;
+    .cards .one{
+        background-color: transparent;
+        margin-inline: 42px;
+        border: none;
     }
-        div.p-card img{
-            max-width: 120px;
-            min-height: 120px;
-            margin-inline: auto;
-        }
-        
-        .p-card{
-            width: 189px;
-            height: 189px;
-            background-image: linear-gradient(130deg, #FFEE7D 50%, #7DDFFF 50%);
-            border-radius: 10rem;
-            transition: all .3s;
-            border: none;
-        }
-        
-        .card2 {
-            width: 190px;
-            height: 190px;
-            background-color: #fff;
-            border-radius:10rem;
-            transition: all .2s;
-            border: none;
-            display: flex;
-            
-        }
-        
-        .card2:hover {
-            transform: scale(0.93);
-            border-radius: 10rem;
-        }
-        
-        .p-card:hover {
-            box-shadow: 15px 15px 30px 5px #7DDFFF, -15px -15px 30px 4px #FFEE7D;
-        }
+    .cards .card{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        max-height: 250px;
+        max-width: 250px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        transition: 400ms;
+    }
+    .cards .card:hover {
+        transform: scale(1.2, 1.2);
+    }      
+    .cards:hover > .card:not(:hover) {
+        filter: blur(10px);
+        transform: scale(0.9, 0.9);
+    }
         
 hr#line-footer{
     height: 4px;
@@ -584,10 +570,12 @@ ul, li{
 footer{
     min-height: 46rem;
     padding: 1rem;
-    background: rgba(0,0,0,0.50)url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png");
+    background-image:url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png");
+    /* background-image: linear-gradient(rgba(255,0,0,0), rgba(255,0,0,1)); */
+    /* background: linear-gradient(rgba(url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png"), 0), rgba(url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png"), 1)); */
     background-size: cover;
     background-position: center;
-    background-blend-mode: overlay;
+    background-blend-mode: hard-light;
     display: flex;
     align-items: center;
 }
@@ -603,19 +591,26 @@ footer{
         color: #fff;
         font-size: 1.8rem;
         font-weight: 400;
-        line-height: 2.4rem;  
+        line-height: 4rem;
     }
 
     footer p{
         font-size: 1.8rem;
         font-weight: 400;
-        line-height: 2.4rem;
         color: #fff;
+        margin: 0;
+        line-height: 4rem;
     }
 
     footer p.title{
-        font-weight: 500;
+        font-weight: 800;
         font-size: 2rem;
+        margin: 0;
+    }
+    footer p.title2{
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin: 0;
     }
 
     .rights,strong{
