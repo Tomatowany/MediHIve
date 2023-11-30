@@ -598,13 +598,13 @@ footer{
     footer a{
         text-decoration: none;
         color: #fff;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 400;
         line-height: 3rem;
     }
 
     footer p{
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 400;
         color: #fff;
         margin: 0;
@@ -613,7 +613,7 @@ footer{
 
     footer p.title{
         font-weight: 800;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         margin: 0;
     }
     .partition-1{

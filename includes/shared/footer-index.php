@@ -20,6 +20,7 @@
           <li><p class="title">Customer Service</p></li>
           <li><a href="../../pages/body/faqs.php">FAQs</a></li>
           <li><p>Contact us at :</p></li>
+          <li><p>(+63) 945-2778-684</p></li>
           <li><p>(+63) 945-1830-519</p></li>
         </ul>
       </div>
