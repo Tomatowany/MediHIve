@@ -9,7 +9,13 @@
         require_once('../../includes/shared/header-nav.php');
     ?>
     <main>
-        asdaasd
+        <section id="AU-banner">
+            <div class="AUbanner-bg">
+                <div class="blackBG">
+                    <p class="words">asdasdasd</p>
+                </div>
+            </div>
+        </section>
     </main>
     <?php
       require_once('../../includes/shared/footer-index.php');

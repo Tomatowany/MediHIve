@@ -135,21 +135,21 @@ a.navbar-brand{
     }
 
 section#banner{
-    height: calc(100vh - 82px);
+    height: calc(100vh - 0px);
     padding: 0;
 }
 .banner-bg{
-    height: calc(100vh - -5px);
+    height: calc(100vh - 0px);
     background-image: url("../img/heroPage/brandon-holmes-GofYo51GQ_4-unsplash.png");
-    margin-top: -35rem;
+    margin-top: -5.3rem;
     z-index: -1;
     background-position: center;
+    display: flex;
+    align-items: center;
 }
 
 .banner-text{
-    padding-left: 3rem;
-    padding-right: 0;
-    padding-top: 8rem;
+    padding-inline: 2rem;
     margin: 0;
 }   
 
@@ -255,6 +255,9 @@ section#banner{
         /* border: 2px solid red; */
     }
 
+.carousel-control-next, .carousel-control-prev{
+    width: 4%;
+}    
 
 section#testimonies{
     /* border: 2px solid red; */
@@ -272,7 +275,7 @@ section#testimonies{
     .testimony .subject{
         display: flex;
         justify-content: center;
-        padding: 1rem;
+        padding: 2rem;
         border: 0;
     }
     #T-subj p{
@@ -355,17 +358,23 @@ hr:not([size]){
 }
 
 section#VMG{
-    height: calc(100vh - 140px);
+    height: calc(118vh);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
+    background-size: cover;
     background-image: url("../img/heroPage/bg_blue_yellow_ls.png");
 }
     .visbox, .misbox{
+        min-height: 650px;
+        min-width: 600px;
         border: 5px solid #5e5e5e;
         border-radius: 15px;
         background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .visbox .vmgcontent,.misbox .vmgcontent{
@@ -376,17 +385,18 @@ section#VMG{
     .visbox .vmgpic, .misbox .vmgpic{
         display: flex;
         justify-content: center;
+        position: relative;
     }
     img#eyehair{
         max-height: 220px;
     }
     p#titvimi{
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         margin: 0;
         padding: 0;
     }
     .vmgcontent p{
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         margin: 0;
         padding-inline: 3rem;
         padding-block-start: .5rem;
@@ -399,7 +409,6 @@ section#medihive-team{
     height: calc(100vh - 50px);
 }
 #MT-subj h1{
-    padding-block-start: 3.5rem;
     padding-block-end: 2.5rem;
     /* padding-block-end: .5rem; */
     font-size: 4rem;
@@ -529,7 +538,7 @@ section#medihive-sec{
     }
     .cards .one{
         background-color: transparent;
-        margin-inline: 42px;
+        margin-inline: 80px;
         border: none;
     }
     .cards .card{
@@ -555,7 +564,7 @@ section#medihive-sec{
         
 hr#line-footer{
     height: 4px;
-    max-width: 79rem;
+    max-width: 94rem;
     border-width: 0;
     color: white;
     background-color: white;
@@ -570,7 +579,7 @@ ul, li{
 footer{
     min-height: 46rem;
     padding: 1rem;
-    background-image:url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png");
+    background-image:linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0), rgba(255,0,0,0)), url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png");
     /* background-image: linear-gradient(rgba(255,0,0,0), rgba(255,0,0,1)); */
     /* background: linear-gradient(rgba(url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png"), 0), rgba(url("../img/heroPage/irwan-blogcious-rbDE93-0hHs-unsplash.png"), 1)); */
     background-size: cover;
@@ -581,7 +590,7 @@ footer{
 }
     footer h2{
         font-weight: 500;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
         padding-bottom: .5rem;
         color: #fff;
     }
@@ -589,35 +598,36 @@ footer{
     footer a{
         text-decoration: none;
         color: #fff;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         font-weight: 400;
-        line-height: 4rem;
+        line-height: 3rem;
     }
 
     footer p{
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         font-weight: 400;
         color: #fff;
         margin: 0;
-        line-height: 4rem;
+        line-height: 3rem;
     }
 
     footer p.title{
         font-weight: 800;
-        font-size: 2rem;
+        font-size: 1.7rem;
         margin: 0;
     }
-    footer p.title2{
-        font-weight: 600;
-        font-size: 1.8rem;
-        margin: 0;
+    .partition-1{
+        display: flex;
+        align-items: flex-start;
+        max-width: 100%;
+        --bs-gutter-x: 0;
     }
 
     .rights,strong{
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 300;
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
 
     div.partition-1 .logo{
@@ -626,8 +636,12 @@ footer{
     }
 
     div.partition-1 .logo .image-1{
-        max-height: 225px;
+        max-height: 160px;
         margin-bottom: .5rem;
+    }
+    div.partition-1 .logo .image-2{
+        max-height: 60px;
+        margin: 0;
     }
 
 .wrapper {
