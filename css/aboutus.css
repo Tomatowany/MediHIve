@@ -56,7 +56,7 @@ p.words{
     background-color: rgba(0, 0, 0, .4);
     border-radius: 75px;
     margin-top: 80px;
-    box-shadow: 8px 8px 15px 0 #7DDFFF, -8px -8px 15px 0 #FFEE7D;
+    box-shadow: 5px 5px 12px 0 #7DDFFF, -5px -5px 12px 0 #FFEE7D;
     display: flex;
     flex-direction: column;
     align-items: center;

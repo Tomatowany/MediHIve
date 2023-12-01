@@ -20,7 +20,7 @@
                     <a class="nav-link" href="#footer-link">Contact us</a>
                   </li>
                   <li class="nav-item-b">
-                      <button type="button" onclick="location.href='/pages/admin/login.php';" class="login-btn">Log in</button>
+                      <button type="button" onclick="location.href='/pages/admin/loginop.php';" class="login-btn">Log in</button>
                   </li>
                 </ul> 
               </div>

@@ -18,7 +18,7 @@
               </div>
               <h6>Global provider of Electronic</h6>
               <h6>Medical Record System</h6>
-              <button type="submit" onclick="location.href='/pages/admin/login.php';" class="login-btn-2">Log in</button>
+              <button type="submit" onclick="location.href='/pages/admin/loginop.php';" class="login-btn-2">Log in</button>
             </div>
           </div>
         </div>
