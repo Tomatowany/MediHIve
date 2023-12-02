@@ -6,7 +6,7 @@
         if user is login then redirect to dashboard page
     */
     if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
-        header('location: ../../staff/dashboard.php');
+        header('location: dashboard.php');
     }
 
     //if the login button is clicked
@@ -19,7 +19,7 @@
         if ($account->sign_in_staff()){
             var_dump($account->sign_in_staff());
             $_SESSION['user'] = 'staff';
-            header('location: ../staff/dashboard.php');
+            header('location: dashboard.php');
         }else{
             $error =  'Invalid email/password. Try again.';
         }

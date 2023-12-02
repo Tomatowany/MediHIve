@@ -23,7 +23,7 @@ class Overview
 
     function fetch($record_id)
     {
-        $sql = "SELECT patientID FROM medical_record p INNER JOIN staff s ON p.staffID = s.staffID;";
+        $sql = "SELECT * FROM medical_record;";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if ($query->execute()) {
@@ -34,7 +34,7 @@ class Overview
 
     function show()
     {
-        $sql = "SELECT patientID FROM medical_record p INNER JOIN staff s ON p.staffID = s.staffID;";
+        $sql = "SELECT * FROM medical_record;";
         $query = $this->db->connect()->prepare($sql);
         $data = null;
         if ($query->execute()) {

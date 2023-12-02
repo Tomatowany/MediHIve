@@ -17,7 +17,7 @@ body{
 }
 
 :root{
-    --offcanvas-width: 220px;
+    --offcanvas-width: 240px;
     --topNavbarHeight: 7%; 
 }
 .sidenavbar{
@@ -49,11 +49,15 @@ ul#menus{
 .card{
     border-radius: 10px;
 }
-
-.lamesa{    
-    flex-wrap: wrap;
+.card h1, .card h2{
+    font-size: 22px;
+}
+.lamesa{
+    width: 100%;
+}
+.lamesa table{
+    max-height: 340px;
 }
 #overview_wrapper{
-    width: 100%;
     padding-inline: 1rem;
 }

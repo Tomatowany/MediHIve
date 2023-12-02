@@ -4,6 +4,12 @@
         <nav class="navbar-light">
             <ul class="navbar-nav nav-pills" id="menus">
                 <li class="mb-1">
+                    <a href="../../index.php" class="nav-link px-3">
+                        <span class="me-2"><i class="bi bi-house-fill"></i></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mb-1">
                     <a href="dashboard.php" class="nav-link px-3 <?= $dashboard_page ?>">
                         <span class="me-2"><i class="bi bi-pie-chart-fill"></i></span>
                         <span>Dashboard</span>
@@ -16,7 +22,7 @@
                     </a>
                 </li>
                 <li class="mb-1">
-                    <a href="#" class="nav-link px-3 <?= $record_page ?>">
+                    <a href="medical-record.php" class="nav-link px-3 <?= $record_page ?>">
                         <span class="me-2"><i class="bi bi-folder-fill"></i></span>
                         <span>Medical Record</span>
                     </a>
@@ -30,15 +36,15 @@
                     </a>
                     <ul class="nav collapse ms-1 flex-column" id="submenu" data-bs-parent="#menus">
                         <li class="mx-5">
-                            <a class="nav-link <?= $case_page ?>" href="#cases" active>
+                            <a class="nav-link ps-3 <?= $case_page ?>" href="case.php">
                                 <span class="me-2"><i class="bi bi-clipboard-heart-fill"></i></span>Cases</a>
                         </li>
                         <li class="mx-5">
-                            <a class="nav-link <?= $medicine_page ?>" href="#medicines">
+                            <a class="nav-link ps-3 <?= $medicine_page ?>" href="medicine.php">
                                 <span class="me-2"><i class="bi bi-capsule"></i></span>Medicines</a>
                         </li>
                         <li class="mx-5">
-                            <a class="nav-link <?= $allergy_page ?>" href="#allergies">
+                            <a class="nav-link ps-3 <?= $allergy_page ?>" href="allergy.php">
                                 <span class="me-2"><i class="bi bi-virus"></i></span>Allergies</a>
                         </li>
                     </ul>
@@ -49,7 +55,7 @@
                         <span>Settings</span>
                     </a>
                 </li>
-                <li class="mb-1" style="margin-top: 22rem;">
+                <li class="mb-1" style="margin-top: 35rem; position: absolute;">
                     <?php
                     if (isset($_SESSION['user'])) {
                         ?>
