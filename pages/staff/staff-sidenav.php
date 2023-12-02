@@ -35,11 +35,11 @@
                         </li>
                         <li class="mx-5">
                             <a class="nav-link <?= $medicine_page ?>" href="#medicines">
-                            <span class="me-2"><i class="bi bi-capsule"></i></span>Medicines</a>
+                                <span class="me-2"><i class="bi bi-capsule"></i></span>Medicines</a>
                         </li>
                         <li class="mx-5">
                             <a class="nav-link <?= $allergy_page ?>" href="#allergies">
-                            <span class="me-2"><i class="bi bi-virus"></i></span>Allergies</a>
+                                <span class="me-2"><i class="bi bi-virus"></i></span>Allergies</a>
                         </li>
                     </ul>
                 </li>
@@ -49,11 +49,25 @@
                         <span>Settings</span>
                     </a>
                 </li>
+<<<<<<< HEAD
                 <li class="mb-1 mt-5 log">
                     <a href="../admin/logout.php" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
                         <span>Logout</span>
                     </a>
+=======
+                <li class="mb-1" style="margin-top: 22rem;">
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        ?>
+                        <a href="../../pages/admin/logout.php" class="nav-link px-3">
+                            <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
+                            <span>Logout</span>
+                        </a>
+                        <?php
+                    }
+                    ?>
+>>>>>>> fed00b2f87053aa483062fba4f6b27fec5720078
                 </li>
             </ul>
         </nav>

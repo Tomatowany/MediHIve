@@ -33,9 +33,15 @@
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-            </li>
+                <li>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        ?>
+                        <a href="../../pages/admin/logout.php" class="dropdown-item"><span>Logout</span></a>
+                        <?php
+                    }
+                    ?>
+                </li>
             </ul>
 
         </div>

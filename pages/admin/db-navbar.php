@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="dashboard.php"><img src="../../img/MediHive_Icon.svg" alt="icon"> <img src="../../img/MediHive.svg" alt="logo" srcset=""></a>
+        <a class="navbar-brand" href="dashboard.php"><img src="../../img/MediHive.svg" alt="logo" srcset=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,9 +33,15 @@
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-            </li>
+                <li>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        ?>
+                        <a href="../../pages/admin/logout.php" class="dropdown-item"><span>Logout</span></a>
+                        <?php
+                    }
+                    ?>
+                </li>
             </ul>
 
         </div>
