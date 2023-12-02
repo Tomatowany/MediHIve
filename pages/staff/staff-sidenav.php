@@ -49,6 +49,11 @@
                         <span>Settings</span>
                     </a>
                 </li>
+                <?php
+                    if (isset($_SESSION['user']){
+                        
+                    }
+                ?>
                 <li class="mb-1 mt-5 log">
                     <a href="#" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
