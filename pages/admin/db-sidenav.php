@@ -28,6 +28,12 @@
                     </a>
                 </li>
                 <li class="mb-1">
+                    <a href="staff.php" class="nav-link px-3 <?= $staff_page ?>">
+                        <span class="me-2"><i class="bi bi-folder-fill"></i></span>
+                        <span>Staff</span>
+                    </a>
+                </li>
+                <li class="mb-1">
                     <a class="nav-link px-3" data-bs-toggle="collapse" href="#submenu" role="button"
                         aria-expanded="false" aria-controls="submenu">
                         <span class="me-2"><i class="bi bi-collection-fill"></i></span>
