@@ -9,9 +9,7 @@
         header('location: dashboard.php');
     }elseif (isset($_SESSION['user']) && $_SESSION['user'] == 'patient'){
         header('location: ../../staff/dashboard.php');
-=========
-        header('location: dashboard.php');
->>>>>>>>> Temporary merge branch 2
+
     }
 
     //if the login button is clicked
