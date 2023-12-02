@@ -4,15 +4,15 @@
         <nav class="navbar-light">
             <ul class="navbar-nav nav-pills" id="menus">
                 <li class="mb-1">
-                    <a href="#" class="nav-link px-3 active <?= $dashboard_page ?>">
+                    <a href="dashboard.php" class="nav-link px-3 <?= $dashboard_page ?>">
                         <span class="me-2"><i class="bi bi-pie-chart-fill"></i></span>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="mb-1">
-                    <a href="#" class="nav-link px-3 <?= $patient_page ?> ">
+                    <a href="patient.php" class="nav-link px-3 <?= $patient_page ?> ">
                         <span class="me-2"><i class="bi bi-heart-pulse-fill"></i></span>
-                        <span>Patients</span>
+                        <span>Patient Record</span>
                     </a>
                 </li>
                 <li class="mb-1">
@@ -47,12 +47,6 @@
                     <a href="#" class="nav-link px-3 <?= $setting_page ?>">
                         <span class="me-2"><i class="bi bi-gear-fill"></i></span>
                         <span>Settings</span>
-                    </a>
-                </li>
-                <li class="mb-1 mt-5 log">
-                    <a href="#" class="nav-link px-3">
-                        <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
-                        <span>Logout</span>
                     </a>
                 </li>
             </ul>
