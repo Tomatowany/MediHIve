@@ -7,6 +7,8 @@
     */
     if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
         header('location: dashboard.php');
+    }elseif (isset($_SESSION['user']) && $_SESSION['user'] == 'patient'){
+        header('location: ../../staff/dashboard.php');
     }
 
     //if the login button is clicked
