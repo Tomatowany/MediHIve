@@ -17,7 +17,7 @@ body{
 }
 
 :root{
-    --offcanvas-width: 220px;
+    --offcanvas-width: 240px;
     --topNavbarHeight: 7%; 
 }
 .sidenavbar{
@@ -46,14 +46,18 @@ ul#menus{
     }
 }
 
-/* .datatable{
-    background-color: white;
-    padding: 10px;
-    box-shadow: 1px 3px 5px #aaa;
-    border-radius: 5px;
-} */
-
-.container{
-    max-width: 1100px;
+.card{
+    border-radius: 10px;
+}
+.card h1, .card h2{
+    font-size: 22px;
+}
+.lamesa{
     width: 100%;
+}
+.lamesa table{
+    max-height: 340px;
+}
+#overview_wrapper{
+    padding-inline: 1rem;
 }
