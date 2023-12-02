@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'MediHive ~ Staff';
+$title = 'Staff Overview';
 $dashboard_page = 'active';
 require_once('staff-head.php');
 ?>
@@ -17,11 +17,10 @@ require_once('staff-head.php');
     <?php
     require_once('staff-sidenav.php');
     ?>
-
-    <main class="mt-5 pt-3">
-        <div class="container-fluid mt-4">
+    <main class="mt-2">
+        <div class="container-fluid mt-4 mb-2">
             <div class="row">
-                <h1 class="my-3" style="margin-left: 3rem;">Overview</h1>
+                <h1 class="col-sm-12 col-lg-3 mb-4 d-flex justify-content-center">Overview</h1>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-md-4 mb-2">
