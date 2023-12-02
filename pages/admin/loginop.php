@@ -1,3 +1,33 @@
+<?php
+    //resume session here to fetch session values
+    $error = "";
+    session_start();
+    /*
+        if user is login then redirect to dashboard page
+    */
+    if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
+        header('location: ../../staff/dashboard.php');
+    }
+
+    //if the login button is clicked
+    
+    if (isset($_POST['staff-login-btn'])) {
+        require_once('../../classes/account.class.php');
+        $account = new Account();
+        $account->email = htmlentities($_POST['email']);
+        $account->password = htmlentities($_POST['password']);
+        if ($account->sign_in_staff()){
+            var_dump($account->sign_in_staff());
+            $_SESSION['user'] = 'staff';
+            header('location: ../staff/dashboard.php');
+        }else{
+            $error =  'Invalid email/password. Try again.';
+        }
+    }
+    
+    //if the above code is false then html below will be displayed
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -10,11 +40,13 @@
         <div class="logcontainer container-fluid">
             <div class="loglabel container-fluid">
                 <h2>You're here as a ...</h2>
+                <?php echo ($error); ?>
             </div>
             <div class="modals">
                 <!-- Button trigger modal -->
                 <button class="btns container-fluid" data-bs-toggle="modal" data-bs-target="#patient"><img src="../../img/login/pasyente.png" alt="patient"><h2>Patient</h2></button>
                 <button class="btns container-fluid" data-bs-toggle="modal" data-bs-target="#medistaff"><img src="../../img/login/medistaff.png" alt="medical staff"><h2>Staff</h2></button>
+                
                 <!-- Modal1 -->
                 <div class="modal fade" id="patient" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="patientLabel" aria-hidden="true" style="display: none;">
                     <div class="modal-dialog modal-dialog-centered">
@@ -45,7 +77,7 @@
                                             <div><label for="email">Email</label></div>
                                             <div><input type="text" name="email" id="email" placeholder="landiaoaj@gmail.com" required></div>     
 
-                                            <button type="submit" name="login" class="login-btn">Log in</button>
+                                            <button type="submit" name="patient-login-btn" class="login-btn">Log in</button>
                                         </form>
                                     </div>
                                 </div>
@@ -56,6 +88,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Modal2 -->
                 <div class="modal fade" id="medistaff" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="medistaffLabel" aria-hidden="true" style="display: none;">
                     <div class="modal-dialog modal-dialog-centered">
@@ -86,7 +119,7 @@
                                             <div><label for="password">Password</label></div>
                                             <div><input type="password" name="password" id="password" placeholder="*********" required></div>             
 
-                                            <button type="submit" name="login" class="login-btn">Log in</button>
+                                            <button type="submit" name="staff-login-btn" class="staff-login-btn">Log in</button>
                                         </form>
                                     </div>
                                 </div>

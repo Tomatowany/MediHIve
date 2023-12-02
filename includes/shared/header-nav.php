@@ -20,7 +20,17 @@
                     <a class="nav-link" href="#footer-link">Contact us</a>
                   </li>
                   <li class="nav-item-b">
-                      <button type="button" onclick="location.href='/pages/admin/loginop.php';" class="login-btn">Log in</button>
+                      <?php 
+                        if(isset($_SESSION['user'])){
+                      ?>
+                          <button type="button" onclick="location.href='../pages/admin/logout.php';" class="login-btn">Logout</button>
+                      <?php
+                        } else {
+                          ?>
+                          <button type="button" onclick="location.href='../pages/admin/loginop.php';" class="login-btn">Login</button>
+                          <?php
+                        }
+                        ?>
                   </li>
                 </ul> 
               </div>
