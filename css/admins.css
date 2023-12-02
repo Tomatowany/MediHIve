@@ -46,14 +46,14 @@ ul#menus{
     }
 }
 
-/* .datatable{
-    background-color: white;
-    padding: 10px;
-    box-shadow: 1px 3px 5px #aaa;
-    border-radius: 5px;
-} */
+.card{
+    border-radius: 10px;
+}
 
-.container{
-    max-width: 1100px;
+.lamesa{    
+    flex-wrap: wrap;
+}
+#overview_wrapper{
     width: 100%;
+    padding-inline: 1rem;
 }

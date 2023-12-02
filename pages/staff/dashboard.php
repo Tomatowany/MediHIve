@@ -27,7 +27,7 @@ require_once('staff-head.php');
                     <div class="card mb-3 h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h2 class="card-title text-center">Total Staff Count</h2>
-                            <p class="card-text text-center">There are</p>
+                            <p class="card-text text-center">Active medical staff members</p>
                             <?php
                                 $sql = "SELECT COUNT(staffID) FROM staff;";                       
                                 $result = mysqli_query($dbc, $sql);
@@ -37,7 +37,6 @@ require_once('staff-head.php');
                             <?php
                                 }
                             ?>
-                            <p class="card-text text-center">active medical staff members</p>
                         </div>
                     </div>
                 </div>
@@ -45,7 +44,9 @@ require_once('staff-head.php');
                     <div class="card mb-3 h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h2 class="card-title text-center">Staff-to-Patient Ratio</h2>
-                            <p class="card-text text-center">As of <p class="card-text text-center" id="demo"></p></p>
+                            <p class="card-text text-center">As of :
+                                <span class="card-text text-center" id="demo"></span>
+                            </p>
                             <script>
                                 const d = new Date();
                                 const datetime = d.toLocaleString("en-US", "short");
@@ -72,7 +73,7 @@ require_once('staff-head.php');
                     <div class="card mb-3 h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h2 class="card-title text-center">Total Patient Count</h2>
-                            <p class="card-text text-center">You have served</p>
+                            <p class="card-text text-center">a</p>
                             <?php
                                 $sql = "SELECT COUNT(patientID) FROM patient;";                       
                                 $result = mysqli_query($dbc, $sql);
@@ -82,7 +83,6 @@ require_once('staff-head.php');
                             <?php
                                 }
                             ?>
-                            <p class="card-text text-center">patients</p>
                         </div>
                     </div>
                 </div>

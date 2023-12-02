@@ -1,70 +1,67 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style>
-    <div class="position-sticky pt-3">
-        <ul class="nav flex-column" id="menu">
-            <li class="nav-item">
-                <a class="nav-link text-dark <?= $dashboard_page ?>" aria-current="page" href="dashboard.php">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i>
-                    Dashboard
-                </a>
-            </li>
-            <li class="nav-item text-dark">
-                <a class="nav-link text-dark <?= $staff_page ?>" href="">
-                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                    Staff
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark <?= $patients_page ?>" href="patient.php">
-                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                    Patients
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark <?= $record_page ?>" href="#">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    Medical Record
-                </a>
-            </li>
-            <li class="nav-item disabled">
-                <a class="nav-link text-dark" href="#submenu" data-bs-toggle="collapse">
-                    <i class="fa fa-ticket" aria-hidden="true"></i>
-                    Library
-                    <i class="fa fa-caret-down"></i>
-                </a><a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    Link with href
-                </a>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        Some placeholder content for the collapse component. This panel is hidden by default but
-                        revealed when the user activates the relevant trigger.
-                    </div>
-                </div>
-                <ul class="nav collapse ms-1 flex-column" id="submenu" data-bs-parent="#menu">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark <?= $case_page ?>" href="#cases" aria-current="page">Cases</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark <?= $medicine_page ?>" href="#medicines">Medicines</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark <?= $allergy_page ?>" href="#allergies">Allergies</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark <?= $settings_page ?>" href="#">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    Settings
-                </a>
-            </li>
-            <hr class="d-md">
-            <li class="nav-item outlog">
-                <a class="nav-link text-dark" href="#">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    Logout
-                </a>
-            </li>
-        </ul>
+<div class="offcanvas offcanvas-start bg-light sidenavbar" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel" style="border: none;">
+    <div class="offcanvas-body p-2">
+        <nav class="navbar-light">
+            <ul class="navbar-nav nav-pills" id="menus">
+                <li class="mb-1">
+                    <a href="dashboard.php" class="nav-link px-3 <?= $dashboard_page ?>">
+                        <span class="me-2"><i class="bi bi-pie-chart-fill"></i></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="mb-1">
+                    <a href="patient.php" class="nav-link px-3 <?= $patient_page ?> ">
+                        <span class="me-2"><i class="bi bi-heart-pulse-fill"></i></span>
+                        <span>Patient Record</span>
+                    </a>
+                </li>
+                <li class="mb-1">
+                    <a href="#" class="nav-link px-3 <?= $record_page ?>">
+                        <span class="me-2"><i class="bi bi-folder-fill"></i></span>
+                        <span>Medical Record</span>
+                    </a>
+                </li>
+                <li class="mb-1">
+                    <a class="nav-link px-3" data-bs-toggle="collapse" href="#submenu" role="button"
+                        aria-expanded="false" aria-controls="submenu">
+                        <span class="me-2"><i class="bi bi-collection-fill"></i></span>
+                        <span>Library</span>
+                        <span class="me-1"><i class="bi bi-caret-down-fill"></i></span>
+                    </a>
+                    <ul class="nav collapse ms-1 flex-column" id="submenu" data-bs-parent="#menus">
+                        <li class="mx-5">
+                            <a class="nav-link <?= $case_page ?>" href="#cases" active>
+                                <span class="me-2"><i class="bi bi-clipboard-heart-fill"></i></span>Cases</a>
+                        </li>
+                        <li class="mx-5">
+                            <a class="nav-link <?= $medicine_page ?>" href="#medicines">
+                                <span class="me-2"><i class="bi bi-capsule"></i></span>Medicines</a>
+                        </li>
+                        <li class="mx-5">
+                            <a class="nav-link <?= $allergy_page ?>" href="#allergies">
+                                <span class="me-2"><i class="bi bi-virus"></i></span>Allergies</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mb-1">
+                    <a href="#" class="nav-link px-3 <?= $setting_page ?>">
+                        <span class="me-2"><i class="bi bi-gear-fill"></i></span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="mb-1" style="margin-top: 22rem;">
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        ?>
+                        <a href="../../pages/admin/logout.php" class="nav-link px-3">
+                            <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
+                            <span>Logout</span>
+                        </a>
+                        <?php
+                    }
+                    ?>
+                </li>
+            </ul>
+        </nav>
     </div>
-</nav>
+</div>

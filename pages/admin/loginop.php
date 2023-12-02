@@ -119,7 +119,7 @@
                                             <div><label for="password">Password</label></div>
                                             <div><input type="password" name="password" id="password" placeholder="*********" required></div>             
 
-                                            <button type="submit" name="staff-login-btn" class="staff-login-btn">Log in</button>
+                                            <button type="submit" name="staff-login-btn" class="login-btn">Log in</button>
                                         </form>
                                     </div>
                                 </div>
