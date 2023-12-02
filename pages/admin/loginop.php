@@ -1,5 +1,6 @@
 <?php
     //resume session here to fetch session values
+    $error = "";
     session_start();
     /*
         if user is login then redirect to dashboard page
@@ -9,12 +10,14 @@
     }
 
     //if the login button is clicked
-    require_once('../../classes/account.class.php');
+    
     if (isset($_POST['staff-login-btn'])) {
+        require_once('../../classes/account.class.php');
         $account = new Account();
         $account->email = htmlentities($_POST['email']);
         $account->password = htmlentities($_POST['password']);
         if ($account->sign_in_staff()){
+            var_dump($account->sign_in_staff());
             $_SESSION['user'] = 'staff';
             header('location: ../staff/dashboard.php');
         }else{
@@ -37,6 +40,7 @@
         <div class="logcontainer container-fluid">
             <div class="loglabel container-fluid">
                 <h2>You're here as a ...</h2>
+                <?php echo ($error); ?>
             </div>
             <div class="modals">
                 <!-- Button trigger modal -->

@@ -22,13 +22,11 @@ class Account{
     
         if ($query->execute()) {
             $accountData = $query->fetch(PDO::FETCH_ASSOC);
-    
-            if ($accountData && password_verify($this->password, $accountData['password'])) {
+            if ($accountData && $this->password == $accountData['password']) {
                 $this->id = $accountData['id'];
-                return true;
+                return $accountData;
             }
         }
-    
         return false;
     }
 

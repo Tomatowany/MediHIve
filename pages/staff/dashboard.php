@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -138,14 +141,19 @@ require_once('staff-head.php');
                 ?>
             </tbody>
         </table>
-
     </main>
-
-
 
     <?php
     require_once('../../includes/js.php');
     ?>
+        <script>
+        $(document).ready(function() {
+            var table = $('#staff').DataTable( {
+                lengthChange: false,
+                buttons: [ 'excel', 'pdf' ]
+            } );
+        } );
+    </script>
 </body>
 
 </html>
