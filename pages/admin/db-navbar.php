@@ -1,7 +1,8 @@
-<header class="navbar navbar-dark sticky-top brand-bg-color flex-md-nowrap p-1 admin">
+<header class="navbar brand-bg-color flex-md-nowrap p-2 admin">
     <div class="col-md-3 col-lg-2 admin-header">
-        <a class="navbar-brand" href="index.php"><img src="../../img/MediHive.svg" alt="" srcset=""></a>
+        <a class="navbar-brand" href="../../index.php"><img src="../../img/MediHive_Icon.svg" alt="icon"> <img src="../../img/MediHive.svg" alt="logo" srcset=""></a>
     </div>
+    <!-- toggler -->
     <button class="navbar-toggler d-md-none collapsed me-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,7 +17,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-profile" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
