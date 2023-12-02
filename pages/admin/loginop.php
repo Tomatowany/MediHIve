@@ -6,13 +6,12 @@
         if user is login then redirect to dashboard page
     */
     if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
-<<<<<<< HEAD
-        header('location: ../../staff/dashboard.php');
+        header('location: dashboard.php');
     }elseif (isset($_SESSION['user']) && $_SESSION['user'] == 'patient'){
         header('location: ../../staff/dashboard.php');
-=======
+=========
         header('location: dashboard.php');
->>>>>>> fed00b2f87053aa483062fba4f6b27fec5720078
+>>>>>>>>> Temporary merge branch 2
     }
 
     //if the login button is clicked

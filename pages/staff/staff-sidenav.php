@@ -50,12 +50,15 @@
                     </a>
                 </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <li class="mb-1 mt-5 log">
                     <a href="../admin/logout.php" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
                         <span>Logout</span>
                     </a>
 =======
+=======
+>>>>>>> c1e9d4f648e8ae1a3af229e2d9e847c432b39df0
                 <li class="mb-1" style="margin-top: 22rem;">
                     <?php
                     if (isset($_SESSION['user'])) {
@@ -67,7 +70,10 @@
                         <?php
                     }
                     ?>
+<<<<<<< HEAD
 >>>>>>> fed00b2f87053aa483062fba4f6b27fec5720078
+=======
+>>>>>>> c1e9d4f648e8ae1a3af229e2d9e847c432b39df0
                 </li>
             </ul>
         </nav>
