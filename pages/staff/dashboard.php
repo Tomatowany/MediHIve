@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -98,6 +101,7 @@ require_once('staff-head.php');
         $caseArray = $case->show();
         $counter = 1;
         ?>
+        
         <table id="staff" class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -136,15 +140,19 @@ require_once('staff-head.php');
                 ?>
             </tbody>
         </table>
-        </div>
-
     </main>
-
-    <script>new DataTable('#staff');</script>
 
     <?php
     require_once('../../includes/js.php');
     ?>
+        <script>
+        $(document).ready(function() {
+            var table = $('#staff').DataTable( {
+                lengthChange: false,
+                buttons: [ 'excel', 'pdf' ]
+            } );
+        } );
+    </script>
 </body>
 
 </html>
