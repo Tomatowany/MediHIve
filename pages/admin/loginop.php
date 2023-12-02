@@ -24,7 +24,21 @@
             $error =  'Invalid email/password. Try again.';
         }
     }
-    
+
+    if (isset($_POST['patient-login-btn'])) {
+        require_once('../../classes/account.class.php');
+        $account = new Account();
+        $account->id = htmlentities($_POST['patientID']);
+        $account->email = htmlentities($_POST['email']);
+        if ($account->sign_in_patient()){
+            var_dump($account->sign_in_patient());
+            $_SESSION['user'] = 'patient';
+            header('location: ../staff/dashboard.php');
+        }else{
+            $error =  'Invalid patient ID/email. Try again.';
+        }
+    }
+
     //if the above code is false then html below will be displayed
 ?>
 
@@ -72,7 +86,7 @@
                                         <h1>Welcome!</h1>
                                         <form action="" method="POST">
                                             <div><label for="hosp-code">Patient ID</label></div>
-                                            <div><input type="text" name="hospital-code" id="hospital-code" placeholder="What's your patient id?" required></div>    
+                                            <div><input type="text" name="patientID" id="patientID" placeholder="What's your patient id?" required></div>    
 
                                             <div><label for="email">Email</label></div>
                                             <div><input type="text" name="email" id="email" placeholder="landiaoaj@gmail.com" required></div>     

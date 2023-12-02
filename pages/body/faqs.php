@@ -21,14 +21,14 @@
                             <input type="radio" name="accordion" id="first" checked>
                             <label for="first">How to login as a patient?</label>
                             <div class="content">
-                                <p>Simply click on the login button and select MEDICAL STAFF, then provide the necessary information and you're all set.</p>
+                                <p>Simply click on the login button and select PATIENT, then provide the necessary information and you're all set.</p>
                             </div>
                         </li>
                         <li>
                             <input type="radio" name="accordion" id="second">
                             <label for="second">How to login as a medical practitioner?</label>
                             <div class="content">
-                                <p>Simply click on the login button and select PATIENT, then provide the necessary information and you're all set.</p>
+                                <p>Simply click on the login button and select MEDICAL STAFF, then provide the necessary information and you're all set.</p>
                             </div>
                         </li>
                         <li>
