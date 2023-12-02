@@ -52,60 +52,55 @@ require_once('staff-head.php');
             </div>
         </div>
 
-        <div id="table-container">
-            <?php
-            require_once '../classes/staff.class.php';
-            require_once '../tools/functions.php';
+        <?php
+        require_once '../../classes/case.class.php';
+        require_once '../../tools/functions.php';
 
-            $staff = new Staff();
+        $case = new Casee();
 
-            // Fetch staff data (you should modify this to retrieve data from your database)
-            $staffArray = $staff->show();
-            $counter = 1;
+        // Fetch staff data (you should modify this to retrieve data from your database)
+        $caseArray = $case->show();
+        $counter = 1;
 
-            ?>
-            <table id="staff" class="table table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Staff Name</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Status</th>
-                        <th scope="col" width="5%">Action</th>
-                    </tr>
-                </thead>
-                <tbody id="staffTableBody">
-                    <?php
-                    if ($staffArray) {
-                        foreach ($staffArray as $item) {
-                            ?>
-                            <tr>
-                                <td>
-                                    <?= $counter ?>
-                                </td>
-                                <td>
-                                    <?= $item['lastname'] . ', ' . $item['firstname'] ?>
-                                </td>
-                                <td>
-                                    <?= $item['role'] ?>
-                                </td>
-                                <td>
-                                    <?= $item['email'] ?>
-                                </td>
-                                <td>
-                                    <?= $item['status'] ?>
-                                </td>
-                                <td class="text-center"><a href="editstaff.php?id=<?php echo $item['id']; ?>"><i
-                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                            </tr>
-                            <?php
-                            $counter++;
-                        }
+        ?>
+        <table id="staff" class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Case Name</th>
+                    <th scope="col">Case Description</th>
+                    <th scope="col" width="5%">Action</th>
+                </tr>
+            </thead>
+            <tbody id="caseTableBody">
+                <?php
+                if ($caseArray) {
+                    foreach ($caseArray as $item) {
+                        ?>
+                        <tr>
+                            <td>
+                                <?= $counter ?>
+                            </td>
+                            <td>
+                                <?= $item['caseName'] ?>
+                            </td>
+                            <td>
+                                <?= $item['caseDescription'] ?>
+                            </td>
+                            <td class="text-center">
+                                <a href="editcase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-pencil-square-o"
+                                        aria-hidden="true"></i></a>
+                                <a href="deletecase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-trash"
+                                        aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                        <?php
+                        $counter++;
                     }
-                    ?>
-                </tbody>
-            </table>
+                }
+                ?>
+            </tbody>
+        </table>
         </div>
 
     </main>

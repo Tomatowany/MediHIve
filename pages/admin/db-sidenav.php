@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark <?= $patients_page ?>" href="">
+                <a class="nav-link text-dark <?= $patients_page ?>" href="patient.php">
                     <i class="fa fa-file-text" aria-hidden="true"></i>
                     Patients
                 </a>
