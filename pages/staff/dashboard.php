@@ -8,6 +8,7 @@ require_once('staff-head.php');
 
 <body>
     <?php
+    require_once('../../classes/database.php');
     require_once('staff-navbar.php');
     ?>
     <?php
@@ -25,7 +26,15 @@ require_once('staff-head.php');
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h2 class="card-title text-center">Total Staff Count</h2>
                             <p class="card-text text-center">There are</p>
-                            <h1 class="card-title text-center" id="staffcount">67</h1>
+                            <?php
+                                $sql = "SELECT COUNT(staffID) FROM staff;";                       
+                                $result = mysqli_query($dbc, $sql);
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                            <h1 class="card-title text-center"><?php echo $row['COUNT(staffID)']."<br>";?></h1>
+                            <?php
+                                }
+                            ?>
                             <p class="card-text text-center">active medical staff members</p>
                         </div>
                     </div>
@@ -34,18 +43,44 @@ require_once('staff-head.php');
                     <div class="card mb-3 h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h2 class="card-title text-center">Staff-to-Patient Ratio</h2>
-                            <p class="card-text text-center">As of current date</p>
-                            <h1 class="card-title text-center" id="ratio">0.67</h1>
+                            <p class="card-text text-center">As of <p class="card-text text-center" id="demo"></p></p>
+                            <script>
+                                const d = new Date();
+                                const datetime = d.toLocaleString("en-US", "short");
+                                document.getElementById("demo").innerHTML = datetime;
+                            </script>
+                            <?php
+                                $sql = "SELECT ((
+                                (SELECT COUNT(s.staffID)
+                                 FROM staff AS s) /
+                                (SELECT COUNT(p.patientID)
+                                 FROM patient AS p) )) AS ratio";                       
+                                $result = mysqli_query($dbc, $sql);
+                                while ($row = $result->fetch_assoc()) {
+                                    $ratio = $row["ratio"];
+                            ?>
+                                <h1 class="card-title text-center"><?php echo round($ratio, 2) ."<br>";?></h1>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-4 mb-2">
                     <div class="card mb-3 h-100">
-                        <div class="card-body d-flex flex-column justify-content-center mt-3">
+                        <div class="card-body d-flex flex-column justify-content-center">
                             <h2 class="card-title text-center">Total Patient Count</h2>
                             <p class="card-text text-center">You have served</p>
-                            <h1 class="card-title text-center" id="patientcount">227</h1>
-                            <p class="card-text text-center">Patients</p>
+                            <?php
+                                $sql = "SELECT COUNT(patientID) FROM patient;";                       
+                                $result = mysqli_query($dbc, $sql);
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                            <h1 class="card-title text-center"><?php echo $row['COUNT(patientID)']."<br>";?></h1>
+                            <?php
+                                }
+                            ?>
+                            <p class="card-text text-center">patients</p>
                         </div>
                     </div>
                 </div>
@@ -55,14 +90,16 @@ require_once('staff-head.php');
         <?php
         require_once '../../classes/case.class.php';
         require_once '../../tools/functions.php';
+        ?>
 
+        <?php
         $case = new Casee();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
         $caseArray = $case->show();
         $counter = 1;
-
         ?>
+        
         <table id="staff" class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -101,7 +138,6 @@ require_once('staff-head.php');
                 ?>
             </tbody>
         </table>
-        </div>
 
     </main>
 
