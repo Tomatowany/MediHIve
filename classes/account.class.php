@@ -30,17 +30,16 @@ class Account{
         return false;
     }
 
-    function sign_in_customer(){
-        $sql = "SELECT * FROM customer WHERE email = :email LIMIT 1;";
+    function sign_in_patient(){
+        $sql = "SELECT * FROM patient WHERE patientID = :id LIMIT 1;";
         $query = $this->db->connect()->prepare($sql);
-        $query->bindParam(':email', $this->email);
+        $query->bindParam(':id', $this->id);
     
         if ($query->execute()) {
             $accountData = $query->fetch(PDO::FETCH_ASSOC);
-    
-            if ($accountData && password_verify($this->password, $accountData['password'])) {
-                $this->id = $accountData['id'];
-                return true;
+            if ($accountData && $this->email == $accountData['email']) {
+                $this->id = $accountData['email'];
+                return $accountData;
             }
         }
     
