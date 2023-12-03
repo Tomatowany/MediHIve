@@ -16,20 +16,10 @@
     
     //if the above code is false then html below will be displayed
 
-    if(isset($_GET['id'])){
-        $medicalrecord =  new MedicalRecord();
-        $record = $medicalrecord->fetch($_GET['id']);
-        $medicalrecord->id = $record['medical_recordID'];
-        $medicalrecord->patientID = $record['patientID'];
-        $medicalrecord->staffID = $record['staffID'];
-        $medicalrecord->diagnosis = $record['diagnosis'];
-        $medicalrecord->datetime = $record['datetime'];
-    }
-
     if(isset($_POST['save'])){
+
         $medicalrecord = new MedicalRecord();
         //sanitize
-        $medicalrecord->id = $_GET['id'];
         $medicalrecord->patientID = htmlentities($_POST['patientID']);
         $medicalrecord->staffID = htmlentities($_POST['staffID']);
         $medicalrecord->diagnosis = htmlentities($_POST['diagnosis']);
@@ -39,20 +29,24 @@
         if (validate_field($medicalrecord->patientID) &&
         validate_field($medicalrecord->staffID) &&
         validate_field($medicalrecord->diagnosis) &&
-        validate_field($medicalrecord->datetime)
-        ){
-                    if($medicalrecord->edit()){
-                        header('location: medical-record.php');
-                    }else{
-                        echo 'An error occured while adding in the database.';
-                    } 
-                }
+        validate_field($medicalrecord->datetime))
+        // validate_field($staff->role) &&
+        // validate_field($staff->email) &&
+        // validate_field($staff->password) &&
+        // validate_field($staff->status) &&
+        // validate_password($staff->password) &&
+        // validate_email($staff->email) && !$staff->is_email_exist()){
+            if($medicalrecord->add()){
+                header('location: medical-record.php');
+            }else{
+                echo 'An error occured while adding in the database.';
             }
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $title = 'Admin M-Record';
+    $title = 'Add Case';
     $record_page = 'active';
     require_once('db-head.php');
 ?>
@@ -69,19 +63,18 @@
                 ?>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div class="col-12 col-lg-6 d-flex justify-content-between align-items-center">
-                        <h2 class="h3 brand-color pt-3 pb-2">Edit Medical Record</h2>
+                        <h2 class="h3 brand-color pt-3 pb-2">Add Medical Record</h2>
                         <a href="medical-record.php" class="text-primary text-decoration-none"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
                     </div>
                     <div class="col-12 col-lg-6">
                         <form method="post" action="">
-
                             <div class="mb-2">
                                 <label for="patientID" class="form-label">Patient ID</label>
-                                <input type="text" class="form-control" id="patientID" name="patientID" required value="<?php if(isset($_POST['patientID'])) { echo $_POST['patientID']; }else if(isset($medicalrecord->patientID)) { echo $medicalrecord->patientID; } ?>">
+                                <input type="text" class="form-control" id="patientID" name="patientID" required value="<?php if(isset($_POST['patientID'])) { echo $_POST['patientID']; } ?>">
                                 <?php
                                     if(isset($_POST['patientID']) && !validate_field($_POST['patientID'])){
                                 ?>
-                                        <p class="text-danger my-1">First name is required</p>
+                                        <p class="text-danger my-1">Patient ID is required</p>
                                 <?php
                                     }
                                 ?>
@@ -89,7 +82,7 @@
 
                             <div class="mb-2">
                                 <label for="staffID" class="form-label">Staff ID</label>
-                                <input type="text" class="form-control" id="staffID" name="staffID" required value="<?php if(isset($_POST['staffID'])) { echo $_POST['staffID']; }else if(isset($medicalrecord->staffID)) { echo $medicalrecord->staffID; } ?>">
+                                <input type="text" class="form-control" id="staffID" name="staffID" required value="<?php if(isset($_POST['staffID'])) { echo $_POST['staffID']; } ?>">
                                 <?php
                                     if(isset($_POST['staffID']) && !validate_field($_POST['staffID'])){
                                 ?>
@@ -101,7 +94,7 @@
 
                             <div class="mb-2">
                                 <label for="diagnosis" class="form-label">Diagnosis</label>
-                                <input type="text" class="form-control" id="diagnosis" name="diagnosis" required value="<?php if(isset($_POST['diagnosis'])) { echo $_POST['diagnosis']; }else if(isset($medicalrecord->diagnosis)) { echo $medicalrecord->diagnosis; } ?>">
+                                <input type="text" class="form-control" id="diagnosis" name="diagnosis" required value="<?php if(isset($_POST['diagnosis'])) { echo $_POST['diagnosis']; } ?>">
                                 <?php
                                     if(isset($_POST['diagnosis']) && !validate_field($_POST['diagnosis'])){
                                 ?>
@@ -113,7 +106,7 @@
 
                             <div class="mb-2">
                                 <label for="datetime" class="form-label">Datetime</label>
-                                <input type="text" class="form-control" id="datetime" name="datetime" required value="<?php if(isset($_POST['datetime'])) { echo $_POST['datetime']; }else if(isset($medicalrecord->datetime)) { echo $medicalrecord->datetime; } ?>">
+                                <input type="datetime-local" class="form-control" id="datetime" name="datetime" required value="<?php if(isset($_POST['datetime'])) { echo $_POST['datetime']; } ?>">
                                 <?php
                                     if(isset($_POST['datetime']) && !validate_field($_POST['datetime'])){
                                 ?>
@@ -122,8 +115,8 @@
                                     }
                                 ?>
                             </div>
-                        
-                            <button type="submit" name="save" class="btn btn-primary mt-2 mb-3 brand-bg-color" id="addMedicalRecordButton"> Save Medical Record</button>
+  
+                            <button type="submit" name="save" class="btn btn-primary mt-2 mb-3 brand-bg-color" id="addMedicalRecordButton">Add Medical Record</button>
                         </form>
                     </div>
                 </main>

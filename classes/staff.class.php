@@ -5,18 +5,13 @@ require_once 'database.php';
 Class Staff{
     //attributes
 
-    public $patientID;
-    public $pFName;
-    public $pLName;
-    public $patientType;
-    public $bloodType;
-    public $birthdate;
+    public $id;
+    public $firstName;
+    public $lastName;
+    public $contact;
+    public $password;
     public $address;
-    public $contactNo;
-    public $civilStatus;
-    public $nationality;
-    public $sex;
-    public $occupation;
+    public $email;
 
     protected $db;
 
@@ -28,21 +23,16 @@ Class Staff{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO patient (pFName, pLName, patientType, bloodType, birthdate, address, contactNo, civilStatus, nationality, sex, occupation) VALUES 
-        (:pFName, :pLName, :patientType, :bloodType, :birthdate, :address, :contactNo, :civilStatus, :nationality, :sex, :occupation);";
+        $sql = "INSERT INTO staff (firstName, lastName, contact, password, address, email) VALUES 
+        (:firstName, :lastName, :contact, :password, :address, :email);";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':pFName', $this->pFName);
-        $query->bindParam(':pLName', $this->pLName);
-        $query->bindParam(':patientType', $this->patientType);
-        $query->bindParam(':bloodType', $this->bloodType);
-        $query->bindParam(':birthdate', $this->birthdate);
+        $query->bindParam(':firstName', $this->firstName);
+        $query->bindParam(':lastName', $this->lastName);
+        $query->bindParam(':contact', $this->contact);
+        $query->bindParam(':password', $this->password);
         $query->bindParam(':address', $this->address);
-        $query->bindParam(':contactNo', $this->contactNo);
-        $query->bindParam(':civilStatus', $this->civilStatus);
-        $query->bindParam(':nationality', $this->nationality);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':occupation', $this->occupation);
+        $query->bindParam(':email', $this->email);
         
         if($query->execute()){
             return true;
@@ -53,20 +43,15 @@ Class Staff{
     }
 
     function edit(){
-        $sql = "UPDATE patient SET pFName=:pFName, pLName=:pLName, patientType=:patientType, bloodType=:bloodType, birthdate=:birthdate, address=:address, contactNo=:contactNo, civilStatus=:civilStatus, nationality=:nationality, sex=:sex, occupation=:occupation WHERE patientID = :id;";
+        $sql = "UPDATE staff SET firstName=:firstName, lastName=:lastName, contact=:contact, password=:password, address=:address, email=:email WHERE staffID = :id;";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':pFName', $this->pFName);
-        $query->bindParam(':pLName', $this->pLName);
-        $query->bindParam(':patientType', $this->patientType);
-        $query->bindParam(':bloodType', $this->bloodType);
-        $query->bindParam(':birthdate', $this->birthdate);
+        $query->bindParam(':firstName', $this->firstName);
+        $query->bindParam(':lastName', $this->lastName);
+        $query->bindParam(':contact', $this->contact);
+        $query->bindParam(':password', $this->password);
         $query->bindParam(':address', $this->address);
-        $query->bindParam(':contactNo', $this->contactNo);
-        $query->bindParam(':civilStatus', $this->civilStatus);
-        $query->bindParam(':nationality', $this->nationality);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':occupation', $this->occupation);
+        $query->bindParam(':email', $this->email);
         $query->bindParam(':id', $this->id);
 
         if($query->execute()){

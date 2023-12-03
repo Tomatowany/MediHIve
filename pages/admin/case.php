@@ -23,10 +23,11 @@ require_once('db-head.php');
             <div class="row">
                 <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Case List
                 </h1>
-                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
+                <!-- <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
                     style="max-width: 110px; border-radius: 25px;" type="button" data-bs-toggle="modal"
                     data-bs-target="#addStaffModal"><i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
-                    Case</button>
+                    Case</button> -->
+                    <a href="addcase.php" class="btn btn-primary brand-bg-color mb-3">Add Case</a>
             </div>
         </div>
 

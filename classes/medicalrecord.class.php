@@ -21,21 +21,15 @@ Class MedicalRecord{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO patient (pFName, pLName, patientType, bloodType, birthdate, address, contactNo, civilStatus, nationality, sex, occupation) VALUES 
-        (:pFName, :pLName, :patientType, :bloodType, :birthdate, :address, :contactNo, :civilStatus, :nationality, :sex, :occupation);";
+        $sql = "INSERT INTO medical_record (medical_recordID, patientID, staffID, diagnosis, datetime) VALUES 
+        (:medical_recordID, :patientID, :staffID, :diagnosis, :datetime);";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':pFName', $this->pFName);
-        $query->bindParam(':pLName', $this->pLName);
-        $query->bindParam(':patientType', $this->patientType);
-        $query->bindParam(':bloodType', $this->bloodType);
-        $query->bindParam(':birthdate', $this->birthdate);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':contactNo', $this->contactNo);
-        $query->bindParam(':civilStatus', $this->civilStatus);
-        $query->bindParam(':nationality', $this->nationality);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':occupation', $this->occupation);
+        $query->bindParam(':medical_recordID', $this->medical_recordID);
+        $query->bindParam(':patientID', $this->patientID);
+        $query->bindParam(':staffID', $this->staffID);
+        $query->bindParam(':diagnosis', $this->diagnosis);
+        $query->bindParam(':datetime', $this->datetime);
         
         if($query->execute()){
             return true;
@@ -46,22 +40,16 @@ Class MedicalRecord{
     }
 
     function edit(){
-        $sql = "UPDATE patient SET pFName=:pFName, pLName=:pLName, patientType=:patientType, bloodType=:bloodType, birthdate=:birthdate, address=:address, contactNo=:contactNo, civilStatus=:civilStatus, nationality=:nationality, sex=:sex, occupation=:occupation WHERE patientID = :id;";
+        $sql = "UPDATE medical_record SET medical_recordID=:medical_recordID, patientID=:patientID, staffID=:staffID, diagnosis=:diagnosis, datetime=:datetime WHERE medical_recordID = :id;";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':pFName', $this->pFName);
-        $query->bindParam(':pLName', $this->pLName);
-        $query->bindParam(':patientType', $this->patientType);
-        $query->bindParam(':bloodType', $this->bloodType);
-        $query->bindParam(':birthdate', $this->birthdate);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':contactNo', $this->contactNo);
-        $query->bindParam(':civilStatus', $this->civilStatus);
-        $query->bindParam(':nationality', $this->nationality);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':occupation', $this->occupation);
-        $query->bindParam(':id', $this->id);
-
+        $query->bindParam(':medical_recordID', $this->medical_recordID);
+        $query->bindParam(':patientID', $this->patientID);
+        $query->bindParam(':staffID', $this->staffID);
+        $query->bindParam(':diagnosis', $this->diagnosis);
+        $query->bindParam(':datetime', $this->datetime);
+        $query->bindParam(':id', $this->id);    
+        
         if($query->execute()){
             return true;
         }

@@ -5,18 +5,9 @@ require_once 'database.php';
 Class Medicine{
     //attributes
 
-    public $patientID;
-    public $pFName;
-    public $pLName;
-    public $patientType;
-    public $bloodType;
-    public $birthdate;
-    public $address;
-    public $contactNo;
-    public $civilStatus;
-    public $nationality;
-    public $sex;
-    public $occupation;
+    public $medicineID;
+    public $medicineName;
+    public $medicineDescription;
 
     protected $db;
 
@@ -28,21 +19,12 @@ Class Medicine{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO patient (pFName, pLName, patientType, bloodType, birthdate, address, contactNo, civilStatus, nationality, sex, occupation) VALUES 
-        (:pFName, :pLName, :patientType, :bloodType, :birthdate, :address, :contactNo, :civilStatus, :nationality, :sex, :occupation);";
+        $sql = "INSERT INTO medicine (medicineName, medicineDescription) VALUES 
+        (:medicineName, :medicineDescription);";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':pFName', $this->pFName);
-        $query->bindParam(':pLName', $this->pLName);
-        $query->bindParam(':patientType', $this->patientType);
-        $query->bindParam(':bloodType', $this->bloodType);
-        $query->bindParam(':birthdate', $this->birthdate);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':contactNo', $this->contactNo);
-        $query->bindParam(':civilStatus', $this->civilStatus);
-        $query->bindParam(':nationality', $this->nationality);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':occupation', $this->occupation);
+        $query->bindParam(':medicineName', $this->medicineName);
+        $query->bindParam(':medicineDescription', $this->medicineDescription);
         
         if($query->execute()){
             return true;
@@ -53,22 +35,13 @@ Class Medicine{
     }
 
     function edit(){
-        $sql = "UPDATE patient SET pFName=:pFName, pLName=:pLName, patientType=:patientType, bloodType=:bloodType, birthdate=:birthdate, address=:address, contactNo=:contactNo, civilStatus=:civilStatus, nationality=:nationality, sex=:sex, occupation=:occupation WHERE patientID = :id;";
+        $sql = "UPDATE medicine SET medicineName=:medicineName, medicineDescription=:medicineDescription WHERE medicineID = :id;";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':pFName', $this->pFName);
-        $query->bindParam(':pLName', $this->pLName);
-        $query->bindParam(':patientType', $this->patientType);
-        $query->bindParam(':bloodType', $this->bloodType);
-        $query->bindParam(':birthdate', $this->birthdate);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':contactNo', $this->contactNo);
-        $query->bindParam(':civilStatus', $this->civilStatus);
-        $query->bindParam(':nationality', $this->nationality);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':occupation', $this->occupation);
-        $query->bindParam(':id', $this->id);
-
+        $query->bindParam(':medicineName', $this->medicineName);
+        $query->bindParam(':medicineDescription', $this->medicineDescription);
+        $query->bindParam(':id', $this->id);    
+        
         if($query->execute()){
             return true;
         }
