@@ -30,47 +30,52 @@ require_once('db-head.php');
         </div>
 
         <?php
-        require_once '../../classes/overview.show.php';
+        require_once '../../classes/staff.class.php';
         require_once '../../tools/functions.php';
         ?>
 
         <?php
-        $overview = new Overview();
+        $staff = new Staff();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
-        $overviewArray = $overview->show();
+        $staffArray = $staff->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="staff" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
                         <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
+                        <th scope="col">Staff Name</th>
+                        <th scope="col">Contact Info</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col" width="5%">Action</th>
                     </tr>
                 </thead>
-                <tbody id="overTableBody">
+                <tbody id="staffTableBody">
                     <?php
-                    if ($overviewArray) {
-                        foreach ($overviewArray as $item) {
+                    if ($staffArray) {
+                        foreach ($staffArray as $item) {
                             ?>
                             <tr>
-                                <td>
-                                    <?= $item['medical_recordID'] ?>
-                                </td>
-                                <td>
-                                    <?= $item['patientID'] ?>
-                                </td>
                                 <td>
                                     <?= $item['staffID'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['diagnosis'] ?>
+                                    <?= $item['lastName']. ", " .$item['firstName']?>
                                 </td>
                                 <td>
-                                    <?= $item['datetime'] ?>
+                                    <?= $item['contact'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['address'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['email'] ?>
+                                </td>
+                                <td class="text-center">
+                                    <a href="editstaff.php?id=<?php echo $item['staffID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="deletestaff.php?id=<?php echo $item['staffID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php

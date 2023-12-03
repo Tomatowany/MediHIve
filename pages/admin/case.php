@@ -31,47 +31,44 @@ require_once('db-head.php');
         </div>
 
         <?php
-        require_once '../../classes/overview.show.php';
+        require_once '../../classes/case.class.php';
         require_once '../../tools/functions.php';
         ?>
 
         <?php
-        $overview = new Overview();
+        $case = new Casee();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
-        $overviewArray = $overview->show();
+        $caseArray = $case->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="case" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
+                        <th scope="col">Case ID</th>
+                        <th scope="col">Case Name ID</th>
+                        <th scope="col">Case Description</th>
+                        <th scope="col" width="5%">Action</th>
                     </tr>
                 </thead>
-                <tbody id="overTableBody">
+                <tbody id="caseTableBody">
                     <?php
-                    if ($overviewArray) {
-                        foreach ($overviewArray as $item) {
+                    if ($caseArray) {
+                        foreach ($caseArray as $item) {
                             ?>
                             <tr>
                                 <td>
-                                    <?= $item['medical_recordID'] ?>
+                                    <?= $item['caseID'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['patientID'] ?>
+                                    <?= $item['caseName'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['staffID'] ?>
+                                    <?= $item['caseDescription'] ?>
                                 </td>
-                                <td>
-                                    <?= $item['diagnosis'] ?>
-                                </td>
-                                <td>
-                                    <?= $item['datetime'] ?>
+                                <td class="text-center">
+                                    <a href="editcase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="deletecase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php

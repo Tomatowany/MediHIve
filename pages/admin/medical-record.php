@@ -41,7 +41,7 @@ require_once('db-head.php');
         $overviewArray = $overview->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="medicalrecord" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Medical Record ID</th>
@@ -49,9 +49,10 @@ require_once('db-head.php');
                         <th scope="col">Staff ID</th>
                         <th scope="col">Diagnosis</th>
                         <th scope="col">Date Time</th>
+                        <th scope="col" width="5%">Action</th>
                     </tr>
                 </thead>
-                <tbody id="overTableBody">
+                <tbody id="medicalrecordTableBody">
                     <?php
                     if ($overviewArray) {
                         foreach ($overviewArray as $item) {
@@ -71,6 +72,10 @@ require_once('db-head.php');
                                 </td>
                                 <td>
                                     <?= $item['datetime'] ?>
+                                </td>
+                                <td class="text-center">
+                                    <a href="editmedicalrecord.php?id=<?php echo $item['medical_recordID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="deletemedicalrecord.php?id=<?php echo $item['medical_recordID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php

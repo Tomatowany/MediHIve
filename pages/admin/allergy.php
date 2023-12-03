@@ -30,47 +30,44 @@ require_once('db-head.php');
         </div>
 
         <?php
-        require_once '../../classes/overview.show.php';
+        require_once '../../classes/allergy.class.php';
         require_once '../../tools/functions.php';
         ?>
 
         <?php
-        $overview = new Overview();
+        $allergy = new Allergy();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
-        $overviewArray = $overview->show();
+        $allergyArray = $allergy->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="allergy" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
+                        <th scope="col">Allergy ID</th>
+                        <th scope="col">Allergy Name</th>
+                        <th scope="col">Allergy Description</th>
+                        <th scope="col" width="5%">Action</th>
                     </tr>
                 </thead>
-                <tbody id="overTableBody">
+                <tbody id="allergyTableBody">
                     <?php
-                    if ($overviewArray) {
-                        foreach ($overviewArray as $item) {
+                    if ($allergyArray) {
+                        foreach ($allergyArray as $item) {
                             ?>
                             <tr>
                                 <td>
-                                    <?= $item['medical_recordID'] ?>
+                                    <?= $item['allergyID'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['patientID'] ?>
+                                    <?= $item['allergyName'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['staffID'] ?>
+                                    <?= $item['allergyDescription'] ?>
                                 </td>
-                                <td>
-                                    <?= $item['diagnosis'] ?>
-                                </td>
-                                <td>
-                                    <?= $item['datetime'] ?>
+                                <td class="text-center">
+                                    <a href="editallergy.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="deleteallergy.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php

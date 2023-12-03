@@ -29,48 +29,82 @@ require_once('db-head.php');
             </div>
         </div>
 
+        <div class="modals">
+                <!-- Button trigger modal -->
+                
+                <!-- Modal1 -->
+                <div class="modal fade" id="addStaffModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="patientLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row container-fluid">
+                                    <div class="v-line col"></div>
+                                    <div class="Lform col">
+                                        <form action="" method="POST">
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         <?php
-        require_once '../../classes/overview.show.php';
+        require_once '../../classes/patient.class.php';
         require_once '../../tools/functions.php';
         ?>
 
         <?php
-        $overview = new Overview();
+        $patient = new Patient();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
-        $overviewArray = $overview->show();
+        $patientArray = $patient->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="patient" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Medical Record ID</th>
                         <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
+                        <th scope="col">Patient Name</th>
+                        <th scope="col">Patient Type</th>
+                        <th scope="col">Blood Type</th>
+                        <th scope="col">Birthdate</th>
+                        <th scope="col">Sex</th>
+                        <th scope="col" width="5%">Action</th>
+
                     </tr>
                 </thead>
-                <tbody id="overTableBody">
+                <tbody id="patientTableBody">
                     <?php
-                    if ($overviewArray) {
-                        foreach ($overviewArray as $item) {
+                    if ($patientArray) {
+                        foreach ($patientArray as $item) {
                             ?>
                             <tr>
-                                <td>
-                                    <?= $item['medical_recordID'] ?>
-                                </td>
                                 <td>
                                     <?= $item['patientID'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['staffID'] ?>
+                                    <?= $item['pLName']. ", " .$item['pFName']?>
                                 </td>
                                 <td>
-                                    <?= $item['diagnosis'] ?>
+                                    <?= $item['patientType'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['datetime'] ?>
+                                    <?= $item['bloodType'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['birthdate'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['sex'] ?>
+                                </td>
+                                <td class="text-center">
+                                    <a href="editpatient.php?id=<?php echo $item['patientID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="deletepatient.php?id=<?php echo $item['patientID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php

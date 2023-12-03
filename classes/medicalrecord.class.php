@@ -2,21 +2,14 @@
 
 require_once 'database.php';
 
-Class Staff{
+Class MedicalRecord{
     //attributes
 
+    public $medical_recordID;
     public $patientID;
-    public $pFName;
-    public $pLName;
-    public $patientType;
-    public $bloodType;
-    public $birthdate;
-    public $address;
-    public $contactNo;
-    public $civilStatus;
-    public $nationality;
-    public $sex;
-    public $occupation;
+    public $staffID;
+    public $diagnosis;
+    public $datetime;
 
     protected $db;
 
@@ -78,7 +71,7 @@ Class Staff{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM staff WHERE staffID = :id;";
+        $sql = "SELECT * FROM medical_record WHERE medical_recordID = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){
@@ -88,7 +81,7 @@ Class Staff{
     }
 
     function show(){
-        $sql = "SELECT * FROM staff;";
+        $sql = "SELECT * FROM medical_record;";
         $query=$this->db->connect()->prepare($sql);
         $data = null;
         if($query->execute()){
