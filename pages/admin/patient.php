@@ -22,36 +22,13 @@ require_once('db-head.php');
             <div class="row">
                 <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Patient List
                 </h1>
-                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
-                    style="max-width: 110px; border-radius: 25px;" type="button" data-bs-toggle="modal" data-bs-target="#addStaffModal"><i
+                <!-- <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
+                    style="max-width: 110px; border-radius: 25px;" type="button" data-bs-toggle="modal"><i
                         class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
-                    Patient</button>
+                    Patient</button> -->
+                <a href="addpatient.php" class="btn btn-primary brand-bg-color mb-3">Add Patient</a>
             </div>
         </div>
-
-        <div class="modals">
-                <!-- Button trigger modal -->
-                
-                <!-- Modal1 -->
-                <div class="modal fade" id="addStaffModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="patientLabel" aria-hidden="true" style="display: none;">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row container-fluid">
-                                    <div class="v-line col"></div>
-                                    <div class="Lform col">
-                                        <form action="" method="POST">
-                                            
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
         <?php
         require_once '../../classes/patient.class.php';
