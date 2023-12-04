@@ -48,18 +48,18 @@
 <?php
     $title = 'Add Case';
     $record_page = 'active';
-    require_once('db-head.php');
+    require_once('staff-head.php');
 ?>
 <body>
     <?php
         require_once('../../classes/database.php');
-        require_once('db-navbar.php');
+        require_once('staff-navbar.php');
     ?>
     <main>
         <div class="container-fluid">
             <div class="row">
                 <?php
-                    require_once('db-sidenav.php');
+                    require_once('staff-sidenav.php');
                 ?>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div class="col-12 col-lg-6 d-flex justify-content-between align-items-center">

@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li class="mb-1">
-                    <a href="#" class="nav-link px-3 <?= $record_page ?>">
+                    <a href="medical-record.php" class="nav-link px-3 <?= $record_page ?>">
                         <span class="me-2"><i class="bi bi-folder-fill"></i></span>
                         <span>Medical Record</span>
                     </a>
@@ -30,15 +30,15 @@
                     </a>
                     <ul class="nav collapse ms-1 flex-column" id="submenu" data-bs-parent="#menus">
                         <li class="mx-5">
-                            <a class="nav-link <?= $case_page ?>" href="#cases" active>
+                            <a class="nav-link <?= $case_page ?>" href="case.php" active>
                                 <span class="me-2"><i class="bi bi-clipboard-heart-fill"></i></span>Cases</a>
                         </li>
                         <li class="mx-5">
-                            <a class="nav-link <?= $medicine_page ?>" href="#medicines">
+                            <a class="nav-link <?= $medicine_page ?>" href="medicine.php">
                                 <span class="me-2"><i class="bi bi-capsule"></i></span>Medicines</a>
                         </li>
                         <li class="mx-5">
-                            <a class="nav-link <?= $allergy_page ?>" href="#allergies">
+                            <a class="nav-link <?= $allergy_page ?>" href="allergy.php">
                                 <span class="me-2"><i class="bi bi-virus"></i></span>Allergies</a>
                         </li>
                     </ul>
@@ -49,31 +49,22 @@
                         <span>Settings</span>
                     </a>
                 </li>
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <li class="mb-1 mt-5 log">
-                    <a href="../admin/logout.php" class="nav-link px-3">
+                    <a href="logout.php" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
                         <span>Logout</span>
                     </a>
-=======
-=======
->>>>>>> c1e9d4f648e8ae1a3af229e2d9e847c432b39df0
                 <li class="mb-1" style="margin-top: 22rem;">
                     <?php
                     if (isset($_SESSION['user'])) {
                         ?>
-                        <a href="../../pages/staff/logout.php" class="nav-link px-3">
+                        <a href="logout.php" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
                             <span>Logout</span>
                         </a>
                         <?php
                     }
                     ?>
-<<<<<<< HEAD
->>>>>>> fed00b2f87053aa483062fba4f6b27fec5720078
-=======
->>>>>>> c1e9d4f648e8ae1a3af229e2d9e847c432b39df0
                 </li>
             </ul>
         </nav>

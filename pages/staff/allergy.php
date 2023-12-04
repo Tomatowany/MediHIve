@@ -6,23 +6,24 @@ session_start();
 <?php
 $title = 'Admin~Allergies';
 $allergy_page = 'active';
-require_once('db-head.php');
+require_once('staff-head.php');
 ?>
 
 <body>
     <?php
     require_once('../../classes/database.php');
-    require_once('db-navbar.php');
     ?>
     <?php
-    require_once('db-sidenav.php');
+    require_once('staff-navbar.php');
+    ?>
+    <?php
+    require_once('staff-sidenav.php');
     ?>
     <main class="mt-2">
         <div class="container-fluid mt-4 mb-1">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">Allergy List
                 </h1>
-                <a href="addallergy.php" class="btn btn-primary brand-bg-color mb-3">Add Allergy</a>
             </div>
         </div>
 
@@ -44,7 +45,6 @@ require_once('db-head.php');
                         <th scope="col">Allergy ID</th>
                         <th scope="col">Allergy Name</th>
                         <th scope="col">Allergy Description</th>
-                        <th scope="col" width="5%">Action</th>
                     </tr>
                 </thead>
                 <tbody id="allergyTableBody">
@@ -61,10 +61,6 @@ require_once('db-head.php');
                                 </td>
                                 <td>
                                     <?= $item['allergyDescription'] ?>
-                                </td>
-                                <td class="text-center">
-                                    <a href="editallergy.php?id=<?php echo $item['allergyID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href="deleteallergy.php?id=<?php echo $item['allergyID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php

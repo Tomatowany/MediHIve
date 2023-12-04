@@ -29,15 +29,15 @@ require_once('staff-head.php');
         </div>
 
         <?php
-        require_once '../../classes/overview.show.php';
+        require_once '../../classes/medicalrecord.class.php';
         require_once '../../tools/functions.php';
         ?>
 
         <?php
-        $overview = new Overview();
+        $medicalrecord = new MedicalRecord();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
-        $overviewArray = $overview->show();
+        $medicalrecordArray = $medicalrecord->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
             <table id="medicalrecord" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
@@ -48,13 +48,12 @@ require_once('staff-head.php');
                         <th scope="col">Staff ID</th>
                         <th scope="col">Diagnosis</th>
                         <th scope="col">Date Time</th>
-                        <th scope="col" width="5%">Action</th>
                     </tr>
                 </thead>
                 <tbody id="medicalrecordTableBody">
                     <?php
-                    if ($overviewArray) {
-                        foreach ($overviewArray as $item) {
+                    if ($medicalrecordArray) {
+                        foreach ($medicalrecordArray as $item) {
                             ?>
                             <tr>
                                 <td>
@@ -71,10 +70,6 @@ require_once('staff-head.php');
                                 </td>
                                 <td>
                                     <?= $item['datetime'] ?>
-                                </td>
-                                <td class="text-center">
-                                    <a href="editmedicalrecord.php?id=<?php echo $item['medical_recordID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href="deletemedicalrecord.php?id=<?php echo $item['medical_recordID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php

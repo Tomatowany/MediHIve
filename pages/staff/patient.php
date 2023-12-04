@@ -53,7 +53,6 @@ require_once('staff-head.php');
                         <th scope="col">Blood Type</th>
                         <th scope="col">Birthdate</th>
                         <th scope="col">Sex</th>
-                        <th scope="col" width="5%">Action</th>
 
                     </tr>
                 </thead>
@@ -80,10 +79,6 @@ require_once('staff-head.php');
                                 </td>
                                 <td>
                                     <?= $item['sex'] ?>
-                                </td>
-                                <td class="text-center">
-                                    <a href="editpatient.php?id=<?php echo $item['patientID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href="deletepatient.php?id=<?php echo $item['patientID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php
