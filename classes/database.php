@@ -1,34 +1,32 @@
 <?php
-    DEFINE('DB_USER', 'root');
-    DEFINE('DB_PASSWORD', '');
-    DEFINE('DB_HOST', 'localhost');
-    DEFINE('DB_NAME', 'medihive');
+class Database {
+      private $server = "localhost";
+    /*private $dbname = 'crimsbhv_medihive';
+    private $user = "crimsbhv";
+    private $pass = '*B!9V6f-ctVJ5Q!U';*/
 
-    $dbc = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
-    OR dies('Could not connect to MySQL: ' . mysql_connect_error());
-?>
-<?php
+    private $dbname = 'medihive';
+    private $user = "root";
+    private $pass = '';
 
-class Database{
-    private $host = 'localhost';
-    private $username = 'root';
-    private $password = '';
-    private $database = 'medihive';
-    protected $connection;
+    private $connection; // Add a property to hold the MySQLi connection
 
-    function connect(){
-        try 
-			{
-				$this->connection = new PDO("mysql:host=$this->host;dbname=$this->database", 
-											$this->username, $this->password);
-			} 
-			catch (PDOException $e) 
-			{
-				echo "Connection error " . $e->getMessage();
-			}
+    public function connect() {
+        //$this->$connection = new PDO($this->server, $this->user, $this->pass, $this->dbname);
+      	
+        try{
+            $this->connection = new PDO("mysql:host=$this->server;dbname=$this->dbname", $this->user, $this->pass);  
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $e) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+
         return $this->connection;
     }
 
+    // Add a method to get the MySQLi connection for direct use if needed
+    public function getConnection() {
+        return $this->connection;
+    }
 }
-
 ?>
