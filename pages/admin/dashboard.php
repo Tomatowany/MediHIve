@@ -29,8 +29,9 @@ require_once('db-head.php');
                             <h2 class="card-title text-center fs-3">Total Staff Count</h2>
                             <p class="card-text text-center">Active medical staff members</p>
                             <?php
+                            $this->db=new Database();
                             $sql = "SELECT COUNT(staffID) FROM staff;";
-                            $result = mysqli_query($dbc, $sql);
+                            $result = $query-fetch($dbc, $sql);
                             while ($row = $result->fetch_assoc()) {
                                 ?>
                                 <h1 class="card-title text-center" style="font-weight: 700; margin-bottom: 0;">
