@@ -15,8 +15,8 @@ require_once('staff-head.php');
     require_once('staff-navbar.php');
     require_once('staff-sidenav.php');
     ?>
-    <main class="mt-2">
-        <div class="container-fluid mt-4 mb-1">
+    <main>
+        <div class="container-fluid mb-2">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Patient Record List
                 </h1>

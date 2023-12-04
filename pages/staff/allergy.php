@@ -16,7 +16,7 @@ require_once('staff-head.php');
     require_once('staff-sidenav.php');
     ?>
 
-    <main class="mt-2">
+    <main>
         <div class="container-fluid mt-4 mb-1">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">Allergy List

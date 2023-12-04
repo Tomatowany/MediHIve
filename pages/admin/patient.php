@@ -18,7 +18,7 @@ require_once('db-head.php');
     <?php
 
     ?>
-    <main class="mt-2">
+    <main>
         <div class="container-fluid mt-4 mb-1">
             <div class="row d-flex flex-sm-row">
                 <h1 class="col-sm-10 col-lg-0 d-flex justify-content-start" style="font-weight: 700;">Patient List

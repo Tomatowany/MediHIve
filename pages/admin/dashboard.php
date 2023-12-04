@@ -15,7 +15,7 @@ require_once('db-head.php');
     require_once('db-navbar.php');
     require_once('db-sidenav.php');
     ?>
-    <main class="mt-2">
+    <main>
         <div class="container-fluid my-1">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center"
@@ -33,7 +33,7 @@ require_once('db-head.php');
                             $result = mysqli_query($dbc, $sql);
                             while ($row = $result->fetch_assoc()) {
                                 ?>
-                                <h1 class="card-title text-center" style="font-weight: 700;">
+                                <h1 class="card-title text-center" style="font-weight: 700; margin-bottom: 0;">
                                     <?php echo $row['COUNT(staffID)'] . "<br>"; ?>
                                 </h1>
                                 <?php

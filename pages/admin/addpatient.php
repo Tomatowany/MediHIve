@@ -103,28 +103,26 @@ require_once('db-head.php');
     ?>
     <main>
         <div class="container-fluid">
-            <div class="row">
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <div class="col-12 col-lg-6 d-flex justify-content-between align-items-center">
-                        <h2 class="h3 brand-color pt-3 pb-2">Add Patient</h2>
-                        <a href="patient.php" class="text-primary text-decoration-none"><i class="fa fa-arrow-left"
-                                aria-hidden="true"></i> Back</a>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <form method="post" action="">
+            <div class="row d-flex flex-column">
+                <div class="col-sm-12 col-lg-12 d-flex justify-content-evenly align-items-center">
+                    <h2 class="h3 brand-color pt-3 pb-2">Add Patient</h2>
+                    <a href="patient.php" class="text-primary text-decoration-none"><i class="fa fa-arrow-left"
+                            aria-hidden="true"></i> Back</a>
+                </div>
+                <div class="col-12 col-lg-12 justify-content-center">
+                    <form method="post" action="">
+                        <div class="row">
                             <div class="mb-2">
                                 <label for="pFName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="pFName" name="pFName" required
-                                    value="<?php if (isset($_POST['pFName'])) {
-                                        echo $_POST['pFName'];
-                                    } ?>">
+                                <input type="text" class="form-control" id="pFName" name="pFName" required value="<?php if (isset($_POST['pFName'])) {
+                                    echo $_POST['pFName'];
+                                } ?>">
                             </div>
                             <div class="mb-2">
                                 <label for="pLName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="pLName" name="pLName" required
-                                    value="<?php if (isset($_POST['pLName'])) {
-                                        echo $_POST['pLName'];
-                                    } ?>">
+                                <input type="text" class="form-control" id="pLName" name="pLName" required value="<?php if (isset($_POST['pLName'])) {
+                                    echo $_POST['pLName'];
+                                } ?>">
                             </div>
                             <div class="form-group mb-2">
                                 <label class="form-label">Patient Type</label>
@@ -197,10 +195,9 @@ require_once('db-head.php');
                             </div>
                             <div class="mb-2">
                                 <label for="birthdate" class="form-label">Birthdate</label>
-                                <input type="date" class="form-control" id="birthdate" name="birthdate" required
-                                    value="<?php if (isset($_POST['birthdate'])) {
-                                        echo $_POST['birthdate'];
-                                    } ?>">
+                                <input type="date" class="form-control" id="birthdate" name="birthdate" required value="<?php if (isset($_POST['birthdate'])) {
+                                    echo $_POST['birthdate'];
+                                } ?>">
                                 <?php
                                 $new_patient = new Patient();
                                 if (isset($_POST['birthdate'])) {
@@ -219,17 +216,15 @@ require_once('db-head.php');
                             </div>
                             <div class="mb-2">
                                 <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" name="address" required
-                                    value="<?php if (isset($_POST['address'])) {
-                                        echo $_POST['address'];
-                                    } ?>">
+                                <input type="text" class="form-control" id="address" name="address" required value="<?php if (isset($_POST['address'])) {
+                                    echo $_POST['address'];
+                                } ?>">
                             </div>
                             <div class="mb-2">
                                 <label for="contactNo" class="form-label">Contact No.</label>
-                                <input type="text" class="form-control" id="contactNo" name="contactNo" required
-                                    value="<?php if (isset($_POST['contactNo'])) {
-                                        echo $_POST['contactNo'];
-                                    } ?>">
+                                <input type="text" class="form-control" id="contactNo" name="contactNo" required value="<?php if (isset($_POST['contactNo'])) {
+                                    echo $_POST['contactNo'];
+                                } ?>">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="civilStatus" class="form-label">Civil Status</label>
@@ -298,9 +293,9 @@ require_once('db-head.php');
                             </div>
                             <button type="submit" name="save" class="btn btn-primary mt-2 mb-3 brand-bg-color"
                                 id="addPatientButton">Add Patient</button>
-                        </form>
-                    </div>
-                </main>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
