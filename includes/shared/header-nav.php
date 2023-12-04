@@ -23,7 +23,7 @@
                       <?php 
                         if(isset($_SESSION['user'])){
                       ?>
-                          <button type="button" onclick="location.href='../pages/admin/logout.php';" class="login-btn">Logout</button>
+                          <button type="button" onclick="location.href='../pages/admin/logout.php';" class="login-btn">asdasd</button>
                       <?php
                         } else {
                           ?>

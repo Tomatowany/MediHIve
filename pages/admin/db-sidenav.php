@@ -61,7 +61,7 @@
                         <span>Settings</span>
                     </a>
                 </li>
-                <li class="mb-1" style="margin-top: 35rem; position: absolute;">
+                <li class="mb-1" style="margin-top: 36rem; position: absolute;">
                     <?php
                     if (isset($_SESSION['user'])) {
                         ?>

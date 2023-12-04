@@ -15,6 +15,7 @@ session_start();
       <section id="banner">
         <div class="banner-bg">
           <div class="banner-text container-fluid">
+            asdasd
           </div>
         </div>
       </section>

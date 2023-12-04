@@ -4,6 +4,12 @@
         <nav class="navbar-light">
             <ul class="navbar-nav nav-pills" id="menus">
                 <li class="mb-1">
+                    <a href="../../index.php" class="nav-link px-3">
+                        <span class="me-2"><i class="bi bi-house-fill"></i></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mb-1">
                     <a href="dashboard.php" class="nav-link px-3 <?= $dashboard_page ?>">
                         <span class="me-2"><i class="bi bi-pie-chart-fill"></i></span>
                         <span>Dashboard</span>
@@ -49,12 +55,7 @@
                         <span>Settings</span>
                     </a>
                 </li>
-                <li class="mb-1 mt-5 log">
-                    <a href="logout.php" class="nav-link px-3">
-                        <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
-                        <span>Logout</span>
-                    </a>
-                <li class="mb-1" style="margin-top: 22rem;">
+                <li class="mb-1" style="margin-top: 36rem; position: absolute;">
                     <?php
                     if (isset($_SESSION['user'])) {
                         ?>
