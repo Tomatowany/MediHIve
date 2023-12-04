@@ -30,7 +30,6 @@ require_once('db-head.php');
                             <h2 class="card-title text-center fs-4" style="font-weight: 600;">Total Staff Count</h2>
                             <p class="card-text text-center">Active medical staff members</p>
                             <?php
-                            $this->db=new Database();
                             $sql = "SELECT COUNT(staffID) FROM staff;";
                             $query = $db->connect()->prepare($sql);
                             $query->execute();
