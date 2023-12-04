@@ -12,13 +12,10 @@ require_once('staff-head.php');
 <body>
     <?php
     require_once('../../classes/database.php');
-    ?>
-    <?php
     require_once('staff-navbar.php');
-    ?>
-    <?php
     require_once('staff-sidenav.php');
     ?>
+    
     <main class="mt-2">
         <div class="container-fluid mt-4 mb-1">
             <div class="row">
@@ -39,7 +36,7 @@ require_once('staff-head.php');
         $medicineArray = $medicine->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="medicine" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Medicine ID</th>
@@ -77,7 +74,7 @@ require_once('staff-head.php');
     ?>
     <script>
         $(document).ready(function () {
-            $('#overview').DataTable({
+            $('#medicine').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'

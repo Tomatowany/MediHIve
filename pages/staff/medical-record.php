@@ -12,19 +12,20 @@ require_once('staff-head.php');
 <body>
     <?php
     require_once('../../classes/database.php');
-    ?>
-    <?php
     require_once('staff-navbar.php');
-    ?>
-    <?php
     require_once('staff-sidenav.php');
     ?>
+
     <main class="mt-2">
         <div class="container-fluid mt-4 mb-1">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-5 d-flex justify-content-center" style="font-weight: 700;">Medical Record List
                 </h1>
-                <a href="addmedicalrecord.php" class="btn btn-primary brand-bg-color mb-3">Add Medical Record</a>
+                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
+                    style="max-width: 175px; border-radius: 25px;" type="button"
+                    onclick="location.href='addmedicalrecord.php';">
+                    <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
+                    Medical Record</button>
             </div>
         </div>
 
@@ -86,7 +87,7 @@ require_once('staff-head.php');
     ?>
     <script>
         $(document).ready(function () {
-            $('#overview').DataTable({
+            $('#medicalrecord').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'

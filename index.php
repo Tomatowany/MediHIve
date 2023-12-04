@@ -24,7 +24,6 @@
               <?php 
                 if(isset($_SESSION['user'])){
               ?>
-              <button type="submit" onclick="location.href='/pages/admin/logout.php';" class="login-btn-2">Logout</button>
                 <?php
                   } else {
                     ?>

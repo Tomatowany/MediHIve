@@ -50,13 +50,11 @@
     <?php
         require_once('../../classes/database.php');
         require_once('db-navbar.php');
+        require_once('db-sidenav.php');
     ?>
     <main>
         <div class="container-fluid">
             <div class="row">
-                <?php
-                    require_once('db-sidenav.php');
-                ?>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div class="col-12 col-lg-6 d-flex justify-content-between align-items-center">
                         <h2 class="h3 brand-color pt-3 pb-2">Add Allergy</h2>
