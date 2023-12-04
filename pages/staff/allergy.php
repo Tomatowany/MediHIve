@@ -12,13 +12,10 @@ require_once('staff-head.php');
 <body>
     <?php
     require_once('../../classes/database.php');
-    ?>
-    <?php
     require_once('staff-navbar.php');
-    ?>
-    <?php
     require_once('staff-sidenav.php');
     ?>
+
     <main class="mt-2">
         <div class="container-fluid mt-4 mb-1">
             <div class="row">

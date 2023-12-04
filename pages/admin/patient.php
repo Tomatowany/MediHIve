@@ -13,20 +13,21 @@ require_once('db-head.php');
     <?php
     require_once('../../classes/database.php');
     require_once('db-navbar.php');
+    require_once('db-sidenav.php');
     ?>
     <?php
-    require_once('db-sidenav.php');
+
     ?>
     <main class="mt-2">
         <div class="container-fluid mt-4 mb-1">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Patient List
                 </h1>
-                <!-- <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
-                    style="max-width: 110px; border-radius: 25px;" type="button" data-bs-toggle="modal"><i
-                        class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
-                    Patient</button> -->
-                <a href="addpatient.php" class="btn btn-primary brand-bg-color mb-3">Add Patient</a>
+                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
+                    style="max-width: 110px; border-radius: 25px;" type="button"
+                    onclick="location.href='addpatient.php';">
+                    <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
+                    Patient</button>
             </div>
         </div>
 
@@ -65,7 +66,7 @@ require_once('db-head.php');
                                     <?= $item['patientID'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['pLName']. ", " .$item['pFName']?>
+                                    <?= $item['pFName'] . " " . $item['pLName'] ?>
                                 </td>
                                 <td>
                                     <?= $item['patientType'] ?>
@@ -80,8 +81,11 @@ require_once('db-head.php');
                                     <?= $item['sex'] ?>
                                 </td>
                                 <td class="text-center">
-                                    <a href="editpatient.php?id=<?php echo $item['patientID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href="deletepatient.php?id=<?php echo $item['patientID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a href="editpatient.php?id=<?php echo $item['patientID']; ?>"><i
+                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="deletepatient.php?id=<?php echo $item['patientID']; ?>"
+                                        onclick="return confirm('Are you sure you want to delete <?php if($item['sex']!= 'Female'){echo 'Mr. '; }else{echo 'Ms. ';} echo $item['pFName'] . ' ' . $item['pLName'] ?>?')"><i
+                                            class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php
@@ -98,7 +102,7 @@ require_once('db-head.php');
     ?>
     <script>
         $(document).ready(function () {
-            $('#overview').DataTable({
+            $('#patient').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'

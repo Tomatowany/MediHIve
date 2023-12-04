@@ -13,8 +13,6 @@ require_once('staff-head.php');
     <?php
     require_once('../../classes/database.php');
     require_once('staff-navbar.php');
-    ?>
-    <?php
     require_once('staff-sidenav.php');
     ?>
     <main class="mt-2">
@@ -101,7 +99,7 @@ require_once('staff-head.php');
         $medicalrecordArray = $medicalrecord->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="medicalrecord" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Medical Record ID</th>
@@ -111,7 +109,7 @@ require_once('staff-head.php');
                         <th scope="col">Date Time</th>
                     </tr>
                 </thead>
-                <tbody id="medicalrecordTableBody">
+                <tbody id="overTableBody">
                     <?php
                     if ($medicalrecordArray) {
                         foreach ($medicalrecordArray as $item) {
