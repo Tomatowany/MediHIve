@@ -38,7 +38,7 @@ ul#menus{
         height: calc(100% - var(--topNavbarHeight));
     }
     ul#menus{
-        margin-top: 2rem;
+        margin-top: .5rem;
     }
     main{
         margin-top: var(--topNavbarHeight);
