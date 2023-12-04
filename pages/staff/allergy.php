@@ -77,7 +77,7 @@ require_once('staff-head.php');
     ?>
     <script>
         $(document).ready(function () {
-            $('#overview').DataTable({
+            $('#allergy').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'

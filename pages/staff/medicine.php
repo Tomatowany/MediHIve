@@ -23,7 +23,7 @@ require_once('staff-head.php');
         <div class="container-fluid mt-4 mb-1">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">Medicine List
-                </h1>s
+                </h1>
             </div>
         </div>
 
@@ -39,7 +39,7 @@ require_once('staff-head.php');
         $medicineArray = $medicine->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+            <table id="medicine" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Medicine ID</th>
@@ -77,7 +77,7 @@ require_once('staff-head.php');
     ?>
     <script>
         $(document).ready(function () {
-            $('#overview').DataTable({
+            $('#medicine').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'
