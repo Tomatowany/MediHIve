@@ -1,10 +1,11 @@
 <?php
 
-require_once('../../classes/database.php');
+require_once('database.php');
 
 class Account{
 
     public $id;
+    public $contactNo;
     public $email;
     public $password;
 
@@ -37,12 +38,11 @@ class Account{
     
         if ($query->execute()) {
             $accountData = $query->fetch(PDO::FETCH_ASSOC);
-            if ($accountData && $this->email == $accountData['email']) {
-                $this->id = $accountData['email'];
+            if ($accountData && $this->contactNo == $accountData['contactNo']) {
+                $this->id = $accountData['id'];
                 return $accountData;
             }
         }
-    
         return false;
     } 
 

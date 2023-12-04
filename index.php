@@ -27,7 +27,7 @@
                 <?php
                   } else {
                     ?>
-                    <button type="submit" onclick="location.href='/pages/admin/loginop.php';" class="login-btn-2">Login</button>
+                    <button type="submit" onclick="location.href='pages/loginop.php';" class="login-btn-2">Login</button>
                   <?php
                   }
                   ?>

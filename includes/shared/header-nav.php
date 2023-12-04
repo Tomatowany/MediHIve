@@ -32,11 +32,11 @@
             <?php
             if (isset($_SESSION['user'])) {
               ?>
-              <button type="button" onclick="location.href='../pages/admin/logout.php';" class="login-btn">asdasd</button>
+              <button type="button" onclick="location.href='../pages/admin/logout.php';" class="login-btn">Logout</button>
               <?php
             } else {
               ?>
-              <button type="button" onclick="location.href='../pages/admin/loginop.php';" class="login-btn">Login</button>
+              <button type="button" onclick="location.href='../../pages/loginop.php';" class="login-btn">Login</button>
               <?php
             }
             ?>

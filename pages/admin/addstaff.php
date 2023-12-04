@@ -31,7 +31,7 @@
         if (validate_field($staff->firstName) &&
         validate_field($staff->lastName) &&
         validate_field($staff->contact) &&
-        validate_field($staff->password) &&
+        validate_password($staff->password) &&
         validate_field($staff->address) &&
         validate_field($staff->email))
         // validate_field($staff->role) &&
@@ -94,7 +94,7 @@
                             </div>
                             <div class="mb-2">
                                 <label for="contact" class="form-label">Staff Contact</label>
-                                <input type="text" class="form-control" id="contact" name="contact" required value="<?php if(isset($_POST['contact'])) { echo $_POST['contact']; } ?>">
+                                <input type="number" class="form-control" id="contact" name="contact" required value="<?php if(isset($_POST['contact'])) { echo $_POST['contact']; } ?>">
                                 <?php
                                     if(isset($_POST['contact']) && !validate_field($_POST['contact'])){
                                 ?>
@@ -107,9 +107,9 @@
                                 <label for="password" class="form-label">Staff Password</label>
                                 <input type="text" class="form-control" id="password" name="password" required value="<?php if(isset($_POST['password'])) { echo $_POST['password']; } ?>">
                                 <?php
-                                    if(isset($_POST['password']) && !validate_field($_POST['password'])){
+                                    if(isset($_POST['password']) && validate_password($_POST['password']) !== "success"){
                                 ?>
-                                        <p class="text-danger my-1">Staff Password is required</p>
+                                        <p class="text-danger my-1"><?= validate_password($_POST['password']) ?></p>
                                 <?php
                                     }
                                 ?>
