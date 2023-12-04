@@ -17,32 +17,32 @@ require_once('db-head.php');
     $db = new Database();
     ?>
     <main>
-        <div class="container-fluid my-1">
+        <div class="container-fluid">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center"
-                    style="font-weight: 700;">Overview
+                    style="font-weight: 800;">Dashboard
                 </h1>
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-4 mb-2">
-                    <div class="card mb-3 w-auto h-100 p-0">
+            <div class="row my-3">
+                <div class="col-sm-12 col-md-4 my-1">
+                    <div class="card mb-3 w-auto h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
-                            <h2 class="card-title text-center fs-3">Total Staff Count</h2>
+                            <h2 class="card-title text-center fs-4" style="font-weight: 600;">Total Staff Count</h2>
                             <p class="card-text text-center">Active medical staff members</p>
                             <?php
                             $sql = "SELECT COUNT(staffID) FROM staff;";
                             $query = $db->connect()->prepare($sql);
                             $query->execute();
-                            $number_of_rows = $query->fetchColumn();
-                            echo ' <h1 class="card-title text-center" style="font-weight: 700; margin-bottom: 0;">'.$number_of_rows.'</h1>';
+                            $num_of_cols = $query->fetchColumn();
+                            echo ' <h1 class="card-title text-center" style="font-weight: 700; margin-bottom: 0;">'.$num_of_cols.'</h1>';
                             ?>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 mb-2">
+                <div class="col-sm-12 col-md-4 my-1">
                     <div class="card mb-3 w-auto h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
-                            <h2 class="card-title text-center fs-3">Staff-to-Patient Ratio</h2>
+                            <h2 class="card-title text-center fs-4" style="font-weight: 600;">Staff-to-Patient Ratio</h2>
                             <p class="card-text text-center">As of :
                                 <span class="card-text text-center" id="demo" style="font-weight: 700;">
                                 <?php
@@ -50,11 +50,6 @@ require_once('db-head.php');
                                 ?>
                                 </span>
                             </p>
-                            <script>
-                                /*const d = new Date();
-                                const datetime = d.toLocaleString("en-US", "short");
-                                document.getElementById("demo").innerHTML = datetime;*/
-                            </script>
                             <?php
                             $sql = "SELECT ((
                                 (SELECT COUNT(s.staffID)
@@ -69,17 +64,17 @@ require_once('db-head.php');
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 mb-2">
+                <div class="col-sm-12 col-md-4 my-1">
                     <div class="card mb-3 w-auto h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
-                            <h2 class="card-title text-center fs-3">Total Patient Count</h2>
-                            <p class="card-text text-center">By Staff</p>
+                            <h2 class="card-title text-center fs-4" style="font-weight: 600;">Total Patient Count</h2>
+                            <p class="card-text text-center">All staff</p>
                             <?php
                             $sql = "SELECT COUNT(patientID) FROM patient;";
                             $query = $db->connect()->prepare($sql);
                             $query->execute();
-                            $number_of_rows = $query->fetchColumn();
-                            echo '<h1 class="card-title text-center" style="font-weight: 700;">'.$number_of_rows.'</h1>';
+                            $num_of_cols = $query->fetchColumn();
+                            echo '<h1 class="card-title text-center" style="font-weight: 700;">'.$num_of_cols.'</h1>';
                             ?>
                         </div>
                     </div>
@@ -110,377 +105,13 @@ require_once('db-head.php');
                     </tr>
                 </thead>
                 <tbody id="overTableBody">
-                <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Medical Record ID</th>
-                        <th scope="col">Patient ID</th>
-                        <th scope="col">Staff ID</th>
-                        <th scope="col">Diagnosis</th>
-                        <th scope="col">Date Time</th>
-                    </tr>
                     <?php
                     if ($overviewArray) {
                         foreach ($overviewArray as $item) {
                             ?>
                             <tr>
                                 <td>
-                                    <?= $item['medical_recordID'] ?>
+                                    <?= $item['consultationID'] ?>
                                 </td>
                                 <td>
                                     <?= $item['patientID'] ?>

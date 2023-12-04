@@ -1,10 +1,9 @@
 <?php
 class Database {
-      private $server = "localhost";
+    private $server = "localhost";
     /*private $dbname = 'crimsbhv_medihive';
     private $user = "crimsbhv";
     private $pass = '*B!9V6f-ctVJ5Q!U';*/
-
     private $dbname = 'medihive';
     private $user = "root";
     private $pass = '';

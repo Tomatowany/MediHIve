@@ -18,7 +18,7 @@
                 <li class="mb-1">
                     <a href="patient.php" class="nav-link px-3 <?= $patient_page ?> ">
                         <span class="me-2"><i class="bi bi-heart-pulse-fill"></i></span>
-                        <span>Patient Record</span>
+                        <span>Patient List</span>
                     </a>
                 </li>
                 <li class="mb-1">

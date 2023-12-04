@@ -16,12 +16,12 @@ require_once('db-head.php');
     require_once('db-sidenav.php');
     ?>
     <main>
-        <div class="container-fluid mt-4 mb-1">
-            <div class="row">
-                <h1 class="col-sm-12 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">Staff Master List
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center mb-3">
+                <h1 class="col-sm-12 col-lg-5 d-flex justify-content-center" style="font-weight: 700;">Staff Master List
                 </h1>
-                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
-                    style="max-width: 100px; border-radius: 25px;" type="button"
+                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-7 d-flex justify-content-center align-items-center ms-auto me-5"
+                    style="max-width: 100px; min-height: 46px; border-radius: 25px;" id="addbutt"
                     onclick="location.href='addstaff.php';">
                     <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
                     Staff</button>

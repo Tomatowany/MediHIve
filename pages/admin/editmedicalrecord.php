@@ -19,7 +19,7 @@
     if(isset($_GET['id'])){
         $medicalrecord =  new MedicalRecord();
         $record = $medicalrecord->fetch($_GET['id']);
-        $medicalrecord->id = $record['medical_recordID'];
+        $medicalrecord->id = $record['consultationID'];
         $medicalrecord->patientID = $record['patientID'];
         $medicalrecord->staffID = $record['staffID'];
         $medicalrecord->diagnosis = $record['diagnosis'];

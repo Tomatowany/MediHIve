@@ -70,17 +70,17 @@ Class Medicine{
         return $data;
     }
 
-    function is_product_exist(){
-        $sql = "SELECT * FROM product WHERE pizzaname = :pizzaname;";
-        $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':pizzaname', $this->pizzaname);
-        if($query->execute()){
-            if($query->rowCount()>0){
-                return true;
-            }
-        }
-        return false;
-    }
+    // function is_product_exist(){
+    //     $sql = "SELECT * FROM product WHERE pizzaname = :pizzaname;";
+    //     $query=$this->db->connect()->prepare($sql);
+    //     $query->bindParam(':pizzaname', $this->pizzaname);
+    //     if($query->execute()){
+    //         if($query->rowCount()>0){
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 }
 
 ?>
