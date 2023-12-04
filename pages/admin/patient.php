@@ -19,10 +19,10 @@ require_once('db-head.php');
     ?>
     <main class="mt-2">
         <div class="container-fluid mt-4 mb-1">
-            <div class="row">
-                <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Patient List
+            <div class="row d-flex flex-sm-row">
+                <h1 class="col-sm-10 col-lg-0 d-flex justify-content-start" style="font-weight: 700;">Patient List
                 </h1>
-                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
+                <button class="btn btn-add btn-outline-secondary col-sm-2 col-lg-2 w-50 d-flex align-items-center"
                     style="max-width: 110px; border-radius: 25px;" type="button" data-bs-toggle="modal" data-bs-target="#addStaffModal"><i
                         class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
                     Patient</button>
