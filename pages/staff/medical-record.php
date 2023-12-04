@@ -4,22 +4,32 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $title = 'MediHive';
-    require_once('../../includes/shared/head-index.php');
+$title = 'Staff M-Record';
+$record_page = 'active';
+require_once('staff-head.php');
 ?>
+
 <body>
-    <?php  
-        require_once('../../includes/shared/header-nav.php');
+    <?php
+    require_once('../../classes/database.php');
+    require_once('staff-navbar.php');
+    require_once('staff-sidenav.php');
     ?>
-    <main>
-      <section id="banner">
-        <div class="banner-bg">
-          <div class="banner-text container-fluid">
-            asdasd
-          </div>
+
+    <main class="mt-2">
+        <div class="container-fluid mt-4 mb-1">
+            <div class="row">
+                <h1 class="col-sm-12 col-lg-5 d-flex justify-content-center" style="font-weight: 700;">Medical Record List
+                </h1>
+                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
+                    style="max-width: 175px; border-radius: 25px;" type="button"
+                    onclick="location.href='addmedicalrecord.php';">
+                    <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
+                    Medical Record</button>
+            </div>
         </div>
-      </section>
-      <?php
+
+        <?php
         require_once '../../classes/medicalrecord.class.php';
         require_once '../../tools/functions.php';
         ?>
@@ -31,8 +41,8 @@ session_start();
         $medicalrecordArray = $medicalrecord->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
-            <table id="medicalrecordArray" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
-            <thead>
+            <table id="medicalrecord" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+                <thead>
                     <tr>
                         <th scope="col">Medical Record ID</th>
                         <th scope="col">Patient ID</th>
@@ -77,7 +87,7 @@ session_start();
     ?>
     <script>
         $(document).ready(function () {
-            $('#overview').DataTable({
+            $('#medicalrecord').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'
@@ -85,14 +95,6 @@ session_start();
             });
         });
     </script>
-      
-      
-    </main>
-    <?php
-      require_once('../../includes/shared/footer-index.php');
-    ?>
-    <?php
-        require_once('../../includes/js.php');
-    ?>
 </body>
+
 </html>

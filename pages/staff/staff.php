@@ -1,10 +1,10 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'Admin~Staff';
+$title = 'Staff~Staff';
 $staff_page = 'active';
 require_once('db-head.php');
 ?>
@@ -12,19 +12,19 @@ require_once('db-head.php');
 <body>
     <?php
     require_once('../../classes/database.php');
-    require_once('db-navbar.php');
-    require_once('db-sidenav.php');
+    ?>
+    <?php
+    require_once('staff-navbar.php');
+    ?>
+    <?php
+    require_once('staff-sidenav.php');
     ?>
     <main class="mt-2">
         <div class="container-fluid mt-4 mb-1">
             <div class="row">
                 <h1 class="col-sm-12 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">Staff Master List
                 </h1>
-                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
-                    style="max-width: 100px; border-radius: 25px;" type="button"
-                    onclick="location.href='addstaff.php';">
-                    <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
-                    Staff</button>
+                <a href="addstaff.php" class="btn btn-primary brand-bg-color mb-3">Add Staff</a>
             </div>
         </div>
 
@@ -61,7 +61,7 @@ require_once('db-head.php');
                                     <?= $item['staffID'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['firstName'] . " " . $item['lastName'] ?>
+                                    <?= $item['lastName']. ", " .$item['firstName']?>
                                 </td>
                                 <td>
                                     <?= $item['contact'] ?>
@@ -73,11 +73,8 @@ require_once('db-head.php');
                                     <?= $item['email'] ?>
                                 </td>
                                 <td class="text-center">
-                                    <a href="editstaff.php?id=<?php echo $item['staffID']; ?>"><i class="fa fa-pencil-square-o"
-                                            aria-hidden="true"></i></a>
-                                    <a href="deletestaff.php?id=<?php echo $item['staffID']; ?>"
-                                        onclick="return confirm('Are you sure you want to delete <?php echo $item['lastName'] ?> as staff?')"><i
-                                            class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a href="editstaff.php?id=<?php echo $item['staffID']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="deletestaff.php?id=<?php echo $item['staffID']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php
@@ -94,7 +91,7 @@ require_once('db-head.php');
     ?>
     <script>
         $(document).ready(function () {
-            $('#staff').DataTable({
+            $('#overview').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'excel', 'pdf'

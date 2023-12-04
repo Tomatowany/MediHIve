@@ -28,17 +28,12 @@
                         Dropdown
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown"">
-                            <li><a class=" dropdown-item" href="#">Account Settings</a>
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
                 <li>
                     <?php
                     if (isset($_SESSION['user'])) {
                         ?>
-                        <a href="../../pages/admin/logout.php" class="dropdown-item"><span>Logout</span></a>
-                        <?php
+                        <a href=" ../../pages/admin/logout.php" class="dropdown-item"><span>Logout</span></a>
+                            <?php
                     }
                     ?>
                 </li>

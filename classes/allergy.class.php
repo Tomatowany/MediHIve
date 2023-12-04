@@ -2,16 +2,12 @@
 
 require_once 'database.php';
 
-Class Staff{
+Class Allergy{
     //attributes
 
     public $id;
-    public $firstName;
-    public $lastName;
-    public $contact;
-    public $password;
-    public $address;
-    public $email;
+    public $allergyName;
+    public $allergyDescription;
 
     protected $db;
 
@@ -23,16 +19,12 @@ Class Staff{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO staff (firstName, lastName, contact, password, address, email) VALUES 
-        (:firstName, :lastName, :contact, :password, :address, :email);";
+        $sql = "INSERT INTO allergy (allergyName, allergyDescription) VALUES 
+        (:allergyName, :allergyDescription);";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':firstName', $this->firstName);
-        $query->bindParam(':lastName', $this->lastName);
-        $query->bindParam(':contact', $this->contact);
-        $query->bindParam(':password', $this->password);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':email', $this->email);
+        $query->bindParam(':allergyName', $this->allergyName);
+        $query->bindParam(':allergyDescription', $this->allergyDescription);
         
         if($query->execute()){
             return true;
@@ -43,17 +35,13 @@ Class Staff{
     }
 
     function edit(){
-        $sql = "UPDATE staff SET firstName=:firstName, lastName=:lastName, contact=:contact, password=:password, address=:address, email=:email WHERE staffID = :id;";
+        $sql = "UPDATE allergy SET allergyName=:allergyName, allergyDescription=:allergyDescription WHERE allergyID = :id;";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':firstName', $this->firstName);
-        $query->bindParam(':lastName', $this->lastName);
-        $query->bindParam(':contact', $this->contact);
-        $query->bindParam(':password', $this->password);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':email', $this->email);
-        $query->bindParam(':id', $this->id);
-
+        $query->bindParam(':allergyName', $this->allergyName);
+        $query->bindParam(':allergyDescription', $this->allergyDescription);
+        $query->bindParam(':id', $this->id);    
+        
         if($query->execute()){
             return true;
         }
@@ -63,7 +51,7 @@ Class Staff{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM staff WHERE staffID = :id;";
+        $sql = "SELECT * FROM allergy WHERE allergyID = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){
@@ -73,7 +61,7 @@ Class Staff{
     }
 
     function show(){
-        $sql = "SELECT * FROM staff;";
+        $sql = "SELECT * FROM allergy;";
         $query=$this->db->connect()->prepare($sql);
         $data = null;
         if($query->execute()){

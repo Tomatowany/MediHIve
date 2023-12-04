@@ -2,16 +2,14 @@
 
 require_once 'database.php';
 
-Class Staff{
+Class MedicalRecord{
     //attributes
 
-    public $id;
-    public $firstName;
-    public $lastName;
-    public $contact;
-    public $password;
-    public $address;
-    public $email;
+    public $medical_recordID;
+    public $patientID;
+    public $staffID;
+    public $diagnosis;
+    public $datetime;
 
     protected $db;
 
@@ -23,16 +21,15 @@ Class Staff{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO staff (firstName, lastName, contact, password, address, email) VALUES 
-        (:firstName, :lastName, :contact, :password, :address, :email);";
+        $sql = "INSERT INTO medical_record (medical_recordID, patientID, staffID, diagnosis, datetime) VALUES 
+        (:medical_recordID, :patientID, :staffID, :diagnosis, :datetime);";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':firstName', $this->firstName);
-        $query->bindParam(':lastName', $this->lastName);
-        $query->bindParam(':contact', $this->contact);
-        $query->bindParam(':password', $this->password);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':email', $this->email);
+        $query->bindParam(':medical_recordID', $this->medical_recordID);
+        $query->bindParam(':patientID', $this->patientID);
+        $query->bindParam(':staffID', $this->staffID);
+        $query->bindParam(':diagnosis', $this->diagnosis);
+        $query->bindParam(':datetime', $this->datetime);
         
         if($query->execute()){
             return true;
@@ -43,17 +40,16 @@ Class Staff{
     }
 
     function edit(){
-        $sql = "UPDATE staff SET firstName=:firstName, lastName=:lastName, contact=:contact, password=:password, address=:address, email=:email WHERE staffID = :id;";
+        $sql = "UPDATE medical_record SET medical_recordID=:medical_recordID, patientID=:patientID, staffID=:staffID, diagnosis=:diagnosis, datetime=:datetime WHERE medical_recordID = :id;";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':firstName', $this->firstName);
-        $query->bindParam(':lastName', $this->lastName);
-        $query->bindParam(':contact', $this->contact);
-        $query->bindParam(':password', $this->password);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':email', $this->email);
-        $query->bindParam(':id', $this->id);
-
+        $query->bindParam(':medical_recordID', $this->medical_recordID);
+        $query->bindParam(':patientID', $this->patientID);
+        $query->bindParam(':staffID', $this->staffID);
+        $query->bindParam(':diagnosis', $this->diagnosis);
+        $query->bindParam(':datetime', $this->datetime);
+        $query->bindParam(':id', $this->id);    
+        
         if($query->execute()){
             return true;
         }
@@ -63,7 +59,7 @@ Class Staff{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM staff WHERE staffID = :id;";
+        $sql = "SELECT * FROM medical_record WHERE medical_recordID = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){
@@ -73,7 +69,7 @@ Class Staff{
     }
 
     function show(){
-        $sql = "SELECT * FROM staff;";
+        $sql = "SELECT * FROM medical_record;";
         $query=$this->db->connect()->prepare($sql);
         $data = null;
         if($query->execute()){

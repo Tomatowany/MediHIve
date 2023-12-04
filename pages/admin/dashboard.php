@@ -13,8 +13,6 @@ require_once('db-head.php');
     <?php
     require_once('../../classes/database.php');
     require_once('db-navbar.php');
-    ?>
-    <?php
     require_once('db-sidenav.php');
     ?>
     <main class="mt-2">

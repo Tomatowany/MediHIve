@@ -13,8 +13,6 @@ require_once('staff-head.php');
     <?php
     require_once('../../classes/database.php');
     require_once('staff-navbar.php');
-    ?>
-    <?php
     require_once('staff-sidenav.php');
     ?>
     <main class="mt-2">
@@ -90,68 +88,70 @@ require_once('staff-head.php');
         </div>
 
         <?php
-        require_once '../../classes/case.class.php';
+        require_once '../../classes/medicalrecord.class.php';
         require_once '../../tools/functions.php';
         ?>
 
-        <?php
-        $case = new Casee();
+<?php
+        $medicalrecord = new MedicalRecord();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
-        $caseArray = $case->show();
-        $counter = 1;
+        $medicalrecordArray = $medicalrecord->show();
         ?>
-        
-        <table id="staff" class="table table-striped table-sm">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Case Name</th>
-                    <th scope="col">Case Description</th>
-                    <th scope="col" width="5%">Action</th>
-                </tr>
-            </thead>
-            <tbody id="caseTableBody">
-                <?php
-                if ($caseArray) {
-                    foreach ($caseArray as $item) {
-                        ?>
-                        <tr>
-                            <td>
-                                <?= $counter ?>
-                            </td>
-                            <td>
-                                <?= $item['caseName'] ?>
-                            </td>
-                            <td>
-                                <?= $item['caseDescription'] ?>
-                            </td>
-                            <td class="text-center">
-                                <a href="editcase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-pencil-square-o"
-                                        aria-hidden="true"></i></a>
-                                <a href="deletecase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-trash"
-                                        aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <?php
-                        $counter++;
+        <div class="lamesa table-responsive-lg mx-auto">
+            <table id="overview" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Medical Record ID</th>
+                        <th scope="col">Patient ID</th>
+                        <th scope="col">Staff ID</th>
+                        <th scope="col">Diagnosis</th>
+                        <th scope="col">Date Time</th>
+                    </tr>
+                </thead>
+                <tbody id="overTableBody">
+                    <?php
+                    if ($medicalrecordArray) {
+                        foreach ($medicalrecordArray as $item) {
+                            ?>
+                            <tr>
+                                <td>
+                                    <?= $item['medical_recordID'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['patientID'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['staffID'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['diagnosis'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['datetime'] ?>
+                                </td>
+                            </tr>
+                            <?php
+                        }
                     }
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <?php
     require_once('../../includes/js.php');
     ?>
-        <script>
-        $(document).ready(function() {
-            var table = $('#staff').DataTable( {
-                lengthChange: false,
-                buttons: [ 'excel', 'pdf' ]
-            } );
-        } );
+    <script>
+        $(document).ready(function () {
+            $('#overview').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'excel', 'pdf'
+                ]
+            });
+        });
     </script>
 </body>
 
