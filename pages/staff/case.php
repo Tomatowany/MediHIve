@@ -11,15 +11,15 @@ require_once('staff-head.php');
 ?>
 
 <body>
-<?php
+    <?php
     require_once('../../classes/database.php');
     require_once('staff-navbar.php');
     require_once('staff-sidenav.php');
     ?>
     <main>
-        <div class="container-fluid mb-1">
-            <div class="row">
-                <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Case List
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center mb-3">
+                <h1 class="col-sm-12 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">List of Cases
                 </h1>
             </div>
         </div>

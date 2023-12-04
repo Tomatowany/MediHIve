@@ -16,12 +16,12 @@ require_once('staff-head.php');
     require_once('staff-sidenav.php');
     ?>
     <main>
-        <div class="container-fluid mb-2">
-            <div class="row">
-                <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Patient Record List
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center mb-3">
+                <h1 class="col-sm-10 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">List of Patients
                 </h1>
-                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
-                    style="max-width: 110px; border-radius: 25px;" type="button"
+                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-7 ms-auto me-5"
+                    style="max-width: 110px; min-height: 46px; border-radius: 25px;" type="button"
                     onclick="location.href='addpatient.php';">
                     <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
                     Patient</button>
@@ -62,7 +62,7 @@ require_once('staff-head.php');
                                     <?= $item['patientID'] ?>
                                 </td>
                                 <td>
-                                    <?= $item['pLName'] . ", " . $item['pFName'] ?>
+                                    <?= $item['pFName'] . " " . $item['pLName'] ?>
                                 </td>
                                 <td>
                                     <?= $item['patientType'] ?>

@@ -5,7 +5,7 @@ require_once 'database.php';
 Class MedicalRecord{
     //attributes
 
-    public $medical_recordID;
+    public $consultationID;
     public $patientID;
     public $staffID;
     public $diagnosis;
@@ -21,11 +21,11 @@ Class MedicalRecord{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO medical_record (medical_recordID, patientID, staffID, diagnosis, datetime) VALUES 
-        (:medical_recordID, :patientID, :staffID, :diagnosis, :datetime);";
+        $sql = "INSERT INTO medical_record (consultationID, patientID, staffID, diagnosis, datetime) VALUES 
+        (:consultationID, :patientID, :staffID, :diagnosis, :datetime);";
 
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':medical_recordID', $this->medical_recordID);
+        $query->bindParam(':consultationID', $this->consultationID);
         $query->bindParam(':patientID', $this->patientID);
         $query->bindParam(':staffID', $this->staffID);
         $query->bindParam(':diagnosis', $this->diagnosis);
@@ -59,7 +59,7 @@ Class MedicalRecord{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM medical_record WHERE medical_recordID = :id;";
+        $sql = "SELECT * FROM medical_record WHERE consultationID = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){

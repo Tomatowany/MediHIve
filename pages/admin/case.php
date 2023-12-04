@@ -17,12 +17,14 @@ require_once('db-head.php');
     require_once('db-sidenav.php');
     ?>
     <main>
-        <div class="container-fluid mt-4 mb-1">
-            <div class="row">
-                <h1 class="col-sm-12 col-lg-3 d-flex justify-content-center" style="font-weight: 700;">Case List
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center mb-3">
+                <h1 class="col-sm-12 col-lg-4 d-flex justify-content-center" style="font-weight: 700;">List of Cases
                 </h1>
-                <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-12 w-25 ms-auto me-3 mb-2"
-                    style="max-width: 100px; border-radius: 25px;" type="button" onclick="location.href='addcase.php';">
+                <button
+                    class="btn btn-add btn-outline-secondary col-sm-12 col-lg-8 d-flex justify-content-center align-items-center ms-auto me-5"
+                    style="max-width: 100px; min-height: 46px; border-radius: 25px;" id="addbutt"
+                    onclick="location.href='addcase.php';">
                     <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
                     Case</button>
             </div>
@@ -68,7 +70,7 @@ require_once('db-head.php');
                                     <a href="editcase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-pencil-square-o"
                                             aria-hidden="true"></i></a>
                                     <a href="deletecase.php?id=<?php echo $item['caseID']; ?>"
-                                        onclick="return confirm('Are you sure you want to delete case #<?php echo $item['caseID'].' '.$item['caseName'] ?>?')"><i
+                                        onclick="return confirm('Are you sure you want to delete case #<?php echo $item['caseID'] . ' ' . $item['caseName'] ?>?')"><i
                                             class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
