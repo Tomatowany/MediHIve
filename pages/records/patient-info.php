@@ -15,7 +15,34 @@ session_start();
       <section id="banner">
         <div class="banner-bg">
           <div class="banner-text container-fluid">
-            asdasd
+            <div>
+                <p>Attending Doctor</p>
+                <p>Patient Type</p>
+                <p>Blood Type</p>
+                <p>Birthdate</p>
+                <p>Address</p>
+            </div>
+            <div>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+            <div>
+                <p>Contact Number</p>
+                <p>Civil Status</p>
+                <p>Nationality</p>
+                <p>Sex</p>
+                <p>Email</p>
+            </div>
+            <div>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
           </div>
         </div>
       </section>

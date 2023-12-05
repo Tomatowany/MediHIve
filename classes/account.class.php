@@ -5,7 +5,6 @@ require_once('database.php');
 class Account{
 
     public $id;
-    public $contactNo;
     public $email;
     public $password;
 
@@ -17,6 +16,7 @@ class Account{
     }
 
     function sign_in_staff(){
+ 
         $sql = "SELECT * FROM staff WHERE email = :email LIMIT 1;";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':email', $this->email);
@@ -32,20 +32,21 @@ class Account{
     }
 
     function sign_in_patient(){
-        $sql = "SELECT * FROM patient WHERE patientID = :id LIMIT 1;";
+
+        $sql = "SELECT * FROM patient WHERE email = :email LIMIT 1;";
         $query = $this->db->connect()->prepare($sql);
-        $query->bindParam(':id', $this->id);
+        $query->bindParam(':email', $this->email);
     
         if ($query->execute()) {
             $accountData = $query->fetch(PDO::FETCH_ASSOC);
-            if ($accountData && $this->contactNo == $accountData['contactNo']) {
+            if ($accountData && $this->email == $accountData['email']) {
                 $this->id = $accountData['id'];
                 return $accountData;
             }
         }
-        return false;
-    } 
+            return false;
+        } 
 
-}
+    }
 
 ?>

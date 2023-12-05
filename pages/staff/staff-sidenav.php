@@ -59,7 +59,7 @@
                     <?php
                     if (isset($_SESSION['user'])) {
                         ?>
-                        <a href="logout.php" class="nav-link px-3">
+                        <a href="../logout.php" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-box-arrow-left"></i></span>
                             <span>Logout</span>
                         </a>

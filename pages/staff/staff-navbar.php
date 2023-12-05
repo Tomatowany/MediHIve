@@ -37,7 +37,7 @@
                     <?php
                     if (isset($_SESSION['user'])) {
                         ?>
-                        <a href="../../pages/admin/logout.php" class="dropdown-item"><span>Logout</span></a>
+                        <a href="../logout.php" class="dropdown-item"><span>Logout</span></a>
                         <?php
                     }
                     ?>
