@@ -66,7 +66,7 @@ require_once('db-head.php');
                 <h1 class="col-sm-12 col-lg-8 d-flex justify-content-center"
                     style="font-weight: 700; margin-bottom: 0;">Add Medical Record Data
                 </h1>
-                <a href="patient.php"
+                <a href="medical-record.php"
                     class="text-primary text-decoration-none col-sm-12 col-lg-2 d-flex align-items-center justify-content-end"><i
                         class="fa fa-arrow-left me-1" aria-hidden="true"></i>Back</a>
             </div>
