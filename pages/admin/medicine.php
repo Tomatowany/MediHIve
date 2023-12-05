@@ -4,8 +4,9 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'Admin~Medicines';
+$title = $_SESSION['role'].'~Medicines';
 $medicine_page = 'active';
+$dropshow = "show";
 require_once('db-head.php');
 ?>
 
@@ -65,11 +66,19 @@ require_once('db-head.php');
                                     <?= $item['medicineDescription'] ?>
                                 </td>
                                 <td class="text-center">
+                                    <?php
+                                        if(isset( $_SESSION['role'])){
+                                            if( $_SESSION['role'] == "Admin") {
+                                    ?>
                                     <a href="editmedicine.php?id=<?php echo $item['medicineID']; ?>"><i
                                             class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="deletemedicine.php?id=<?php echo $item['medicineID']; ?>"
                                         onclick="return confirm('Are you sure you want to delete medicine #<?php echo $item['medicineID'].' '.$item['medicineName'] ?>?')"><i
                                             class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                             <?php

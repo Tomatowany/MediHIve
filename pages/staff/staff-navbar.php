@@ -27,7 +27,7 @@
                         <i class="bi bi-person-badge"></i>
                         Dropdown
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown"">
+                    <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
                             <li><a class=" dropdown-item" href="#">Account Settings</a>
                 </li>
                 <li>

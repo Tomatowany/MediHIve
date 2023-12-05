@@ -15,6 +15,7 @@ require_once('db-head.php');
     require_once('db-navbar.php');
     require_once('db-sidenav.php');
     $db = new Database();
+    
     ?>
     <main>
         <div class="container-fluid">
@@ -68,9 +69,19 @@ require_once('db-head.php');
                     <div class="card mb-3 w-auto h-100">
                         <div class="card-body d-flex flex-column justify-content-center">
                             <h2 class="card-title text-center fs-4" style="font-weight: 600;">Total Patient Count</h2>
-                            <p class="card-text text-center">All staff</p>
+                            
                             <?php
-                            $sql = "SELECT COUNT(patientID) FROM patient;";
+                            $sql = "";
+                            if(isset($_SESSION['data'])){
+                                if($_SESSION['data']['role'] == "Admin"){
+                                    echo '<p class="card-text text-center">All staff</p>';
+                                    $sql = "SELECT COUNT(patientID) FROM patient";
+                                } else {
+                                    echo '<p class="card-text text-center">Of '.$_SESSION['data']['lastName'].'</p>';
+                                    $sql = "SELECT COUNT(patientID) FROM patient WHERE staffID = ".$_SESSION['data']['staffID'];
+                                }
+                            }
+                            
                             $query = $db->connect()->prepare($sql);
                             $query->execute();
                             $num_of_cols = $query->fetchColumn();

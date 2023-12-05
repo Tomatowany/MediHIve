@@ -6,6 +6,7 @@ session_start();
 <?php
 $title = 'Admin~Allergies';
 $allergy_page = 'active';
+$dropshow = "show";
 require_once('db-head.php');
 ?>
 
@@ -65,11 +66,19 @@ require_once('db-head.php');
                                     <?= $item['allergyDescription'] ?>
                                 </td>
                                 <td class="text-center">
+                                    <?php
+                                        if(isset( $_SESSION['role'])){
+                                            if( $_SESSION['role'] == "Admin") {
+                                    ?>
                                     <a href="editallergy.php?id=<?php echo $item['allergyID']; ?>"><i
                                             class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="deleteallergy.php?id=<?php echo $item['allergyID']; ?>"
                                         onclick="return confirm('Are you sure you want to delete allergy #<?php echo $item['allergyID'] . ' ' . $item['allergyName'] ?>?')"><i
                                             class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                             <?php

@@ -6,7 +6,7 @@ session_start();
 <?php
 $title = 'Admin~Cases';
 $case_page = 'active';
-$cond = 'true';
+$dropshow = "show";
 require_once('db-head.php');
 ?>
 
@@ -67,11 +67,19 @@ require_once('db-head.php');
                                     <?= $item['caseDescription'] ?>
                                 </td>
                                 <td class="text-center">
+                                    <?php
+                                        if(isset( $_SESSION['role'])){
+                                            if( $_SESSION['role'] == "Admin") {
+                                    ?>
                                     <a href="editcase.php?id=<?php echo $item['caseID']; ?>"><i class="fa fa-pencil-square-o"
                                             aria-hidden="true"></i></a>
                                     <a href="deletecase.php?id=<?php echo $item['caseID']; ?>"
                                         onclick="return confirm('Are you sure you want to delete case #<?php echo $item['caseID'] . ' ' . $item['caseName'] ?>?')"><i
                                             class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                             <?php

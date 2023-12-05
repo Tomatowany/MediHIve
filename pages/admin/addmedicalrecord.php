@@ -58,6 +58,7 @@ require_once('db-head.php');
     require_once('../../classes/database.php');
     require_once('db-navbar.php');
     require_once('db-sidenav.php');
+    $db = new Database();
     ?>
     <main>
         <div class="container-fluid">
@@ -74,37 +75,51 @@ require_once('db-head.php');
                     <div class="row d-flex justify-content-center w-50 mx-auto">
                         <div class="mb-2">
                             <label for="patientID" class="form-label">Patient ID</label>
-                            <input type="text" class="form-control" id="patientID" name="patientID" required value="<?php if (isset($_POST['patientID'])) {
-                                echo $_POST['patientID'];
-                            } ?>">
+                            <select class="form-control" id="patientID" name="patientID">
+                            <option value="0">SELECT PATIENT</option>
                             <?php
+                             $stmt = $db->connect()->query("SELECT * FROM patient");
+                             while ($row = $stmt->fetch()) {
+                                 echo "<option value='".$row["patientID"]."'>".$row["pFName"].", ".$row["pLName"]."</option>";
+                             }
                             if (isset($_POST['patientID']) && !validate_field($_POST['patientID'])) {
                                 ?>
                                 <p class="text-danger my-1">Patient ID is required</p>
                                 <?php
                             }
                             ?>
+                            </select>
                         </div>
 
                         <div class="mb-2">
-                            <label for="staffID" class="form-label">Staff ID</label>
-                            <input type="text" class="form-control" id="staffID" name="staffID" required value="<?php if (isset($_POST['staffID'])) {
-                                echo $_POST['staffID'];
-                            } ?>">
-                            <?php
-                            if (isset($_POST['staffID']) && !validate_field($_POST['staffID'])) {
-                                ?>
-                                <p class="text-danger my-1">Staff ID is required</p>
-                                <?php
-                            }
+                            <?php if(isset($_SESSION['data'])):
+                                if($_SESSION['role'] == "Admin"){
                             ?>
+                            <label for="staffID" class="form-label">Staff ID</label>
+                            <select class="form-control" id="staffID" name="staffID">
+                                <option value="0">SELECT STAFF</option>
+                            <?php
+                                $stmt = $db->connect()->query("SELECT * FROM staff where role != 'Admin'");
+                                while ($row = $stmt->fetch()) {
+                                    echo "<option value='".$row["staffId"]."'>".$row["lastName"].", ".$row["firstName"]."</option>";
+                                }
+                            ?>
+                            </select>
+                            <?php
+                                } else {
+                            ?>
+                            <input type="hidden" id="staffID" name="staffID" value="<?php echo $_SESSION['data']['staffID']; ?>" >
+                            <?php }
+                            endif; ?>
                         </div>
 
                         <div class="mb-2">
                             <label for="diagnosis" class="form-label">Diagnosis</label>
-                            <input type="text" class="form-control" id="diagnosis" name="diagnosis" required value="<?php if (isset($_POST['diagnosis'])) {
+                            
+                            <textarea class="form-control" id="diagnosis" name="diagnosis" required value="<?php if (isset($_POST['diagnosis'])) {
                                 echo $_POST['diagnosis'];
                             } ?>">
+                            </textarea>
                             <?php
                             if (isset($_POST['diagnosis']) && !validate_field($_POST['diagnosis'])) {
                                 ?>

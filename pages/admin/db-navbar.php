@@ -19,25 +19,45 @@
                         aria-describedby="button-addon2">
                 </div>
             </form>
-
             <ul class="navbar-nav me-3 mx-3  mb-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <i class="bi bi-person-badge"></i>
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown"">
-                <li>
-                    <?php
-                    if (isset($_SESSION['user'])) {
+                        <?php
+                            
+                            if(isset($_SESSION['data'])){
+                                echo $_SESSION['data']['role']." ".$_SESSION['data']['firstName'];
+                            }
                         ?>
-                        <a href=" ../../pages/admin/logout.php" class="dropdown-item"><span>Logout</span></a>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+                        <?php
+                            if(isset($_SESSION['data'])){
+                                if($_SESSION['data']['role'] == "Staff"){
+                                    echo '<li><a class=" dropdown-item" href="#">Account Settings</a>';
+                                    echo '<li>
+                                        <hr class="dropdown-divider">
+                                    </li>';
+                                }
+                            }
+                           
+                        ?>    
+                     
+                    <li>
+                        <?php
+                        if (isset($_SESSION['user'])) {
+                            ?>
+                            <a href="../../pages/admin/logout.php" class="dropdown-item"><span>Logout</span></a>
                             <?php
-                    }
-                    ?>
+                        }
+                        ?>
+                    </li>   
                 </li>
+                
             </ul>
+            </ul>
+            
 
         </div>
     </div>

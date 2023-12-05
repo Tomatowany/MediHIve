@@ -74,11 +74,19 @@ require_once('db-head.php');
                                     <?= $item['datetime'] ?>
                                 </td>
                                 <td class="text-center">
+                                     <?php
+                                        if(isset( $_SESSION['role'])){
+                                            if( $_SESSION['role'] == "Admin") {
+                                    ?>
                                     <a href="editmedicalrecord.php?id=<?php echo $item['consultationID']; ?>"><i
                                             class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="deletemedicalrecord.php?id=<?php echo $item['consultationID']; ?>"
                                         onclick="return confirm('Are you sure you want to delete record #<?php echo $item['consultationID'] ?> ?')"><i
                                             class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                             <?php

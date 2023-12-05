@@ -34,7 +34,7 @@
                         <span>Library</span>
                         <span class="me-1"><i class="bi bi-caret-down-fill"></i></span>
                     </a>
-                    <ul class="nav collapse ms-1 flex-column" id="submenu" data-bs-parent="#menus">
+                    <ul class="nav collapse ms-1 flex-column <?= $dropshow ?>" id="submenu" data-bs-parent="#menus">
                         <li class="mx-5">
                             <a class="nav-link ps-3 <?= $case_page ?>" href="case.php">
                                 <span class="me-2"><i class="bi bi-clipboard-heart-fill"></i></span>Cases</a>
@@ -49,12 +49,26 @@
                         </li>
                     </ul>
                 </li>
+                <?php
+                if(isset($_SESSION['data'])){
+                    if($_SESSION['data']['role'] == 'Admin'){
+                ?>
                 <li class="mb-1">
                     <a href="staff.php" class="nav-link px-3 <?= $staff_page ?>">
                         <span class="me-2"><i class="bi bi-folder-fill"></i></span>
                         <span>Staff</span>
                     </a>
                 </li>
+                <?php } else { ?>
+                <li class="mb-1">
+                    <a href="#" class="nav-link px-3 <?= $setting_page ?>">
+                        <span class="me-2"><i class="bi bi-folder-fill"></i></span>
+                        <span>Setting</span>
+                    </a>
+                </li>      
+                <?php }
+                }
+                ?>
                 <li class="mb-1" style="margin-top: 36rem; position: absolute;">
                     <?php
                     if (isset($_SESSION['user'])) {

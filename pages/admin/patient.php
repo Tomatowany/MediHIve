@@ -78,11 +78,19 @@ require_once('db-head.php');
                                     <?= $item['sex'] ?>
                                 </td>
                                 <td class="text-center">
+                                    <?php
+                                        if(isset( $_SESSION['role'])){
+                                            if( $_SESSION['role'] == "Admin") {
+                                    ?>
                                     <a href="editpatient.php?id=<?php echo $item['patientID']; ?>"><i
                                             class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="deletepatient.php?id=<?php echo $item['patientID']; ?>"
                                         onclick="return confirm('Are you sure you want to delete <?php if($item['sex']!= 'Female'){echo 'Mr. '; }else{echo 'Ms. ';} echo $item['pFName'] . ' ' . $item['pLName'] ?>?')"><i
                                             class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                             <?php

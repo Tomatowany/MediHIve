@@ -22,6 +22,8 @@
         if ($account->sign_in_staff()){
             var_dump($account->sign_in_staff());
             $_SESSION['user'] = 'staff';
+            $_SESSION['data'] = $account->sign_in_staff();
+            $_SESSION['role'] = $account->sign_in_staff()['role'];
             header('location: dashboard.php');
         }else{
             $error =  'Invalid email/password. Try again.';
