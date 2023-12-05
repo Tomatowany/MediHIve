@@ -36,7 +36,7 @@
         if ($account->sign_in_patient()){
             var_dump($account->sign_in_patient());
             $_SESSION['user'] = 'patient';
-            header('location: ../staff/dashboard.php');
+            header('location: ../records/patient-info.php');
         }else{
             $error =  'Invalid patient ID/email. Try again.';
         }

@@ -249,7 +249,7 @@ require_once('db-head.php');
                             </div>
                             <div class="form-group mb-2">
                                 <label for="bloodType" class="form-label">Blood Type</label>
-                                <select name="bloodType" id="bloodType" class="form-select">
+                                <select name="bloodType[]" id="bloodType" class="form-select js-example-basic-multiple" multiple="multiple">
                                     <option value="">Select Blood Type</option>
                                     <option value="A" <?php if (isset($_POST['bloodType']) && $_POST['bloodType'] == 'A') {
                                         echo 'selected';
@@ -311,9 +311,17 @@ require_once('db-head.php');
             </div>
         </div>
     </main>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
     <?php
     require_once('../../includes/js.php')
         ?>
+   
+
+
 </body>
 
 </html>
