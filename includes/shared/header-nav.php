@@ -20,23 +20,24 @@
           </li>
           <li class="nav-item">
             <?php
-            if (isset($_SESSION['user'])) {
-              ?>
-              <a class="nav-link" href="../pages/admin/dashboard.php">Dashboard</a>
-              <?php
+            if (isset($_SESSION['data'])) {
+              if ($_SESSION['data']['role'] == 'Admin' || $_SESSION['data']['role'] == 'Staff') {
+                ?>
+                <a class="nav-link" href="../../pages/admin/dashboard.php">Dashboard</a>
+                <?php
+              }
             }
             ?>
-
           </li>
           <li class="nav-item-b">
             <?php
             if (isset($_SESSION['user'])) {
               ?>
-              <button type="button" onclick="location.href='../pages/admin/logout.php';" class="login-btn">asdasd</button>
+              <button type="button" onclick="location.href='../../pages/admin/logout.php';" class="login-btn">Logout</button>
               <?php
             } else {
               ?>
-              <button type="button" onclick="location.href='../pages/admin/loginop.php';" class="login-btn">Login</button>
+              <button type="button" onclick="location.href='../../pages/admin/loginop.php';" class="login-btn">Login</button>
               <?php
             }
             ?>

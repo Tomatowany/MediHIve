@@ -20,12 +20,14 @@ if (isset($_POST['save'])) {
 
     $patient = new Patient();
     //sanitize
+    $patient->staffID = htmlentities($_POST['staffID']);
     $patient->pFName = htmlentities($_POST['pFName']);
     $patient->pLName = htmlentities($_POST['pLName']);
     $patient->patientType = htmlentities($_POST['patientType']);
     $patient->bloodType = htmlentities($_POST['bloodType']);
     $patient->birthdate = htmlentities($_POST['birthdate']);
     $patient->address = htmlentities($_POST['address']);
+    $patient->email = htmlentities($_POST['email']);
     $patient->contactNo = htmlentities($_POST['contactNo']);
     $patient->civilStatus = htmlentities($_POST['civilStatus']);
     $patient->nationality = htmlentities($_POST['nationality']);
@@ -46,46 +48,19 @@ if (isset($_POST['save'])) {
         validate_field($patient->bloodType) &&
         validate_field($patient->birthdate) &&
         validate_field($patient->address) &&
+        validate_field($patient->email) &&
         validate_field($patient->contactNo) &&
         validate_field($patient->civilStatus) &&
         validate_field($patient->nationality) &&
         validate_field($patient->sex) &&
         validate_field($patient->occupation)
     )
-        // validate_field($staff->role) &&
-        // validate_field($staff->email) &&
-        // validate_field($staff->password) &&
-        // validate_field($staff->status) &&
-        // validate_password($staff->password) &&
-        // validate_email($staff->email) && !$staff->is_email_exist()){
         if ($patient->add()) {
             header('location: patient.php');
         } else {
             echo 'An error occured while adding in the database.';
         }
 }
-//validate
-// if (validate_field($product->pizzaname) &&
-// validate_field($product->category) &&
-// validate_field($product->price) &&
-// validate_field($product->availability) &&
-// validate_name($product->pizzaname) && !$product->is_product_exist()){
-//     if($product->add()){
-//             header('location: products.php');
-//         }else{
-//             echo 'An error occured while adding in the database.';
-//         }
-// }
-// validate_field($product->password) &&
-// validate_field($staff->status) &&
-// validate_password($staff->password) &&
-// validate_email($staff->email) && !$staff->is_email_exist()){
-//     if($staff->add()){
-//         header('location: staff.php');
-//     }else{
-//         echo 'An error occured while adding in the database.';
-//     }
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,11 +79,11 @@ require_once('db-head.php');
     <main>
         <div class="patient_form container-fluid">
             <div class="row d-flex align-items-center mb-5">
-                <h1 class="col-sm-12 col-lg-8 d-flex justify-content-center"
+                <h1 class="col-sm-12 col-lg-5 d-flex justify-content-center"
                     style="font-weight: 700; margin-bottom: 0;">Add Patient Data
                 </h1>
                 <a href="patient.php" id="back"
-                    class="text-primary text-decoration-none col-sm-12 col-lg-3 d-flex align-items-center justify-content-end"><i
+                    class="text-primary text-decoration-none col-sm-12 col-lg-6 d-flex align-items-center justify-content-end"><i
                         class="fa fa-arrow-left me-1" aria-hidden="true"></i>Back</a>
             </div>
             <div class="row d-flex justify-content-center align-items-center">
@@ -201,6 +176,14 @@ require_once('db-head.php');
                                 }
                                 ?>
                             </div>
+                            <div class="mb-2">
+                                <label for="nationality" class="form-label">Nationality</label>
+                                <input type="text" class="form-control" id="nationality" name="nationality" required
+                                    value="<?php if (isset($_POST['nationality'])) {
+                                        echo $_POST['nationality'];
+                                    } ?>">
+                            </div>
+
                         </div>
 
                         <div class="col-sm-12 col-md-6">
@@ -215,6 +198,12 @@ require_once('db-head.php');
                                 <label for="address" class="form-label">Address</label>
                                 <input type="text" class="form-control" id="address" name="address" required value="<?php if (isset($_POST['address'])) {
                                     echo $_POST['address'];
+                                } ?>">
+                            </div>
+                            <div class="mb-2">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" required value="<?php if (isset($_POST['email'])) {
+                                    echo $_POST['email'];
                                 } ?>">
                             </div>
                             <div class="mb-2">
@@ -292,12 +281,6 @@ require_once('db-head.php');
                                 }
                                 ?>
                             </div>
-                        </div>
-                        <div class="mb-2 col-md-7">
-                            <label for="nationality" class="form-label">Nationality</label>
-                            <input type="text" class="form-control" id="nationality" name="nationality" required value="<?php if (isset($_POST['nationality'])) {
-                                echo $_POST['nationality'];
-                            } ?>">
                         </div>
 
                         <div class="footer_form row d-flex justify-content-center">

@@ -6,11 +6,9 @@ session_start();
 <?php
     $title = 'MediHive';
     require_once('../../includes/shared/head-index.php');
+    require_once('../../includes/shared/header-nav.php');
 ?>
 <body>
-    <?php  
-        require_once('../../includes/shared/header-nav.php');
-    ?>
     <main>
       <section id="banner">
         <div class="banner-bg">

@@ -50,23 +50,17 @@
                     </ul>
                 </li>
                 <?php
-                if(isset($_SESSION['data'])){
-                    if($_SESSION['data']['role'] == 'Admin'){
-                ?>
-                <li class="mb-1">
-                    <a href="staff.php" class="nav-link px-3 <?= $staff_page ?>">
-                        <span class="me-2"><i class="bi bi-folder-fill"></i></span>
-                        <span>Staff</span>
-                    </a>
-                </li>
-                <?php } else { ?>
-                <li class="mb-1">
-                    <a href="#" class="nav-link px-3 <?= $setting_page ?>">
-                        <span class="me-2"><i class="bi bi-folder-fill"></i></span>
-                        <span>Setting</span>
-                    </a>
-                </li>      
-                <?php }
+                if (isset($_SESSION['data'])) {
+                    if ($_SESSION['data']['role'] == 'Admin') {
+                        ?>
+                        <li class="mb-1">
+                            <a href="staff.php" class="nav-link px-3 <?= $staff_page ?>">
+                                <span class="me-2"><i class="bi bi-folder-fill"></i></span>
+                                <span>Staff</span>
+                            </a>
+                        </li>
+                    <?php } ?>
+                <?php
                 }
                 ?>
                 <li class="mb-1" style="margin-top: 36rem; position: absolute;">

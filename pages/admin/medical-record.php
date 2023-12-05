@@ -30,15 +30,15 @@ require_once('db-head.php');
         </div>
 
         <?php
-        require_once '../../classes/overview.show.php';
+        require_once '../../classes/medicalrecord.class.php';
         require_once '../../tools/functions.php';
         ?>
 
         <?php
-        $overview = new Overview();
+        $medicalrecord = new MedicalRecord();
 
         // Fetch staff data (you should modify this to retrieve data from your database)
-        $overviewArray = $overview->show();
+        $medicalrecordArray = $medicalrecord->show();
         ?>
         <div class="lamesa table-responsive-lg mx-auto">
             <table id="medicalrecord" class="table mx-auto table-responsive-lg table-sm table-striped table-bordered">
@@ -54,8 +54,8 @@ require_once('db-head.php');
                 </thead>
                 <tbody id="medicalrecordTableBody">
                     <?php
-                    if ($overviewArray) {
-                        foreach ($overviewArray as $item) {
+                    if ($medicalrecordArray) {
+                        foreach ($medicalrecordArray as $item) {
                             ?>
                             <tr>
                                 <td>

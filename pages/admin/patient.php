@@ -48,6 +48,7 @@ require_once('db-head.php');
                         <th scope="col">Patient Type</th>
                         <th scope="col">Blood Type</th>
                         <th scope="col">Birthdate</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Sex</th>
                         <th scope="col" width="5%">Action</th>
 
@@ -73,6 +74,9 @@ require_once('db-head.php');
                                 </td>
                                 <td>
                                     <?= $item['birthdate'] ?>
+                                </td>
+                                <td>
+                                    <?= $item['email'] ?>
                                 </td>
                                 <td>
                                     <?= $item['sex'] ?>
