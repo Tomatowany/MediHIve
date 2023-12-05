@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'Admin P-Record';
+$title = $_SESSION['role'].'~ Patient List';
 $patient_page = 'active';
 require_once('db-head.php');
 ?>

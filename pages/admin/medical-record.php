@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'Admin M-Record';
+$title = $_SESSION['role'].'~ Medical Records';
 $record_page = 'active';
 require_once('db-head.php');
 ?>
@@ -22,10 +22,10 @@ require_once('db-head.php');
                     List
                 </h1>
                 <button class="btn btn-add btn-outline-secondary col-sm-12 col-lg-7 d-flex justify-content-center align-items-center ms-auto me-5"
-                    style="max-width: 175px; min-height: 46px; border-radius: 25px;" id="addbutt"
+                    style="max-width: 115px; min-height: 46px; border-radius: 25px;" id="addbutt"
                     onclick="location.href='addmedicalrecord.php';">
                     <i class="fa fa-plus brand-color me-2" aria-hidden="true"></i>
-                    Medical Record</button>
+                    Record</button>
             </div>
         </div>
 

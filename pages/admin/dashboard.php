@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'Admin Overview';
+$title = $_SESSION['role'].'~ Overview';
 $dashboard_page = 'active';
 require_once('db-head.php');
 ?>

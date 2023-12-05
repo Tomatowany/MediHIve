@@ -114,6 +114,8 @@ require_once('db-head.php');
             <div class="row d-flex justify-content-center align-items-center">
                 <form method="post" action="">
                     <div class="row d-flex justify-content-center w-100 mx-auto">
+                        <input type="hidden" id="staffID" name="staffID"
+                            value="<?php echo $_SESSION['data']['staffID']; ?>">
                         <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="pFName" class="form-label">First Name</label>

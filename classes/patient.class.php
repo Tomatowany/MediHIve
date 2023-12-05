@@ -6,6 +6,7 @@ Class Patient{
     //attributes
 
     public $patientID;
+    public $staffID;
     public $pFName;
     public $pLName;
     public $patientType;
@@ -28,10 +29,11 @@ Class Patient{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO patient (pFName, pLName, patientType, bloodType, birthdate, address, contactNo, civilStatus, nationality, sex, occupation) VALUES 
-        (:pFName, :pLName, :patientType, :bloodType, :birthdate, :address, :contactNo, :civilStatus, :nationality, :sex, :occupation);";
+        $sql = "INSERT INTO patient (staffID, pFName, pLName, patientType, bloodType, birthdate, address, contactNo, civilStatus, nationality, sex, occupation) VALUES 
+        (:staffID, :pFName, :pLName, :patientType, :bloodType, :birthdate, :address, :contactNo, :civilStatus, :nationality, :sex, :occupation);";
 
         $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':staffID',$this->staffID);
         $query->bindParam(':pFName', $this->pFName);
         $query->bindParam(':pLName', $this->pLName);
         $query->bindParam(':patientType', $this->patientType);

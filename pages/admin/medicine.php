@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = $_SESSION['role'].'~Medicines';
+$title = $_SESSION['role'].'~ List of Medicines';
 $medicine_page = 'active';
 $dropshow = "show";
 require_once('db-head.php');

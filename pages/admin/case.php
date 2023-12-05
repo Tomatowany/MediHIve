@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'Admin~Cases';
+$title = $_SESSION['role'].'~ List of Cases';
 $case_page = 'active';
 $dropshow = "show";
 require_once('db-head.php');

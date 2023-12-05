@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = 'Admin~Allergies';
+$title = $_SESSION['role'].'~ List of Allergies';
 $allergy_page = 'active';
 $dropshow = "show";
 require_once('db-head.php');

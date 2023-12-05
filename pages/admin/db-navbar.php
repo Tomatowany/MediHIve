@@ -11,15 +11,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <form class="d-flex ms-auto" role="search">
-                <div class="input-group my-3 my-lg-0">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-                        style="border: 1px solid #ced4da;"><i class="bi bi-search"></i></button>
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                        aria-describedby="button-addon2">
-                </div>
-            </form>
-            <ul class="navbar-nav me-3 mx-3  mb-lg-0">
+            <ul class="navbar-nav me-3 mx-auto  mb-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
